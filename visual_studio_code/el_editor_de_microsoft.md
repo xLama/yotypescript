@@ -53,15 +53,25 @@ app.js compilado desde app.ts:
 
 Si queremos ocultar de la lista los archivos .js y .map que se generan, debemos configurarlo.
 
-
+![](image013.png)
 
 Veremos esto:
 
-
+![](image014.png)
 
 En el archivo de la derecha añadimos:
 
-{"files.exclude" : { "**/.git" : **true**, "**/.DS_Store" : **true**, "**/*.js" : { "when" : "$(basename).ts" }, "**/*.map" : { } }}
+
+![](image015.png)
+
+```ts
+{"files.exclude" : { 
+  "**/.git" : true, 
+  "/.DS_Store" : true, 
+  "**/*.js" : { "when" : "$(basename).ts" }, 
+  "**/*.map" : { } }
+}
+```
 
 A partir de ahora los archivos .js que tengan su correspondiente .ts no se mostrarán. Además también ocultamos todos los .map.
 
@@ -73,3 +83,7 @@ Resumidamente, a estas alturas, en nuestro proyecto tendremos:
 | **app.js** |
 
 Si ejecutamos index.html:
+
+![](image016.png)
+
+

@@ -43,6 +43,8 @@ alert("Probando JS");
 
 _alert()_ muestra en una ventana emergente el texto que le proporcionamos.
 
+![](image001.png)
+
 Para sólo tener que incluir un archivo .js es preferible compilar y agrupar todo nuestro TS. Es algo que se puede hacer desde un editor de TS o manualmente desde el compilador con la consola de comandos. Para ello es necesario que las referencias sean correctas, es decir, que cada archivo .ts importe los otros .ts que necesite para funcionar. Esto se verá en el capítulo de Módulos
 
 .

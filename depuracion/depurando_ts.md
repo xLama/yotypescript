@@ -4,8 +4,12 @@ Realmente no podríamos depurar directamente TS pues lo que se ejecuta es su tra
 
 Para activar esta características en _Chrome_ debemos abrir el navegador y pulsar F12\. En la parte superior derecha de la pestaña que se ha abierto aparece un icono de una sierra dentada como en la imagen:
 
-![C:\Users\L0010062\Desktop\PrtScr capture.jpg](assets/cusersl0010062desktopprtscr_ca.jpeg)
+![](image025.jpg)
 
 Pulsamos y nos abrirá otra pestaña en la que debemos marcar la opción _Enable JavaScript source maps:_
 
+![](image026.png)
+
 Una vez hecho podemos ver el código TS en la pestaña _Sources_ y eligiendo el archivo .ts que queramos.
+
+![](image027.png)

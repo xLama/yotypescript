@@ -8,7 +8,7 @@ Ejemplos correctos de variables:
 var variable1;
 var variable2;
 var numeroDeElementos;
-var ಠ_ಠ = 65;
+var ლ_ಠ益ಠ_ლ = 65;
 ```
 
 Ejemplos erróneos:

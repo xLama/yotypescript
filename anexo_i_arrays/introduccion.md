@@ -1,6 +1,6 @@
 ## Introducción {#introducci-n}
 
-![http://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Array1.svg/328px-Array1.svg.png](assets/httpuploadwikimediaorgwikiped.png)
+![](image034.png)
 
 En TS un array es en realidad una lista de elementos. Como se ve en la imagen se puede representar como espacios contiguos donde se almacenan valores. Es conveniente tipar de forma que sepamos de qué tipo son los valores que contiene.
 

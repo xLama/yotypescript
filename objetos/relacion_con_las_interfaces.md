@@ -4,4 +4,6 @@ Todo lo mostrado en este tema puede realizarse mediante [interfaces](../interfac
 
 Todos los ejemplos que hacen uso del tipo _Person_ en este tema, podrían haber escrito de la siguiente forma sin modificar de ninguna manera la semántica.
 
-**interface** Person { name: **string**; age: **number**;}
+```ts
+interface Person { name: string; age: number;}
+```

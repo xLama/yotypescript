@@ -2,6 +2,8 @@
 
 Una herramienta muy importante es la consola. En ella podemos ver los errores de nuestra aplicación así como la línea de código donde ha fallado. Pulsa F12 para abrirla.
 
+
+
 Aquí podemos ver que se ha lanzado una excepción que no se ha controlado
 
 Intentamos ejecutar un método de un objeto con valor nulo.

@@ -3,14 +3,18 @@
 Llamados _break points_ en inglés. Su utilidad es tan simple como importante. Con ellos establecemos una línea en el código donde la ejecución del programa se parará cuando llegue a ese punto. Una vez ahí tenemos las opciones de seguir con la ejecución o evaluar expresiones.
 
 Estos se establecen sobre el código en la misma pestaña _Sources_ pulsado sobre la línea que queramos. Se verá una etiqueta azul sobre el número de línea.
+![](image028.png)
 
 Si actualizamos la página pulsando F5
+
+![](image029.png)
 
 Vemos que la línea 25, que es donde establecimos el punto de ruptura, se ha coloreado de azul. En la imagen la ejecución del programa está parada.
 
 En ese momento tenemos a nuestra disposición en la parte derecha de esa misma pestaña, unos botones útiles:
 
-![Nueva pestaña - Google Chrome](assets/nueva_pestana_-_google_chrome.jpeg)
+![](image030.jpg)
+
 
 | Código | Uso |
 | --- | --- |

@@ -18,41 +18,41 @@ En TS los tipos primitivos y los objetos poseen el mismo nombre pero con la dife
 
 Si declaramos una variable con un tipo primitivo, no la podemos inicializar con el tipo objeto aunque sí se puede hacer lo inverso.
 
-**var** variable1: Boolean = **new** Boolean(**true**); // Correcto**var** variable2: **boolean** = variable1;// Incorrecto boolean/Boolean
+```**var** variable1: Boolean = **new** Boolean(**true**); // Correcto**var** variable2: **boolean** = variable1;// Incorrecto boolean/Boolean
 
-**var** variable3: **boolean** = **true**; // Correcto**var** variable4: Boolean = variable3; // Correcto
+**var** variable3: **boolean** = **true**; // Correcto**var** variable4: Boolean = variable3; // Correcto```
 
 ### Inicialización literal {#inicializaci-n-literal}
 
 Consiste es asignarle el valor directamente a una variable sin usar ningún [constructor](../clases/constructores.md). Tanto los primitivos como los objetos pueden ser inicializados de forma literal.
 
-**var** cadena: **string** = "Esto es una cadena";**var** cadena3: String = "Esto es una cadena";**var** numero: **number** = 2;**var** numero2: Number = 2;**var** boolean: **boolean** = **true**;**var** boolean2: Boolean = **true**;
+```**var** cadena: **string** = "Esto es una cadena";**var** cadena3: String = "Esto es una cadena";**var** numero: **number** = 2;**var** numero2: Number = 2;**var** boolean: **boolean** = **true**;**var** boolean2: Boolean = **true**;```
 
 El por qué de esto se ve mejor con un ejemplo
 
 TS:
 
-**var** cadena: **string** = "Esto es una cadena";**var** cadena2: String = "Esto es una cadena";
+```**var** cadena: **string** = "Esto es una cadena";**var** cadena2: String = "Esto es una cadena";```
 
 JS:
 
-**var** cadena = "Esto es una cadena";**var** cadena2 = "Esto es una cadena";
+```**var** cadena = "Esto es una cadena";**var** cadena2 = "Esto es una cadena";```
 
 Lo que en TS son dos variables de tipos distintos, una primitiva y otra objeto, en JS son dos variables sin tipo. El hecho de que no podamos inicializar una variable primitiva usando el constructor de su equivalente objeto es una comprobación del compilador de TS realizada para mantener la consistencia pero que en JS no ocurre.
 
 TS:
 
-**var** cadena: **string** = **new** String("Cadena"); // Error
+```**var** cadena: **string** = **new** String("Cadena"); // Error```
 
 JS:
 
-**var** cadena = **new** String("Esto es una cadena"); // Correcto
+```**var** cadena = **new** String("Esto es una cadena"); // Correcto```
 
 Al tipar la variable con **string**_,_ en TS ya estamos indicando que debe contener un tipo primitivo o literal y no va a permitir algo distinto. Como en JS no tipamos la variable, podemos inicializarla con el primitivo o el objeto.
 
 Un apunte a tener en cuenta es que las cadenas de caracteres (**string**) se pueden inicializar tanto con dobles comillas como con las simples:
 
-**var** cadena: **string** = "Esto es una cadena";**var** cadena2: **string** = 'Esto es una cadena';**var** cadena3: String = "Esto es una cadena";**var** cadena4: String = 'Esto es una cadena';
+```**var** cadena: **string** = "Esto es una cadena";**var** cadena2: **string** = 'Esto es una cadena';**var** cadena3: String = "Esto es una cadena";**var** cadena4: String = 'Esto es una cadena';```
 
 ### Template Strings (cadenas plantilla) {#template-strings-cadenas-plantilla}
 

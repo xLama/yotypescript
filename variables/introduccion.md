@@ -1,6 +1,6 @@
 ## Introducción {#introducci-n}
 
-Las variables en TS sirven para lo mismo que en todos los lenguajes de programación: para almacenar información. Y como su nombre indica pueden variar su contenido durante toda la ejecución del programa.
+Las variables en TS sirven para lo mismo que en todos los lenguajes de programación: almacenar información. Y como su nombre indica pueden variar su contenido durante toda la ejecución del programa.
 
 Para crearlas se utiliza la palabra clave _var o let_ seguido de un nombre identificativo. A esto se le llama declarar una variable.
 

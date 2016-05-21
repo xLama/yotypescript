@@ -4,10 +4,30 @@ Otra utilidad que tiene es la de controlar que todas las operaciones han sido ej
 
 Con callbacks:
 
-**function** callService(){ service1(callback, failback); service2(callback, failback); service3(callback, failback);}**var** serviceEnded = 0;**function** callback(){ serviceEnded++; if (serviceEnded === 3){ // Podemos avanzar }}**function** failback(){ // Error en uno de los servicios. No avanzamos.}
+```ts
+function callService() {
+    service1(callback, failback); service2(callback, failback); service3(callback, failback);
+}
+
+var serviceEnded = 0;
+
+function callback() {
+    serviceEnded++;
+    if (serviceEnded === 3) { } // Podemos avanzar 
+} 
+
+function failback() { } // Error en uno de los servicios. No avanzamos.
+```
 
 Con funciones asíncronas:
-
-**async function** callService(){ **try**{ **var** results = **await*** [service1(), service2(), service3()] **catch (error){** // Algo ha ido mal **}** // Hacemos algo con results si ha ido bien}
+```ts
+async function callService() {
+    try {
+        var results = await* [service1(), service2(), service3()];
+        // Hacemos algo con results si ha ido bien
+    }
+    catch (error) { /* Algo ha ido mal */ }
+}
+```
 
 Con await* la función espera hasta que completen todas las llamadas pasadas dentro del array. Results será un array en el que cada posición (en este caso 3) será el valor devuelvo (si lo hubiera) por cada una de las llamadas. La comodidad salta a la vista, ¿cierto?

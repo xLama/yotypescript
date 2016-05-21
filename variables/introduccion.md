@@ -4,7 +4,10 @@ Las variables en TS sirven para lo mismo que en todos los lenguajes de programac
 
 Para crearlas se utiliza la palabra clave _var o let_ seguido de un nombre identificativo. A esto se le llama declarar una variable.
 
-**var** nombre;**let** apellidos;
+```ts
+var nombre; 
+let apellidos;
+```
 
 Puedes declarar una variable en cualquier momento. Aunque lo más recomendable es que se declaren todas antes de empezar la lógica que estemos desarrollando. De esta forma conseguiremos un código mejor estructurado y legible.
 

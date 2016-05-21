@@ -8,7 +8,11 @@ async function asyncFunction{}
 
 ¿Qué conseguimos con esto? Lo que conseguimos es que lo devuelto por la función se envuelva en un Promise de forma automática y transparente para el desarrollador. Pero hay que tener claro que lo que devuelve en realidad no es un objeto Promise, sino el valor en sí.
 
-```**async function** asyncFunction{ **return** 1}```
+```ts
+async function asyncFunction{
+  return 1
+}
+```
 
 Pero la verdadera potencia no radica ahí, sino en el await. Await para la ejecución de la función hasta que se resuelva la operación. Para usar await la función debe devolver un Promise, ya sea de forma explícita o porque esa misma función también sea async:
 
@@ -24,7 +28,7 @@ asyncFunction(); // 1
 var name = "Lama"; // 4
 ```
 
-Ejecutamos asyncFunction. Al llegar a la primera línea, se encuentra con un await, lo que hace ejecutar la función otherAsyncFunction() y para el flujo de esa función hasta que se resuelva, devolviendo el control de la ejecución a la siguiente línea posterior a la invocación de asyncFunction(). El ejemplo es muy sencillo pero sirve para esquematizar lo que ocurre. Los números reflejan el orden de ejecución en un caso normal, puesto que no sabemos cuánto va a tardar en devolver una respuesta otherAsyncFunction(). Como se ha sido antes, al acabar la ejecución de otherAsyncFunction(), la variable results no será un Promise, sino el array [0,1,2].
+Ejecutamos asyncFunction. Al llegar a la primera línea, se encuentra con un await, lo que hace ejecutar la función otherAsyncFunction() y para el flujo de esa función hasta que se resuelva, devolviendo el control de la ejecución a la siguiente línea posterior a la invocación de asyncFunction(). El ejemplo es muy sencillo pero sirve para esquematizar lo que ocurre. Los números reflejan el orden de ejecución en un caso normal, puesto que no sabemos cuánto va a tardar en devolver una respuesta otherAsyncFunction(). Como sí ha sido antes, al acabar la ejecución de otherAsyncFunction(), la variable results no será un Promise, sino el array [0,1,2].
 
 Para detectar si algo ha ido mal, se debe encerrar el código en un bloque try-catch.
 

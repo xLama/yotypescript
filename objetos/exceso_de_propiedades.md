@@ -8,7 +8,9 @@ Expliquemos paso por paso.
 
 Objeto literal fresco es simplemente un objeto literal cualquiera.
 
+```ts
 { name: "Carlos", age : 26};
+```
 
 Si asignamos ese objeto literal a un tipo objeto literal que no sea el objeto vacío {}, se va a comprobar que el objeto literal no tenga más propiedades que las del tipo, de lo contrario dará error:
 

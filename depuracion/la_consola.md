@@ -9,6 +9,7 @@ Aquí podemos ver que se ha lanzado una excepción que no se ha controlado
 ![](image019.png)![](image020.png)
 
 Intentamos ejecutar un método de un objeto con valor nulo.
+![](image021.png)
 
 
 
@@ -16,6 +17,12 @@ También podemos escribir desde nuestro código. Para utilizarla tenemos a nuest
 
 console.log("probando console.log");
 
+![](image022.png)
+
 console.info("probando console.info");
 
+![](image023.png)
+
 console.error("probando console.error");
+
+![](image024.png)

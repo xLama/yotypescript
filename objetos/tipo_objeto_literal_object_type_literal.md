@@ -2,11 +2,16 @@
 
 Es posible definir un tipo objeto literal de manera que podamos especificar qué propiedades debe tener un objeto y de qué tipo son éstas:
 
-```**var** objeto: {a: **string** , n: **number** } = { a: "cadena", n : 1 }```
+```ts
+let objeto: {a: string , n: number } = { a: "cadena", n : 1 }
+```
 
 Lo más común es usarlo junto con los tipos alias:
 
-```**type** obj = {a: **string** , n: **number** }**var** g : obj = { a: "cadena", n : 1 }```
+```ts
+type obj = {a: string , n: number }
+let g : obj = { a: "cadena", n : 1 }
+```
 
 Existen tres restricciones a la hora de asginar objetos literales a variables de tipo objeto literal: número, nombre y tipo de propiedades del objeto:
 

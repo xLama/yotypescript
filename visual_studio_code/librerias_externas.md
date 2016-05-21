@@ -1,0 +1,3 @@
+## Librerías externas {#librer-as-externas}
+
+Cuando estemos trabajando con librerías externas el procedimiento es algo distinto. Ya que lo normal es ofrecer todo nuestro código en un único archivo .js que es el que realmente se va a usar finalmente en la web, nosotros podemos ofrecer las nuestras como un proyecto de TS y que sea el programador que la use el responsable de su compilación y utilización. La otra forma es proveer el archivo .js junto con un archivo de definiciones. El archivo .js se añade al .html normalmente y es en nuestro proyecto de TS donde usaremos el d.ts. Si está bien construido todo lo que ahí se exponga tendrá su equivalencia en la librería en JS por lo que no habrá problemas al ejecutarlo.

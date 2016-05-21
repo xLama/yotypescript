@@ -1,0 +1,1 @@
+# Funciones asíncronas {#funciones-as-ncronas}

@@ -1,0 +1,3 @@
+## Introducción {#introducci-n}
+
+La idea básica de la programación es la automatización de procesos en los que un humano debería hacerlos de forma manual cada vez que quisiera obtener resultados. Por ello es imprescindible poder controlar la ejecución del programa tomando decisiones sobre qué debería o no ejecutar dependiendo de la situación. Por otra parte, no basta con bifurcar los caminos, sino que debemos tener algún mecanismo para repetir sentencias de forma que no nos obligue a escribir un número X de veces situaciones análogas.

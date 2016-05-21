@@ -1,0 +1,1 @@
+# Tipado estructural {#tipado-estructural}

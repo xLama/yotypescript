@@ -8,19 +8,26 @@ Sólo sirve para determinar que una función no devuelve ningún valor. También
 
 No se puede tipar una variable con _Null._ Sólo puede ser el valor de la variable. Cualquier tipo de variable puede contener el valor _null_. Representa valor nulo.
 
-**var** variable: Boolean = **null**;
+```ts
+let variable: Boolean = null;
+```
 
 ### Undefined {#undefined}
 
 Representa variables no inicializadas. También podemos asignar el valor _undefined_ a una variable de cualquier tipo:
 
-**var** variable: Boolean = undefined;
+```ts
+let variable: Boolean = undefined;
+```
 
 ### [Enum](../control_del_flujo/sentencias_utiles_para_los_bucles.md#757309351116418-_Enumerados) {#enum}
 
 Es una forma más amigable de representar los números.
 
-**enum** Animales { Perro, Gato, Conejo };**var** perro = Animales.Perro;
+```ts
+enum Animals { Dog, Cat };
+let dog = Animals.Dog;
+```
 
 Perro representaría el 0, Gato el 1 y así sucesivamente.
 
@@ -28,31 +35,46 @@ Perro representaría el 0, Gato el 1 y así sucesivamente.
 
 En TS, como en JS, una función también es un objeto y se puede almacenar como tal.
 
-**var** funcion: Function;
+```ts
+let funcion: Function;
+```
 
 ### [Array](../modulos/evitar_que_una_clase_pueda_ser_superclase.md#757309351116418-_Anexo_I._) {#array}
 
 Los arrays son colecciones de datos. Podemos declarar un _array_ de dos formas:
 
-**var** array1: Array&lt;tipoDato&gt;;**var** array2: tipoDato[];
+```ts
+let array1: Array<tipoDato>;
+let array2: tipoDato[];
+```
 
 Son compatibles entre sí al 100% y se pueden asignar de forma recíproca.
 
 tipoDato se refiere al tipo de dato de los objetos que va almacenar el array:
 
-**var** array1: Array<**number**>;**var** array2: Array<**string**>;
+```ts
+let array1: Array<number>;
+let array2: Array<string>;
+```
 
 Incluso otro array;
 
-**var** arrayDeArrays: Array<Array<**number**>>;
+```ts
+let arrayDeArrays: Array<Array<number>>;
+```
 
 Para inicializarlos tenemos, a su vez, dos formas:
 
-**var** array1: Array<**number**> = **new** Array<**number**>();**var** array2: **number**[] = [];
+```ts
+let array1: Array<number> = new Array<number>();
+let array2: number[] = [];
+```
 
-En _array2_ podríamos incluso introducir valores separados por comas:
+En *array2* podríamos incluso introducir valores separados por comas:
 
-**var** array2: **number**[] = [1, 2, 3, 4, 90];
+```ts
+let array2: number[] = [1, 2, 3, 4, 90];
+```
 
 No hace falta determinar el tamaño del array. Este tipo tiene un tamaño dinámico que puede ir creciendo según las necesidades.
 
@@ -62,21 +84,19 @@ Toda la información relevante a este tipo está disponible en [este tema](../ob
 
 ### Symbols {#symbols}
 
-Sólo existen a partir de la ES6 por lo que para usarlo debes compilar TS con el
+Sólo existen a partir de la ES6 por lo que para usarlo debes compilar TS con el target "ES6"
 
-target “ES6”
+Son valores únicos e inmutables, es decir, una vez declarados e inicializados no se pueden modificar y no puede haber dos iguales. Para instanciarlos se usa la función *Symbol*. No es posible utilizar el operador _new_ ya que daría un _TypeError_. El tipo es **symbol**
 
-Son valores únicos e inmutables, es decir, una vez declarados e inicializados no se pueden modificar y no puede haber dos iguales. Para instanciarlos se usa la función _Symbol_. No es posible utilizar el operador _new_ ya que daría un _TypeError_. El tipo es **symbol**
-
-**var** aSymbol : **symbol** = Symbol();**var** otherSymbol : **symbol** = **new** Symbol(); // Error
+```**var** aSymbol : **symbol** = Symbol();**var** otherSymbol : **symbol** = **new** Symbol(); // Error```
 
 Se le puede pasar un **string** como argumento a la función _Symbol_ que sirve como identificador:
 
-**var** aSymbol : **symbol** = Symbol("aSymbol");
+```**var** aSymbol : **symbol** = Symbol("aSymbol");```
 
 Esto no quiere decir que si creamos dos **symbol** con un mismo indentificador, éstos sean iguales:
 
-Symbol("aSymbol") === Symbol("aSymbol"); // False
+```Symbol("aSymbol") === Symbol("aSymbol"); // False```
 
 Una de las grandes utilidades de los **symbol** es que pueden ser usados como [propiedades de objetos](../objetos/propiedades_computadas_computed_properties.md#propiedades-symbol). Además existen los llamados “bien conocidos” que son **symbol** predefinidos que sirven para identificar funcionalidades específicas, como los [iteradores.](../iteradores/README.md)
 

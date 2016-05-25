@@ -4,7 +4,14 @@ JSON, acrónimo de JavaScript Object Notation, es un formato ligero para el inte
 
 JSON es realmente un _Object_ de Javascript, lo que podemos representar por {}. Un ejemplo de JSON sería el siguiente.
 
-{"productos": { "camaras": [ {"modeloA": {"precio":"100"} }, {"modeloB": {"precio":"200"} } ], "relojes": [ {"relojA": {"precio":"100"} }, {"relojB": {"precio":"200"} } ] }}
+```json
+{"productos": 
+  { 
+    "camaras": [ {"modeloA": {"precio":"100"} }, {"modeloB": {"precio":"200"} } ], 
+    "relojes": [ {"relojA": {"precio":"100"} }, {"relojB": {"precio":"200"} } ] 
+  }
+}
+```
 
 JSON se compone de, básicamente, seis tipos de datos: _{}_, _Array_, _String, Number, Null y Boolean_. Lo normal es que todo el archivo se agrupe en un {} de modo que tenga toda la información accesibles a través de índices de cadenas de caracteres. Si quedemos agrupar _{}_ relacionados usamos los Arrays mediante literales [].
 

@@ -8,7 +8,13 @@ El esquema de este archivo lo podemos encontrar aquí:
 
 Un prototipo básico sería como sigue:
 
-{ **** "compilerOptions" : {}, **** "files" : [], "exclude" : []****}
+```json
+{
+  "compilerOptions" : {}, 
+  "files" : [],
+  "exclude" : []
+}
+```
 
 _files_ no es más que un array de los archivos .ts que queremos que se compilen.
 

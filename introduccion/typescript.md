@@ -12,7 +12,7 @@ Entre sus mejores características está la compatibilidad con todo el código J
 
 JS se diseñó para ser un lenguaje con el que desarrollar pequeñas funcionalidades en la web. Con el paso del tiempo y la llegada de las aplicaciones ricas en Internet (RIA) su uso no sólo se ha extendido, sino que el propio lenguaje se ha visto superado por las circunstancias.
 
-Los proyectos son cada vez más complejos y necesitan mejores funcionalidades. No es un lenguaje pensado para grandes aplicaciones por lo que la dificultad para desarrollarlas ha ido en aumento, siendo un verdadero quebradero de cabeza por sus particularidades como su singular orientación a objetos mediante prototipos. Por otro lado no es posible hacer borrón y cuenta nueva y dejar de darle soporte porque está tan arraigado al mundo web que prácticamente el 99% de las webs actuales no funcionarían, lo que obligaría a hacer nuevos desarrollos. Ante esta tesitura y la cada vez más fuerte presión de la comunidad, se intentaron hacer cambios para, de cierta manera, mitigar estos problemas que ha venido arrastrando. Alternativas como CoffeScript o LiveScript surgieron para este propósito aunque con un éxito moderado. Microsoft ha decidido dar un paso al frente y lanzar su propia adaptación, que introduce cambios significativos como el tipado estático, clases, interfaces, etc, con una sintaxis similar a Java.
+Los proyectos son cada vez más complejos y necesitan mejores funcionalidades. No era un lenguaje pensado para grandes aplicaciones por lo que la dificultad para desarrollarlas ha ido en aumento, siendo un verdadero quebradero de cabeza por sus particularidades como su singular orientación a objetos mediante prototipos. Por otro lado no es posible hacer borrón y cuenta nueva y dejar de darle soporte porque está tan arraigado al mundo web que prácticamente el 99% de las webs actuales no funcionarían, lo que obligaría a hacer nuevos desarrollos. Ante esta tesitura y la cada vez más fuerte presión de la comunidad, se intentaron hacer cambios para, de cierta manera, mitigar estos problemas que ha venido arrastrando. Alternativas como CoffeScript o LiveScript surgieron para este propósito aunque con un éxito moderado. Microsoft ha decidido dar un paso al frente y lanzar su propia adaptación, que introduce cambios significativos como el tipado estático, clases, interfaces, etc, con una sintaxis similar a Java.
 
 ### Qué es y no es TypeScript {#qu-es-y-no-es-typescript}
 
@@ -44,16 +44,22 @@ El principal requsito para trabajar con TS es Node.js. Si instalamos el IDE Visu
 
 Una vez lo tengamos, podemos escribir en una consola de comandos:
 
+```
 npm install -g typescript
+```
 
 Y TS se instalará de forma automática. Desde la misma consola podemos comprobar que lo tenemos con el comando _tsc_ que nos mostrará la versión del compilador y la lista de parámetros que admite. El compilador se añade de forma automática a la variable PATH del sistema por lo que podemos invocarlo desde cualquier parte.
 
 Si queremos instalar versiones posteriores a la oficiales y que todavía están en desarrollo y no cerradas:
 
+```
 npm install -g typescript@next
+```
 
 Para compilar TS manualmente lo normal sería escribir:
 
+```
 tsc -target ES5 --removeComments --declaration --out app.ts app.js
+```
 
 El compilador tiene bastantes opciones que es [útil conocer](../anexo_iv_tsconfigjson.md).

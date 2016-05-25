@@ -11,7 +11,7 @@ let name = "José Carlos";
 Devuelve el carácter de la posición numérica pasada como argumento.
 
 ```ts
-let caracter = nombre.charAt(3);//caracter3 es "é"
+let caracter = name.charAt(3);//caracter3 es "é"
 ```
 
 ### charCodeAt {#charcodeat}
@@ -19,7 +19,7 @@ let caracter = nombre.charAt(3);//caracter3 es "é"
 Devuelve el códido ASCII del carácter de la posición numérica pasada como argumento.
 
 ```ts
-let caracter3 = nombre.charCodeAt(3);//caracter3 es 233
+let caracter3 = name.charCodeAt(3);//caracter3 es 233
 ```
 
 ### concat {#concat}
@@ -28,20 +28,21 @@ Devuelve un **string** que es la concatenación de dos o más.
 
 ```ts
 let apellidos = "Lama Ponce";
-let nombreCompleto = nombre.concat(apellidos);// nombreCompleto es "José Carlos Lama Ponce"
+let nombreCompleto = name.concat(apellidos);// nombreCompleto es "José Carlos Lama Ponce"
 ```
 
 ### indexOf {#indexof}
 
-Devuelve la posición de la primera ocurrencia del **string** suministrado como argumento. Devuelve -1 si no lo encuentra.
+Devuelve la posición de la primera ocurrencia del **string** pasado como argumento. Devuelve -1 si no lo encuentra.
+
 ```ts
-let posicionPrimeraS = nombre.indexOf("s");// posicionPrimeraS es 2
+let posicionPrimeraS = name.indexOf("s");// posicionPrimeraS es 2
 ```
 
 Si se le proporciona una cadena y no un solo carácter, buscará la coincidencia de la cadena al completo pero devolverá la posición del primer carácter
 
 ```ts
-let posicionCar = nombre.indexOf ("Car");//posicionCar es 5
+let posicionCar = name.indexOf ("Car");//posicionCar es 5
 ```
 
 ### lastIndexOf {#lastindexof}
@@ -49,13 +50,13 @@ let posicionCar = nombre.indexOf ("Car");//posicionCar es 5
 Devuelve la posición de la última ocurrencia del **string** suministrado como argumento. Devuelve -1 si no lo encuentra.
 
 ```ts
-let posicionUltimaS:**number** = nombre.lastIndexOf("s");// posicionUltimaS es 10
+let posicionUltimaS = name.lastIndexOf("s");// posicionUltimaS es 10
 ```
 
 Si se le proporciona una cadena y no un solo carácter, buscará la coincidencia de la cadena al completo pero devolverá la posición del primer carácter.
 
 ```ts
-let posicionCar = nombre.indexOf ("Car");//posicionCar es 5
+let posicionCar = name.indexOf ("Car");//posicionCar es 5
 ```
 
 ### match {#match}
@@ -71,48 +72,50 @@ Si la búsqueda se hace con otra cadena, sólo devuelve la primera ocurrencia en
 
 ### replace {#replace}
 
-Encuentra coincidencias en la cadena a partir de una expresión regular u otra cadena para sustituirlas las ocurrencias por una nueva cadena
+Encuentra coincidencias en la cadena a partir de una expresión regular u otra cadena para sustituirlas por una nueva cadena
 
 ```ts
-let nombreReal = nombre.replace("e","é")); // José Carlos
+let nombreReal = name.replace("e","é")); // "José Carlos"
 
 let nombre: = "J o se C ar l o s";
-let nombreReal = nombre.replace(/\s/g,"")); // José Carlos. Elimina los espacios
+let nombreReal = name.replace(/\s/g,"")); // "José Carlos". Elimina los espacios
 ```
 
 ### search {#search}
 
-Busca en la cadena la cadena o expresión rgular introducida como argumento y devuelve el índide de la primera ocurrencia de izquierda de derecha. Si no la cuentra devuelve null.
+Busca la cadena o expresión regular pasada como argumento y devuelve el índide de la primera ocurrencia de izquierda de derecha. Si no la cuentra devuelve null.
 
 ```ts
-let letraJ = nombre.search("J") // 1
+let letraJ = name.search("J") // 1
 ```
 
 ### slice {#slice}
 
-Devuelve un trozo del string proporcionando los índices como argumento. El primero determina donde empieza. El segundo donde acaba sin incluirlo.
+Devuelve un trozo del string proporcionando los índices como argumento. El primero determina donde empieza; el segundo donde acaba sin incluirlo.
 
 ```ts
-let primeroNombre = nombre.slice(0,2);// primeroNombre es "Jo"
+let primeroNombre = name.slice(0,2);// primeroNombre es "Jo"
 ```
 
 Puede empezar por el final si se proporciona el segundo argumento negativo.
 
 ```ts
-let primeroNombre = nombre.slice(0,-2);// primeroNombre es "José Carl"
+let primeroNombre = name.slice(0,-2);// primeroNombre es "José Carl"
 ```
 
-Si el índice de comienzo es negativo, comienza por el índice calculado de la longitud de la cadena + índice de comienzo
+Si el índice de comienzo es negativo, empieza por el índice calculado de la longitud de la cadena + índice de comienzo
 
 ```ts
-let primeroNombre = nombre.slice(-5,7);// primeroNombre es “a”/* El índice de comienzo es -5\. Sumamos la longitud que es 11 y resultaría 6\. Es equivalente a nombre.slice(6,7); */
+let primeroNombre = name.slice(-5,7);// primeroNombre es “a”
+/* El índice de comienzo es -5\. Sumamos la longitud que es 11 y resultaría 6\. Es equivalente a nombre.slice(6,7); */
+```
 
 ### split {#split}
 
-Convierte el string en un array de strings proporcionando como paráemtro el carácter separador.
+Convierte el string en un array de strings proporcionando como argumento el carácter separador.
 
 ```ts
-let nombresSeparados = nombre.split(" ");// nombresSeparados es ["José","Carlos”]
+let nombresSeparados = name.split(" ");// nombresSeparados es ["José","Carlos”]
 ```
 
 Hemos “roto” el string por el espacio en blanco.
@@ -132,14 +135,15 @@ Devuelve un trozo del string proporcionando los índices como argumento. El prim
 nombre.slice(0,4) es quivalente a nombre.slice(4,0);
 
 ```ts
-let primeroNombre = nombre.slice(0,4);// primeroNombre es “José ”
+let primeroNombre = name.slice(0,4);// primeroNombre es “José ”
+```
 
 ### toLowerCase {#tolowercase}
 
 Convierte todos los caracteres en minúsculas.
 
 ```ts
-let nombreMinusculas = nombre.toLowerCase();// nombreMinusculas es "josé carlos"
+let nombreMinusculas = name.toLowerCase();// nombreMinusculas es "josé carlos"
 ```
 
 ### toUpperCase {#touppercase}
@@ -147,7 +151,7 @@ let nombreMinusculas = nombre.toLowerCase();// nombreMinusculas es "josé carlos
 Convierte todos los caracteres en mayúsculas
 
 ```ts
-let nombreMayusculas = nombre.toUpperCase();// nombreMayusculas es "JOSÉ CARLOS"
+let nombreMayusculas = name.toUpperCase();// nombreMayusculas es "JOSÉ CARLOS"
 ```
 
 ### trim {#trim}
@@ -156,6 +160,6 @@ Elimina los espacios en blanco del principio y final del string.
 
 ```ts
 let nombre = " José Carlos ";
-let nombreSinEspacios= nombre.trim();// nombreSinEspacios es "José Carlos"
+let nombreSinEspacios = name.trim();// nombreSinEspacios es "José Carlos"
 ```
 

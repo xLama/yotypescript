@@ -10,7 +10,10 @@ Para hacerlo hay que usar la palabra reservada _extends_.
 
 **class** Persona{}**class** Alumno **extends** Persona { }**class** Profesor **extends** Persona { }
 
-*   _Nota: no existe la herencia múltiple en TS. Esto es que una clase sólo puede heredar de una sola clase a la vez. No confundir con construir una jerarquía pues una clase puede heredar de varias si entre todas se relacionan de forma vertical._
+
+> No existe la herencia múltiple en TS. Esto es que una clase sólo puede heredar de una sola clase a la vez. No confundir con construir una jerarquía pues una clase puede heredar de varias si entre todas se relacionan de forma vertical.
+
+
 
 Alumno Persona Mamifero SerVivo
 

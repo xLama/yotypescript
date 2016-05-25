@@ -2,7 +2,9 @@
 
 El **string** que usaremos para algunos ejemplos es el siguiente:
 
-**var** nombre:**string** = "José Carlos";
+```ts
+let name = "José Carlos";
+```
 
 ### charAt {#charat}
 

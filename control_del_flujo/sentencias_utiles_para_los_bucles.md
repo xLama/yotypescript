@@ -38,7 +38,7 @@ Si encuentra el valor “José” en el array _nombres_ itera el siguiente sin e
 Termina la ejecución de una función devolviendo un valor. Si no se escpecifica ninguno éste es undefined:
 
 ```ts
-function(x) {
+function retu(x) {
   return; // Acaba la función devolviendo undefined
   let y = 0; // No se ejecuta
 }

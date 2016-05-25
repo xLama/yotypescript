@@ -2,32 +2,42 @@
 
 ¿Qué es la herencia? Podemos imaginar que en el mundo existen diferentes tipos de cosas que tienen estados y comportamientos comunes como podrían ser los mamíferos, los automóviles o los teléfonos. La herencia nos provee un mecanismo para relacionar las distintas clases.
 
-Nuestra clase ejemplo _Persona_ se refiere a algo muy general. Podríamos especificar más. Si estamos realizando la gestión de un aula, nos damos cuenta de que en ella hay alumnos y profesores y ambos son personas. De esta forma estamos agrupando dos tipos de cosas bajo un mismo comportamiento y estado.
+Nuestra clase ejemplo _Person_ se refiere a algo muy general. Podríamos especificar más. Si estamos realizando la gestión de un aula, nos damos cuenta de que en ella hay alumnos y profesores y ambos son personas. De esta forma estamos agrupando dos tipos de cosas bajo un mismo comportamiento y estado.
 
-Con todo ello podríamos crear una clase llamada _Alumno_ y otra llamada _Profesor_ que heredarían de _Persona_ por lo que las clases hijas (así se les llamas a las clases que heredan de otra) obtendrían todo lo que es y hace el padre (así se les llama a las clases de las que se hereda).
+Con todo ello podríamos crear una clase llamada Student y otra llamada Teacher que heredarían de _Person_ por lo que las clases hijas (así se les llamas a las clases que heredan de otra) obtendrían todo lo que es y hace el padre (así se les llama a las clases de las que se hereda).
 
 Para hacerlo hay que usar la palabra reservada _extends_.
 
-**class** Persona{}**class** Alumno **extends** Persona { }**class** Profesor **extends** Persona { }
+```ts
+class Person{}
+class Student extends Person { }
+class Teacher extends Person { }
+```
 
 
 > No existe la herencia múltiple en TS. Esto es que una clase sólo puede heredar de una sola clase a la vez. No confundir con construir una jerarquía pues una clase puede heredar de varias si entre todas se relacionan de forma vertical.
 
 
 
-Alumno Persona Mamifero SerVivo
+Alumno -> Persona -> Mamifero -> SerVivo
 
-Ahora tanto _Alumno_ como _Profesor_ obtendrían todo lo que es y hace _Persona_. Bueno, no todo realmente pues aquí entra en juego el princio de ocultación. Todo lo declarado como público se hereda. Todo lo declarado como privado no se hereda y no es accesible desde la clase hija. Hay un tercer modificador, llamado “protegido” (_protected_). Si declaramos un miembro como _protected_, las clases hijas lo heredan pero no es accesible desde fuera.
+Ahora tanto _Alumno_ como _Profesor_ obtendrían todo lo que es y hace _Persona_. Bueno, no todo realmente pues aquí entra en juego el principio de ocultación. Todo lo declarado como público se hereda. Todo lo declarado como privado no se hereda y no es accesible desde la clase hija. Hay un tercer modificador, llamado protegido (_protected_). Si declaramos un miembro como _protected_, las clases hijas lo heredan pero no es accesible desde fuera.
 
 ### Herencia mediante expresiones {#herencia-mediante-expresiones}
 
-Como hemos visto la herencia se consigue gracias a _extends_ seguido del nombre de la clase. Existe otra forma de hacerlo que nos permite que en vez de ser una clase lo que escibramos, sea una expresión, como por ejemplo una función:
+Como hemos visto la herencia se consigue gracias a _extends_ seguido del nombre de la clase. Existe otra forma de hacerlo que nos permite que en vez de ser una clase lo que escribamos sea una expresión, como por ejemplo una función:
 
-**function** PersonClass() : typeof Person { **return** Person;}**class** Person{}**class** Student **extends** PersonClass() { }
+```ts
+function PersonClass() : typeof Person { 
+  return Person;
+}
+class Person{}
+class Student extends PersonClass() { }
+```
 
 La función devuelve la clase _Person_ que se utiliza como padre. Realmente lo que requiere la expresión es devolver un constructor, ya sea de clase o definido en una interfaz. El siguiente ejemplo es más complejo y no se entendrá bien hasta haber estudiado las interfaces:
 
-La herencia clásica es explícita, es decir, debemos especificar claramente de qué clase se hereda. Con la herencia mediante expresiones podemos darle un poco más de dinamismo ya que, aunque una vez definida la superclase no la podamos cambiar, sí que podemos elegirla según algún criterio antes del proceso de herencia.
+La herencia clásica es explícita y estática, es decir, debemos especificar claramente de qué clase se hereda. Con la herencia mediante expresiones podemos darle un poco más de dinamismo ya que, aunque una vez definida la superclase no la podamos cambiar, sí que podemos elegirla según algún criterio antes del proceso de herencia.
 
 Para este ejemplo vamos a recurrir a los coches. Los coches tienen motores que consumen distintos tipos de combustible: gasolina y gasoil. Para ellos nos creamos una interfaz _Fuel_ y dos clases _Gasoil_ y _Gasoline_ que implementan dicha interfaz:
 

@@ -11,7 +11,7 @@ let name = "José Carlos";
 Devuelve el carácter de la posición numérica pasada como argumento.
 
 ```ts
-let caracter = nombre.charAt(3);//caracter3 es "é"```
+let caracter = nombre.charAt(3);//caracter3 es "é"
 ```
 
 ### charCodeAt {#charcodeat}

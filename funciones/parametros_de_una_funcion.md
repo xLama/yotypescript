@@ -1,14 +1,20 @@
 ## Parámetros de una función {#par-metros-de-una-funci-n}
 
-*   _Nota: comúnmente a los parámetros se les llama también argumentos, separando los parámetros/argumentos formales y los parámetros/argumentos actuales. Los primeros son propiedades intrínsecas que están definidas en la signatura de la función. Los segundos son los valores que se le pasan a esa función en la invocación de la misma. Para facilitar las cosas, a partir de ahora llamaremos simplemente parámetros para referirnos a los formales y argumentos para referirnos a los actuales._
+
+> Comúnmente a los parámetros se les llama también argumentos, separando los parámetros/argumentos formales y los parámetros/argumentos actuales. Los primeros son propiedades intrínsecas que están definidas en la signatura de la función. Los segundos son los valores que se le pasan a esa función en la invocación de la misma. Para facilitar las cosas, a partir de ahora llamaremos simplemente parámetros para referirnos a los formales y argumentos para referirnos a los actuales.
+
+
 
 Los parámetros se definen de la siguien forma:
 
-**function** nombreDeLaFuncion(*/listaParametros*/):**void**
+```ts
+function nombreDeLaFuncion(*/listaParametros*/):void```
 
-_listaParametros_ representa una lista de parámetros separados por coma. Los parámetros son valores que la función acepta como entrada. Esto resulta muy útil para construir funciones más reutilizables que nos ahorren tiempo y trabajo. Los parámetros se declaran exactamente igual que las variables pero sin la palabra reservar _var_.
+_listaParametros_ representa una lista de parámetros separados por coma. Los parámetros son valores que la función acepta como entrada. Esto resulta muy útil para construir funciones más reutilizables que nos ahorren tiempo y trabajo.
 
-**function** funcion (x: **number**, z: **number**): **void** { }
+```ts
+funcion (x: number, z: number) { }
+```
 
 Hemos declarado dos parámetros llamados _x_ y _z_ respectivamente del tipo **number**. Esto quiere decir que para poder utilizar esa función debemos pasarle como argumentos dos números o algún tipo de dato compatible con **number**.
 
@@ -16,29 +22,44 @@ Hemos declarado dos parámetros llamados _x_ y _z_ respectivamente del tipo **nu
 
 En TS podemos hacer que un parámetro de una función sea opcional, e incluso asignarle un valor por defecto. Para hacer que sea opcional escribimos el símbolo _?_ justo después del nombre del parámetro.
 
-**function** sumar(x: **number**, z?: **number**): **number** {**return** x * y;}
+```ts
+function sum(x: number, z?: number) {
+  return x * y;
+}
+```
 
 Si llamamos a la función sólo con un argumento:
 
+```ts
 sumar(10);
+```
 
 E inspeccionamos el valor de _z_, nos daría _undefined_, pues no lo hemos especificado.
 
 Pero si llamamos a la función pasándole dos argumentos:
 
+```ts
 sumar(10,20);
+```
 
 El valor de _x_ sería 10 y el de _z_ sería 20.
 
 También podemos asignar un valor por defecto.
 
-**function** sumar(x: **number**, z?: **number = 20**): **number** {**** **return** x * z;}
+```ts
+function sum(x: number, z? = 20):  {
+  return x * z;
+}
+```
 
 De esta forma, aunque llamemos a la función con sólo un argumento, la _z_ valdrá 20 y no _undefined_.
 
 Los parámetros opciones e inicializados no pueden colocarse delante de uno no opcional ni inicializado.
 
-**function** sumar(x?: **number**, z: **number**): **void** { } // Error**function** sumar(x: **number** = 20, z: **number**): **void** { } // Error
+```ts
+function sum(x?: number, z: number) { } // Error
+function sum(x = 20, z: number): { } // Error
+```
 
 ### Más parámetros {#m-s-par-metros}
 

@@ -86,7 +86,7 @@ let z = ~~10; // 10. El complemento del complemento es el número original */
 Sirve para negar una expresión o un tipo de datos **boolean** o _Boolean_.
 
 Si tenemos esto:
-
+ 
 ```ts
 let truly = true; // true
 let falsy = !truly; // false

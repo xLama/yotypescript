@@ -6,10 +6,28 @@ Parámetros:
 
 *   target : Function - La clase.
 
-@decorador**class** Persona{}
+```ts
+@decorator 
+class Person{}
+```
 
-**function** decorador(target : Function){ target["estoyDecorado"] = **true**;}Persona["estoyDecorado"]; //true
+```ts
+function decorator(target : Function){ 
+  target["IAmDecorated"] = true;
+}
+Person["IAmDecorated"]; //true
+```
 
-En el decorador podemos modificar la clase añadiendo o elminando miembros. En el ejemplo hemos añadido una propiedad llamada _estoyDecorado_ como miembro estático. Si quisiéramos añadirlo como membro de instancia sólo habría que usar _prototype_:
+En el decorador podemos modificar la clase añadiendo o elminando miembros. En el ejemplo hemos añadido una propiedad llamada *IAmDecorated* como miembro estático. Si quisiéramos añadirlo como membro de instancia sólo habría que usar _prototype_:
 
-@decorador**class** Persona{}**function** decorador(target : Function){ target.prototype["estoyDecorado"] = **true**;}**var** persona: Persona **= new** Persona();****persona["estoyDecorado"] //true
+```ts
+@decorator 
+class Person { } 
+
+function decorator(target: Function) { 
+  target.prototype["IAmDecorated"] = true; 
+} 
+
+let person = new Person(); 
+person["IAmDecorated"] //true
+```

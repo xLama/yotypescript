@@ -17,8 +17,8 @@ class Ajax {
     private xmlR: XMLHttpRequest;
     private success: (data: any) => void;
 
-    private static init = (): Ajax => {
-        var ajax: Ajax = new Ajax();
+    private static init = () => {
+        var ajax = new Ajax();
         ajax.xmlR = new XMLHttpRequest();
         ajax.xmlR.addEventListener("readystatechange", ajax.onReadyState, true);
         return ajax;

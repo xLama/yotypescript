@@ -1,8 +1,8 @@
 ## Introducción {#introducci-n}
 
-Es una nueva característica añadida a partir de la versión 1.5 y se basa en una propuesta para ECMAScript 7\.
+Es una nueva característica añadida a partir de la versión 1.5 y se basa en una propuesta para ECMAScript 7.
 
-Si tienes conocimientos sobre patrones de diseño seguramente hayas lo hayas asociado al patrón Decorator. Si bien no es sintácticamente igual, sí lo es conceptualmente, pues se basa en decorar distintos elementos. En concreto: clases, métodos, parámetros y atributos.
+Si tienes conocimientos sobre patrones de diseño seguramente lo hayas asociado al patrón Decorator. Si bien no es sintácticamente igual, sí lo es conceptualmente, pues se basa en decorar distintos elementos. En concreto: clases, métodos, parámetros y atributos.
 
 Un decorador se define como:
 
@@ -13,10 +13,16 @@ Un decorador se define como:
 
 Un decorador siempre es una función. Ejemplo de decorador de métodos:
 
-**function** decorador(target:, propertyKey, descriptor: TypedPropertyDescriptor<**void**>){ }
+```ts
+function decorator(target, propertyKey, descriptor: TypedPropertyDescriptor< () => >){ }
+```
 
 Para asignar el decorador se hace de una forma declarativa, escibiendo @nombreDecorador justo en la línea anterior a la declaración del objetivo a decorar:
 
-**class** Persona{ @decorador **public** caminar():**void**{}}
+```ts
+class Person{ 
+  @decorator caminar(){}
+}
+```
 
 Se vuelven muy útiles a la hora de inyectar dependencias, trabajar con metadatos y configurar clases o miembros.

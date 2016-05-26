@@ -8,7 +8,9 @@ Es el _=_ (igual). Ya vimos que se usaba para inicializar las variables. La regl
 
 No podemos hacer esto:
 
-1 = **var** num: **number**;
+```ts
+1 = let num: number;
+```
 
 ### Operadores lógicos {#operadores-l-gicos}
 
@@ -45,11 +47,16 @@ expresion2 y expresion3 actúan como una a la hora de evaluarse de forma conjunt
 
 También puede usarse para una asignación condicional. Si el primer operando se evalúa como **true**, se asignará el valor del segundo operando. Si se evalúa como **false**, se asignará el valor del primero. La variable siempre quedará tipada con el tipo de dato del segundo operando.
 
-**var** and = **false** && "cadena"; // false
+```ts
+let and = false && "str"; // false
+```
 
 Es muy útil cuando lo usamos con instancias que no sabemos si son _null/undefined_ o no.
 
-**var** persona: Persona = **null;var** nombre = persona && persona.nombre; // undefined
+```ts
+let person: Person = null;
+let name = person && person.name; // undefined
+``` 
 
 Como _persona_ no es una instancia de _Persona_, no tiene acceso a sus atributos, por lo que _persona.nombre_ fallará. De esta forma nos aseguramos que esto no ocurre porque si persona es _null_ ( y _null_ se evalúa como **false**), se asignará a nombre el valor del primer operando sin evaluar el segundo. Si _persona_ no fuera _null_ evaluaría _persona.nombre_ y se lo asignaría a _nombre_.
 
@@ -70,13 +77,19 @@ Al igual que con AND, se pueden hacer todo lo largas que se quiera.
 
 También puede usarse para una asignación condicional.
 
-**var** or = **false** || 4; // 4**var** or = 10 || "or"; // 10
+```ts
+let or = false || 4; // 4
+let or = 10; || "or"; // 10
+```
 
 Si el primer operando se evalúa como **true**, se asignará a la variable. Si se evalúa como **false**, se asignará el segundo operando sea cual sea su valor. La variable quedará tipada como el [tipo unión](../tipos/otros_tipos.md#tipos-uni-n-union-types) entre ambos operadores.
 
 Es muy útil para inicializar variables que no sabes si ya lo están.
 
-**var** name: **string**;name = name || "Carlos";
+```ts
+let name: string;
+name = name || "Carlos";
+```
 
 Evalúa _name_. Al ser _null_, y _null_ ser **false**, asigna el valor del segundo operando a la variable. Si _name_ ya estuviera inicializado, lo evaluaría como **true** y le asignaría el valor del primer operando a la variable.
 

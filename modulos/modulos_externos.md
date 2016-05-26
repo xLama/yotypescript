@@ -4,41 +4,58 @@ Estos son usados normalmente junto con otras librerías como RequireJS o trabaja
 
 ### Exportando {#exportando}
 
-Lo primero que hay que hacer es declarar algún módulo como exportado para que pueda ser importando posteriormente. Lo habitual es tener un módulo por archivo, aunque no es obligatorio.
+Lo primero que hay que hacer es declarar algún miembro como exportado para que pueda ser importando posteriormente. Lo habitual es tener un módulo por archivo, aunque no es obligatorio.
 
 Persona.ts:
 
-**export** **class** Persona { }
+```ts
+export class Person { }
+```
 
 También podemos exportarlos de esta forma.
 
-Persona.ts
+Person.ts
 
-**class** Persona { }**export** { Persona };
+```ts
+class Person { }
+export { Person };
+```
 
 Si tenemos más de un miembro con el mismo nombre, se exportarán ambos.
 
 Persona.ts:
 
-**export** **class** Persona { }**export** **interface** Persona { }**export** { Persona };
+```ts
+class Person { }
+interface Person { }
+export { Person }
+```
 
 Además podemos renombrar un miembro al ser exportado.
 
-Persona.ts:
+Person.ts:
 
-**export** **class** Persona { }**export** { Persona as Person };
+```ts
+class Person { }
+export { Person as Persona }
+```
 
 Una forma más fácil de exportar uno miembro es con la plabara reservada _default_. Sólo puede haber un miembro _default_ por módulo ya que con él se marca el único o más relevante del mismo.
 
-Persona.ts
+Person.ts
 
-**export** **class** Persona { }**export** { Persona as default };
+```ts
+class Person { }
+export { Person as default }
+```
 
 Sería equivalente a.
 
-Persona.ts:
+Person.ts:
 
-**export** **default** **class** Persona { }
+```ts
+export default class Person { }
+```
 
 ### Importando {#importando}
 
@@ -46,47 +63,60 @@ Ya que hemos aprendido a exportar miembros, debemos aprender a importarlos para 
 
 App.ts
 
-**import** { Persona } from"./Persona";**var** persona:Persona;
+import { Person } from"./Person";
+var person : Person;
 
 Por supuesto también podemos renombrarlo.
 
 App.ts:
 
-**import** { Persona as Person } from"./Persona";**var** persona:Person;
+import { Person as Persona } from "./Person";
+let persona: Persona;
 
 Si se quiere importar todo el módulo con todos los miembros exportados podemos hacerlo con el * y nombrándolo como nos convenga. Para usar los miembros debemos referenciarlos con el nombre elegido en el renombrado seguido del nombre del miembro, separado por un punto.
 
 App.ts
 
-**import** * as P from"./Persona";**var** persona:P.Persona;
+import * as P from "./Person";
+let person:P.Person;
 
 Si delaramos un miembro como _default_ a la hora de exportarlo, nos va a facilitar las cosas al importarlo. De esta forma no es necesario que encerremos entre llaves el miembro a importar.
 
-**import** Persona from"./Persona";**var** persona:Persona;
+```ts
+import Person from"./Person";
+let person: Person;
+```
 
 Sería equivalente a esto.
 
 App.ts:
 
-**import** { default as Persona } from"./Persona";**var** persona:Persona = **new** Persona();
+```ts
+import { default as Person } from "./Person";
+let person: Person;
+```
 
 Si te estás preguntando cómo importar el mimebro _default_ y el resto, se hace así.
 
 App.ts
 
-**import** Persona, { otroMiembro } from"./Persona";**var** persona:Persona = **new** Persona();
+```ts
+import Person, { other } from "./Person"; 
+```
 
 ### Cómo generarlos {#c-mo-generarlos}
 
-Es importante aclarar que la sintaxis de los módulos externos vista hasta ahora es de la ECMAScript 6\. Eso quiere decir que si configuramos el compilador para que genere código ES6 el resultado será invariable. Es así porque el nuevo ES6 incorpora una gestión de módulos propia, cosa que hasta día de hoy debían hacer herramientas externas.
+Es importante aclarar que la sintaxis de los módulos externos vista hasta ahora es de la ECMAScript 6. Eso quiere decir que si configuramos el compilador para que genere código ES6 el resultado será invariable. Es así porque el nuevo ES6 incorpora una gestión de módulos propia, cosa que hasta día de hoy debían hacer herramientas externas.
 
-No ocurre así si compilamos para ES3 o ES5\. En ese caso necesitamos librerías externas para su uso, además de parametrizar el compilador con el tipo de módulo a utilizar, dándonos cuatro opciones. Éste se debe cambiar en el archivo tsconfig.json con el parámetro _module_
+No ocurre así si compilamos para ES3 o ES5. En ese caso necesitamos librerías externas para su uso, además de parametrizar el compilador con el tipo de módulo a utilizar, dándonos cuatro opciones. Éste se debe cambiar en el archivo tsconfig.json con el parámetro _module_
 
-“commonjs” : Normalmente si usamos Node.js “amd” : Necesitamos la librería RequireJS para que funcione. Ésta debe estar agregada en el &lt;head&gt; del HTML como otro archivo .js cualquiera.
+* commonjs : Normalmente si usamos Node.js 
 
-“umd” : Debido a que podríamos querer compilarlo como commonjs como amd, esta opción nos provee una forma que aglutina a ambos.
+* amd : Necesitamos la librería RequireJS para que funcione. Ésta debe estar agregada en el &lt;head&gt; del HTML como otro archivo .js cualquiera.
 
-“system” : Es otra forma utilizar módulos de manera universal pero requiere otra librería, System.js.
+* system : Es otra forma utilizar módulos de manera universal pero requiere otra librería, System.js.
+
+* umd : Debido a que podríamos querer compilarlo como commonjs como amd, esta opción nos provee una forma que aglutina a ambos.
 
 Si bien el caso típico de una aplicación para navegador sería el uso de módulos amd con la librería RequireJS: [http://requirejs.org/](http://requirejs.org/)
 

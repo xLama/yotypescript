@@ -126,38 +126,61 @@ TypeScript nos provee un nivel más de abstracción al agrupar los métodos de m
 
 La forma de tratar los módulos ha cambiado a partir de la versión 1.5 de TS. Debido al trabajo ya generado en versiones anteriores, se ha mantenido cierta compatibilidad a la antigua sintaxis. Se recomienda usar siempre la nueva pues la otra está obsoleta y no se sabe a ciencia cierta cuándo dejará de estar operativa.
 
-Persona.ts:
+Person.ts:
 
-**class** Persona { }**export** = Persona;
+```ts
+class Person { }
+export = Person;
+```
 
 Esta forma de exportación no se puede utilizar si ya se está exportando con la nueva sintaxis. Además para importalo se debe usar también la antigua
 
 App.ts:
 
-**import** Persona = require("Persona") MAL**var** persona:Persona = **new** Persona();
+```ts
+import Person = require("Person") // Error
+var person: Person;
+```
 
 Lo único compatible es la exportación de módulos internos
 
-Persona.ts:
+Person.ts:
 
-**module** Humano { **export** **class** Persona { }}**export** = Humano;
+```ts
+module Human {
+    export class Person { }
+}
+export = Human;
+```
 
 App.ts
 
-**import** { Persona } from"./Persona";**var** persona:Persona = **new** Persona();
+```ts
+import { Person } from "./Person";
+let person: Person;
+```
 
-El nombre del módulo _Humano_ no se usa en la importación, es decir, al hacer export = Humano lo que se exporta realmente son los miembros declarados como _export_ del módulo _Humano_ y no el módulo en sí. Para importar el módulo completo:
+El nombre del módulo *Human* no se usa en la importación, es decir, al hacer export = Human lo que se exporta realmente son los miembros declarados como _export_ del módulo _Humano_ y no el módulo en sí. Para importar el módulo completo:
 
 App.ts
 
-**import** * as Humano from"./Persona";**var** persona:Humano.Persona = **new** Humano**.**Persona();
+```ts
+import * as Human from "./Person";
+let person: Human.Persona;
+```
 
 Es preciso indicar que esta forma de importación no es posible si lo exportado no es un módulo o una variable
 
-Persona.ts
+Person.ts
 
-**export** **class** Persona { }**export** = Persona;
+```ts
+export class Person { } 
+export = Person;
+```
 
 App.ts
 
-**import** * as Persona from"./Persona"; // Error**var** persona: Persona = **new** Persona();
+```ts
+import * as Person from "./Person"; // Error
+let person: Person;
+```

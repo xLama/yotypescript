@@ -62,6 +62,7 @@ Función como argumento:
 (valor:T, index:number, array:T[]) => boolean
 ```
 
+```ts
 function filterTwoOnly(val:number, index:number, array:number[]){ 
   return val === 2;
 }

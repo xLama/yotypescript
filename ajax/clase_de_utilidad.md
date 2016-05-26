@@ -1,18 +1,30 @@
 ## Clase de utilidad {#clase-de-utilidad}
 
-En este tema vamos a hacer una sencilla clase llamada _Ajax_ para manejar las peticiones de una forma más versátil.
+En este tema vamos a hacer una sencilla clase llamada *Ajax* para manejar las peticiones de una forma más versátil.
 
-Como hemos dicho es imprescindible usar la clase _XMLHttpRequest_ para realizar peticiones al servidor.
+Como hemos dicho es imprescindible usar la clase *XMLHttpRequest* para realizar peticiones al servidor.
 
-**class** Ajax { **private** xmlR: XMLHttpRequest;}
+```ts
+class Ajax { 
+  private xmlR: XMLHttpRequest;
+}
+```
 
 Los métodos de interacción los vamos a hacer estáticos para evitar instanciar la clase _Ajax_ de forma manual cada vez que queramos usarla.
 
-**class** Ajax { **private** xmlR: XMLHttpRequest; **private** success: (data: **any**) => **void**;
+```ts
+class Ajax {
+    private xmlR: XMLHttpRequest;
+    private success: (data: any) => void;
 
-**private** **static** init = (): Ajax => { **var** ajax: Ajax = **new** Ajax(); ajax.xmlR = **new** XMLHttpRequest(); ajax.xmlR.addEventListener("readystatechange", ajax.onReadyState, **true**);
-
-**return** ajax; }****}
+    private static init = (): Ajax => {
+        var ajax: Ajax = new Ajax();
+        ajax.xmlR = new XMLHttpRequest();
+        ajax.xmlR.addEventListener("readystatechange", ajax.onReadyState, true);
+        return ajax;
+    }
+}
+```
 
 En el método instanciamos la clase _Ajax_.Inicializamos el atributo privado _xmlR_. Aunque sea privado es accesible porque estamos dentro de la clase.Registramos el _listenener_ con el evento _readystatechange_ que es el que se lanza cuando hay alguna noticia de la comunicación. El _handler_ utilizado es _onReadyState_ que veremos después.
 

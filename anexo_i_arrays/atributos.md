@@ -4,4 +4,7 @@
 
 Almacena el tamaño del array.
 
-**var** elementos = [undefined, "gg", undefined, **null**];elementos.length // 4
+```ts
+let elements = [undefined, "gg", undefined, null];
+elements.length // 4
+```

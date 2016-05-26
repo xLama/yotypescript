@@ -4,7 +4,7 @@
 
 En TS un array es en realidad una lista de elementos. Como se ve en la imagen se puede representar como espacios contiguos donde se almacenan valores. Es conveniente tipar de forma que sepamos de qué tipo son los valores que contiene.
 
-Cada elemento del array tiene asignado un índice numérico el cual nos permite acceder al valor. En TS empiezan por 0\. Si conocemos el índice sólo tenemos que escribir el nombre del array y entre corchetes el índice numérico:
+Cada elemento del array tiene asignado un índice numérico el cual nos permite acceder al valor. En TS empiezan por 0. Si conocemos el índice sólo tenemos que escribir el nombre del array y entre corchetes el índice numérico:
 
 ```ts
 let elementos: string[] = []; // Vacío

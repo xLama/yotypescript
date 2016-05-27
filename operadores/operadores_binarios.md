@@ -125,21 +125,36 @@ let division = x / y; // 1
 
 Obtiene el resto de una división.
 
-**var** x: **number** = 5;**var** y: **number** = 2;**var** resto: **number** = x % y; // 1
+```ts
+let x = 5;
+let y = 2;
+let resto = x % y; // 1
+```
 
 #### Operador ** {#operador-0}
 
 Obtiene la potencia siendo el primer operando la base y el segundo el exponente.
 
-**var** x: **number** = 5;**var** y: **number** = 2;**x ** y** // 5 ^ 2= 25
+```ts
+let x = 5;
+let y = 2;
+x ** y // 5 ^ 2= 25
+```
 
 Es una especificación de ES7 por lo que los anteriores se transpilan usando el método _pow_ de la librería matemática _Math,_ por lo que el resultado de transpilarlo a JS sería el siguiente:
 
-**var** x: **number** = 5;**var** y: **number** = 2;**Math.pow(x, y);** // 5 ^ 2= 25
+```ts
+let x = 5;
+let y = 2;
+Math.pow(x, y); // 5 ^ 2= 25
+```
 
 Todos los operadores anteriores tienen la forma corta de este tipo:
 
-**var** x: **number** = 1;x *= 3; // Equivalente a x = x * 3;
+```ts
+let x = 1;
+x *= 3; // Equivalente a x = x * 3;
+```
 
 ### Operadores de bits {#operadores-de-bits}
 

@@ -4,8 +4,6 @@ Realmente no es obligatorio un editor de TS pues podemos escribir nuestro códig
 
 Un editor nos ayuda coloreando las palabras reservadas del lenguaje; mostrándonos los errores sintácticos; autocompletando nuestro código con sugerencias según vayamos escribiendo, etc. Además de compilar TS de forma automática.
 
-Tenemos que elegir un editor para empezar. Realmente hay pocos disponibles.
-
 Microsoft ofrece uno online: [http://www.typescriptlang.org/Playground](http://www.typescriptlang.org/Playground)
 
 Pero no sirve para proyectos reales ya que no organiza por archivos ni permite su guardado. Hay que verlo como un entorno de pruebas rápidas donde podemos, sin necesidad de instalar nada, ejecutar pequeños trozos de código para observar su comportamiento.

@@ -1,6 +1,6 @@
 # Summary
 
-* [YoTypeScriptQuinta](README.md)
+* [YoTypeScript18](README.md)
 * [Introducción](introduccion/README.md)
    * [¿A quién va dirigido este libro?](introduccion/a_quien_va_dirigido_este_libro.md)
    * [JavaScript](introduccion/javascript.md)

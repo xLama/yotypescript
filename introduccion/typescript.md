@@ -4,7 +4,7 @@ TypeScript (a partir de ahora TS) es un lenguaje de programación de código abi
 
 La primera versión se liberó en 2012 y a fecha de la edición del libro la última es la 1.8.10.
 
-Su estándar es el ECMAScript como lo es también de y ActionScript (a partir de ahora AS). TS es un superconjunto de JS que le proporciona una capa de orientación a objetos. Por ello no existe ningún navegador que ejecute TS de forma nativa sino que todo el código es traducido a JS.
+Su estándar es el ECMAScript como lo es también de ActionScript (a partir de ahora AS). TS es un superconjunto de JS que le proporciona una capa de orientación a objetos. Por ello no existe ningún navegador que ejecute TS de forma nativa sino que todo el código es traducido a JS.
 
 Entre sus mejores características está la compatibilidad con todo el código JS existente. Podemos usar librerías como jQuery sin problemas pues TS es JS.
 

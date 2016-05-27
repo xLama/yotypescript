@@ -95,23 +95,31 @@ Evalúa _name_. Al ser _null_, y _null_ ser **false**, asigna el valor del segun
 
 ### Operadores aritméticos {#operadores-aritm-ticos}
 
-Estos operadores son exclusivos para **number**, **any** y
+Estos operadores son exclusivos para **number**, **any** y **enum**
 
-enum
-
-. No se pueden usar con _Number_. El resultado siempre será un número.
+. No se pueden usar con **Number**. El resultado siempre será un número.
 
 #### Operadores + y - {#operadores-y}
 
 Son los usados para sumar y restar números respectivamente.
 
-**var** x: **number** = 2;**var** y: **number** = 2;**var** sum: **number** = x + y; // 4**var** res: **number** = x - y; // 0
+```ts
+let x = 2;
+let y = 2;
+let sum = x + y; // 4
+let res = x - y; // 0
+```
 
 #### Operadores * y / {#operadores-y-0}
 
 Son los usados para multiplicar y dividir números respectivamente.
 
-**var** x: **number** = 2;**var** y: **number** = 2;**var** multiplicacion: **number** = x * y; // 4**var** division: **number** = x / y; // 1
+```ts
+let x = 2;
+let y = 2;
+let multiplicacion = x * y; // 4
+let division = x / y; // 1
+```
 
 #### Operador % {#operador}
 

@@ -1,6 +1,6 @@
 ## El editor de Microsoft {#el-editor-de-microsoft}
 
-Visual Code es un IDE gratuito de reciente lanzamiento por parte de Microsoft. Su interfaz es sencilla y fácil de manejar. Aún se encuentra en fase “preview” pero es totalmente funcional y el soporte de TypeScript es completo. Para descargarlo debemos ir aquí: [https://code.visualstudio.com/](https://code.visualstudio.com/)
+Visual Code es un IDE gratuito de reciente lanzamiento por parte de Microsoft. Su interfaz es sencilla y fácil de manejar. Es totalmente funcional y el soporte de TypeScript es completo. Para descargarlo debemos ir aquí: [https://code.visualstudio.com/](https://code.visualstudio.com/)
 
 Para empezar, lo más recomendable es referenciar nuestra instalación de TS para que el editor pueda ayudarnos de forma eficaz.
 

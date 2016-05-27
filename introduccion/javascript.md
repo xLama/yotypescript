@@ -2,11 +2,11 @@
 
 ### Historia {#historia}
 
-JavaScript (a partir de ahora JS) es un lenguaje de programación orientado a objetos mediante prototipos, interpretado, imperativo y funcional. Fue desarrollado por Brendan Eich, un trabajador de la antigua Netscape. En un principio se denominó LiveScript y se lanzó junto al navegador Netscape Navigator 2.0 en 1995\. Posteriormente el nombre cambió a JavaScript por cuestiones de marketing.
+JavaScript (a partir de ahora JS) es un lenguaje de programación orientado a objetos mediante prototipos, interpretado, imperativo y funcional. Fue desarrollado por Brendan Eich, un trabajador de la antigua Netscape. En un principio se denominó LiveScript y se lanzó junto al navegador Netscape Navigator 2.0 en 1995. Posteriormente el nombre cambió a JavaScript por cuestiones de marketing.
 
-Debido al éxito que obtuvo, Microsoft decidió desarrollar el suyo propio al que llamó JScript que en realidad era el mismo lenguaje pero con otro nombre para evitar problemas legales.
+Debido al éxito que obtuvo, Microsoft decidió desarrollar el suyo propio al que llamó JScript. En realidad era el mismo lenguaje pero con otro nombre para evitar problemas legales.
 
-En 1997 la ECMA (European Computer Manufacturers Association) desarrolló el primer borrador para estandarizar el lenguaje. Es lo que hoy conocemos como ECMAScript.
+En 1997 la ECMA (European Computer Manufacturers Association) desarrolló el primer borrador para estandarizarlo. Es lo que hoy conocemos como ECMAScript.
 
 Para más información: [http://es.wikipedia.org/wiki/JavaScript](http://es.wikipedia.org/wiki/JavaScript)
 

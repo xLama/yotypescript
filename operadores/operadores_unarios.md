@@ -138,8 +138,9 @@ Expande un _array._ Ni más ni menos. De esta forma evitamos el uso de bucles.
 
 Se puede utilizar para añadir los elementos de un _array_ en otro en el orden que queramos:
 
-```
-**var** numbers: **number**[] = [1,2];**var** moreNumbers: **number**[] = [4,5,9, ...numeros,10]; // 4,5,9,1,2,10
+```ts
+let numbers  = [1,2];
+let moreNumbers = [4,5,9, ...numeros,10]; // 4,5,9,1,2,10
 ```
 
 También sirve como parámetro de una función para indicar que admite un número infinito de argumentos, además de usarse como argumento en sí mismo:

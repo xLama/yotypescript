@@ -83,13 +83,25 @@ El _this_ en JS funciona de una forma distinta a como lo hace en la mayoría de 
 
 El operador _this_ sólo tiene sentido dentro de las funciones pues fuera de éstas su valor siempre es _window_ (excepto en el modo estricto que sería undefined). Ya una vez dentro de la función el valor de _this_ será el objeto al que pertenezca esa función en el momento de ser ejecutada. Podemos decir que las funciones son las únicas que crean nuevos contextos.
 
-**var** thisExample = { **** name: "José", surname: "Lama", nameAndSurname: **this**.name +" "+ **this**.surname****}****thisExample.nameAndSurname // undefined undefined
+```ts
+let thisExample = { 
+  name: "José",
+  surname: "Lama", 
+  nameAndSurname: this.name +" "+ this.surname
+}
+thisExample.nameAndSurname // undefined undefined
+```
 
-El atribudo _nameAndSurname_ del ejemplo es _undefined undefined_ pues _this_ está referenciando a _window_ y éste no tiene las propiedades _name_ y _surname_.
+La propiedad *nameAndSurname* del ejemplo es *undefined undefined* pues _this_ está referenciando a _window_ y éste no tiene las propiedades _name_ y _surname_.
 
 En el caso de que lo usemos dentro de una función.
 
-**function** thisExample(){ **this;** // window}****thisExample();
+```ts
+function thisExample(){ 
+  this; // window
+}
+thisExample();
+```
 
 De nuevo this es _window_ porque _thisExample()_ no pertenece a ningún objeto de forma explícita, por lo que es parte de _window_.
 
@@ -117,11 +129,24 @@ Hay que diferenciar entre el **this** usado en una expresión y el usado como un
 
 Si se usa como expresión, es decir, se utiliza el operador **this** en una sentencia cualquiera, como por ejemplo en un **return**, hace referencia a la instancia original:
 
-**class** HTMLElement { //…
-
-**public** setId( id: **string** ){ **this**.id = id; **return** this; } //…}**class** Div **extends** HTMLElement { //…
-
-**public** setWidth( width: **number** ){ **this**.width = width; **return** this; } //…}**var** div = **new** Div().setId("div").setWidth(5);
+```ts
+class HTMLElement { 
+//...
+  public setId( id: string ){ 
+    this.id = id;
+    return this; 
+  } 
+//...
+}
+class Div extends HTMLElement { //…
+  public setWidth( width: number ){ 
+    this.width = width;
+    return this; 
+  } 
+//...
+}
+let div = new Div().setId("div").setWidth(5);
+```
 
 Al invocar el método _setId,_ el cual es de _HTMLElement_, lo devolvería, con lo cual, al intentar invocar _setWidth,_ y no ser éste parte de esa clase, fallaría. Precisamente ese es el comportamiento que ha cambiado. Ahora sabe que lo que devuelve _setId_ no es _HTMLElement,_ sino cualquier clase que herede de ella y que esté invocando el método en ese instante.
 

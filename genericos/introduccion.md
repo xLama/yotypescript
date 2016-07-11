@@ -10,7 +10,9 @@ Esta clase es capaz de englobar todos los concesionarios de las marcas de los co
 
 ¿Pero para qué marcas de automóviles diseñaremos la clase? Podemos hacerlas para todas con el uso de genéricos.
 
+```ts
 **class** Concesionario&lt;T&gt;{ **private** coches: Array&lt;T&gt;; **constructor**(){ **this**.coches = **new** Array&lt;T&gt;(); } **public** getCoche(indice: **number**): T { **return** **this**.coches[indice]; }****}
+```
 
 Para hacerlo se añade _&lt;T&gt;_ después del nombre de la clase. Realmente puedes escribir lo que quieras, no necesariamente una T. Ademas puedes parametrizar con una lista si te hace falta:
 

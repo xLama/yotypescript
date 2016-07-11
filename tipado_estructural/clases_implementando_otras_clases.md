@@ -1,8 +1,16 @@
 ## Clases implementando otras clases {#clases-implementando-otras-clases}
 
-**class** A { **** nombre: String; **public** hacerAlgo(): **void** { }****}
+```ts
+class A {
+    name: String;
+    doSomething() { }
+}
 
-**class** B **implements** A { **** nombre: String; **public** hacerAlgo(): **void** { }****}
+class B implements A {
+    name: String;
+    doSomething() { }
+}
+```
 
 Para ello se hace como si de una interfaz se tratara, con la palabra reservada _implements_. La clase que implementa otra se comporta como una interfaz, es decir, debe implementar sus métodos y atributos.
 

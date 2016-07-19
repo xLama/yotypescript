@@ -5,22 +5,22 @@ Es la base de los tipos en TypeScript. Sin él no se entiende el resto. Esto es 
 Es el tipo más básico de TS. Su uso se ha extendido ya que es la base de [JSON](../anexo_ii_strings/metodos.md#757309351116418-_Anexo_III._JSON).
 
 ```ts
-var objeto1: Object; 
-var objeto2: {}; // Objeto literal
+let objeto1: Object; 
+let objeto2: {}; // Objeto literal
 ```
 
 Y se puede inicializar así:
 
 ```ts
-var objeto: Object = new Object();
-var objeto: Object = {};
-var objeto: Object = {clave: "valor", clave2: "valor2"};
+let objeto: Object = new Object();
+let objeto: Object = {};
+let objeto: Object = {clave: "valor", clave2: "valor2"};
 ```
 
 Es un [tipo dinámico](../clases/objetos_dinamicos.md). Esto quiere decir que le podemos crear más claves-valor en tiempo de ejecución.
 
 ```ts
-var objeto: Object = {};
+let objeto: Object = {};
 objeto["clave1"] = "valor1";
 ```
 

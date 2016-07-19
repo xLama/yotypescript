@@ -9,8 +9,16 @@ Los decoradores también tienen un nivel de precedencia por el cual la ejecució
 
 Todos estos elementos se pueden decorar con más de un decorador, teniendo encuenta que el más interno es el primero en ejecutarse:
 
-@decorador@otroDecorador**class** Persona{}
+```ts
+@decorator
+@anotherDecorator
+class Person { }
 
-**function** decorador(target : Function){}**function** otroDecorador(target : Function){}
+function decorator(target: Function) { }
+function anotherDecorator(target: Function) { }
+```
 
-Primero se decoraría con @otroDecorador y después con @decorador.
+
+
+
+Primero se decoraría con @anotherDecorator y después con @decorator.

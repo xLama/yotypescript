@@ -15,7 +15,10 @@ class Person {
     }
 }
 
-function noWritable(target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) {
+function noWritable(
+target: Object, 
+propertyKey: string,
+descriptor: TypedPropertyDescriptor<any>) {
     descriptor.writable = false;
     return descriptor;
 }
@@ -33,7 +36,10 @@ class Person {
     }
 }
 
-function noWritable(target: Object, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) {
+function noWritable(
+target: Object, 
+propertyKey: string, 
+descriptor: TypedPropertyDescriptor<any>) {
     descriptor.writable = false;
     return descriptor;
 }

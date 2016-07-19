@@ -46,11 +46,21 @@ En el cuerpo del método se instancia la clase _Ajax_ a través de _init()_Asign
 
 Para controlar la comunicación nos falta el método _onReadyState()_
 
-**private** onReadyState = (evt: Event) => { **var** xmlR: XMLHttpRequest = **this**.xmlR; **switch** (xmlR.readyState) { **case** 4: **if** (xmlR.status == 200) { **this**.success(xmlR.responseXML); } **else** **if** (xmlR.status == 404) { }
+```ts
+private onReadyState = (evt: Event) => {
+    let xmlR: XMLHttpRequest = this.xmlR;
+    switch (xmlR.readyState) {
+        case 4: 
+          if (xmlR.status == 200) {
+              this.success(xmlR.responseXML);
+          }
+          else if (xmlR.status == 404) { }
 
-**else** **if** (xmlR.status == 500) { }
-
-**break**; }****}
+          else if (xmlR.status == 500) { }
+         break;
+    }
+}
+```
 
 Recuperamos el objeto _XMLHttpRequest_ que hemos usado para la petición. Cabe decir que este método va a ejecutarse varias veces en todo el proceso pues se lanzarán varios eventos distintos. Por ello hemos hecho un _switch_ con _xmlR.readyState_ que es donde se almacena el estado de la petición. En 4 indica que ya ha sido procesado aunque debemos inspeccionar el valor de _xmlR.status_. 200 es el indicador de que todo ha ido bien. Si es así procedemos a ejecutar la función _success_ pasándole como argumento los datos obtenidos los cuales hemos supuesto que son XML. Si es texto plano o JSON se haría con _xmlR.responseText._
 

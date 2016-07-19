@@ -8,4 +8,16 @@ Parámetros:
 
 Los parámetros también se pueden decorar:
 
-**class** Persona{ **public** nombre: **string** **constructor**(@nombrenombre:**string**){ **this.**nombre = nombre **** } }**function** nombre (target : {}, propertyName: **string**,parameterIndex: **number**){ target[propertyName] = "Carlos";}**var** persona : Persona = **new** Persona();****persona.nombre; // Carlos
+```ts
+class Person {
+    public name: string;
+    constructor( @propertyDecorator name: string) {
+        this.name = name;
+    }
+}
+function propertyDecorator(target: {}, propertyName: string, parameterIndex: number) {
+    target[propertyName] = "Carlos";
+}
+let person = new Person("");
+person.name; // Carlos
+```

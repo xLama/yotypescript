@@ -24,7 +24,7 @@
 | Decorators | Adaptado | Adaptado | Adaptado |
 | Iteradores | No soportado | No soportado | Nativo |
 | Generadores | No soportado | No soportado | Nativo |
-| Destructuración | Adaptado | Adaptado | Nativo |
+| Deconstrucción | Adaptado | Adaptado | Nativo |
 | Funciones asíncronas | No soportado | No soportado (previsto para la 2.1) | Adaptado |
 
 **Sintáctico**: Comprobación del compilador de TS sin equivalencia en JS.

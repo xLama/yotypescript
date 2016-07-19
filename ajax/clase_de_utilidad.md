@@ -30,7 +30,13 @@ En el método instanciamos la clase _Ajax_.Inicializamos el atributo privado _xm
 
 Ajax tiene dos formas de comunicarse con el servidor: _post_ y _get_. Normalmente se utiliza _post_ por ser más seguro. El servidor recibiría los datos por _get_ en forma de parámetros en la url. Vamos a hacer sólo el _Post_ para simplicar el tema.
 
-**public** **static** post = (url: **string**, success?: (data: **any**) => **void**): **void** => { **var** ajax: Ajax = Ajax.init(); ajax.success = success; ajax.xmlR.open("post", url, **false**);}
+```ts
+public static post = (url: string, success?: (data: any) => void): void => {
+    let ajax: Ajax = Ajax.init();
+    ajax.success = success;
+    ajax.xmlR.open("post", url, false);
+}
+```
 
 Es estático público para que el programador pueda usarlo sin problemas. Por parámetro tenemos:
 

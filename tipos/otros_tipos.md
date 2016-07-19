@@ -19,6 +19,9 @@ Representa variables no inicializadas. También podemos asignar el valor _undefi
 ```ts
 let variable: Boolean = undefined;
 ```
+### Never {#never}
+
+Representa valores que nunca pueden ocurrir.
 
 ### [Enum](../control_del_flujo/sentencias_utiles_para_los_bucles.md#757309351116418-_Enumerados) {#enum}
 

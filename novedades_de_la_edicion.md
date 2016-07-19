@@ -7,7 +7,7 @@ Entre las versiones 1.7 y 1.8 se enumeran las siguientes novedades recogidas por
 *   Polimorfismo F-Bounded
 *   Tipos cadenas literales
 *   Nuevos parámetros del compilador
-*   JavaScript es compilaciones TypeScript
+*   JavaScript en compilaciones TypeScript
 *   Guardas de tipos con this.
 *   Corrección de errores
 

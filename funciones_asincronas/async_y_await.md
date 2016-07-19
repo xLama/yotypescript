@@ -22,11 +22,11 @@ async function anotherAsyncFunction(){
 }
 
 async function asyncFunction(){ 
-  var results = await anotherAsyncFunction();// 2 º
+  var results = await anotherAsyncFunction();// 2º
   var n = 1; // 5º
 }
 
-asyncFunction(); // 1 
+asyncFunction(); // 1º 
 var name = "Lama"; // 4º
 ```
 

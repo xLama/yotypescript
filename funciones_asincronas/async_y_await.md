@@ -17,17 +17,17 @@ async function asyncFunction{ // El tipo devuelto es Promise<number>
 Pero la verdadera potencia no radica ahí, sino en el **await**. **Await** para la ejecución de la función hasta que se resuelva la operación. Para usar **await** la función debe devolver un Promise, ya sea de forma explícita o porque esa misma función también sea **async**:
 
 ```ts
-async function otherAsyncFunction(){ 
-  return [0,1,2]; // 3
+async function anotherAsyncFunction(){ 
+  return [0,1,2]; // 3º
 }
 
 async function asyncFunction(){ 
-  var results = await otherAsyncFunction();// 2 
-  var n = 1; // 5
+  var results = await anotherAsyncFunction();// 2 º
+  var n = 1; // 5º
 }
 
 asyncFunction(); // 1 
-var name = "Lama"; // 4
+var name = "Lama"; // 4º
 ```
 
 Ejecutamos asyncFunction. Al llegar a la primera línea, se encuentra con un await, lo que hace ejecutar la función otherAsyncFunction() y para el flujo de esa función hasta que se resuelva, devolviendo el control de la ejecución a la siguiente línea posterior a la invocación de asyncFunction(). El ejemplo es muy sencillo pero sirve para esquematizar lo que ocurre. Los números reflejan el orden de ejecución en un caso normal, puesto que no sabemos cuánto va a tardar en devolver una respuesta otherAsyncFunction(). Como sí ha sido antes, al acabar la ejecución de otherAsyncFunction(), la variable results no será un Promise, sino el array [0,1,2].

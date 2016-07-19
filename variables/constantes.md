@@ -27,7 +27,7 @@ Lo que evita es la asignación de la variable al completo, no una de sus partes.
 ```ts
 const options = {frecuency : 10, all: null}; 
 options.frecuency = 20;  // Ok
-options = {frecuency: 20, all: true}
+options = {frecuency: 20, all: true} // Error
 ```
 
 Además las constantes [se pueden simular en algunas circunstancias](../clases/estaticos.md#757309351116418-_Constantes_mediante_estáticos).

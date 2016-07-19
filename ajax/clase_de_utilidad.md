@@ -32,7 +32,7 @@ Ajax tiene dos formas de comunicarse con el servidor: _post_ y _get_. Normalment
 
 ```ts
 public static post = (url: string, success?: (data: any) => void): void => {
-    let ajax: Ajax = Ajax.init();
+    let ajax = Ajax.init();
     ajax.success = success;
     ajax.xmlR.open("post", url, false);
 }

@@ -6,10 +6,10 @@ Son dos las palabras reservadas para usarlas: **async** y **await**. Para declar
 async function asyncFunction(){}
 ```
 
-¿Qué conseguimos con esto? Lo que conseguimos es que lo devuelto por la función se envuelva en un Promise de forma automática y transparente para el desarrollador. Pero hay que tener claro que lo que devuelve en realidad no es un objeto Promise, sino el valor en sí.
+¿Qué conseguimos con esto? Lo que conseguimos es que lo devuelto por la función se envuelva en un **Promise** de forma automática y transparente para el desarrollador. Pero hay que tener claro que lo que devuelve en realidad no es un objeto Promise, sino el valor en sí.
 
 ```ts
-async function asyncFunction{
+async function asyncFunction{ // El tipo devuelto es Promise<number>
   return 1;
 }
 ```

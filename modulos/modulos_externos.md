@@ -63,22 +63,28 @@ Ya que hemos aprendido a exportar miembros, debemos aprender a importarlos para 
 
 App.ts
 
+```ts
 import { Person } from"./Person";
 var person : Person;
+```
 
 Por supuesto también podemos renombrarlo.
 
 App.ts:
 
+```ts
 import { Person as Persona } from "./Person";
 let persona: Persona;
+```
 
 Si se quiere importar todo el módulo con todos los miembros exportados podemos hacerlo con el * y nombrándolo como nos convenga. Para usar los miembros debemos referenciarlos con el nombre elegido en el renombrado seguido del nombre del miembro, separado por un punto.
 
 App.ts
 
+```ts
 import * as P from "./Person";
 let person:P.Person;
+```
 
 Si delaramos un miembro como _default_ a la hora de exportarlo, nos va a facilitar las cosas al importarlo. De esta forma no es necesario que encerremos entre llaves el miembro a importar.
 

@@ -22,6 +22,10 @@ Básicamente lo que se hace es escribir en un archivo de extensión _.d.ts_ toda
 
 Para ello se utiliza la palabra reservada _declare_ seguido de la entidad que sea: clase, enum, función, módulo o variable pero sin implementar, es decir, no se reescribe el cuerpo sólo su cabecera. Con las interfaces no es necesario.
 
-**declare** **class** Persona { **constructor**(**private** edad: **number**);}
+```ts
+declare class Person { 
+  constructor(private age:number);
+}
+```
 
 Así podremos usar _Persona_ en nuestra aplicación TS para instanciarla, extenderla, etc.

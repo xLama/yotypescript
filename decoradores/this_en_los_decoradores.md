@@ -4,4 +4,15 @@ Hay que tener en cuenta que la sentencia **this** dentro de un decorador hace re
 
 Tomando el ejemplo del decorador de clase:
 
-**class** Persona{ @nombre **public** nombre:**string**}**function** nombre (target : {}, propertyName: **string**){ **this**; // Window target[propertyName] = "Carlos";}**var** persona : Persona = **new** Persona();****persona.nombre; // Carlos
+```ts
+class Person {
+    @propertyDecortator public name: string;
+}
+
+function propertyDecortator(target: {}, propertyName: string) {
+    this; //Window 
+    target[propertyName] = "Carlos";
+}
+let person = new Person();
+person.name; // Carlos
+```

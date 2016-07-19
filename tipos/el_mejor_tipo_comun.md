@@ -22,9 +22,9 @@ let array = [x, "Carlos", true]; // Resultado any[]
 Si introducimos un objeto {} en el array o un _Object_ _(_**new** _Object() ),_ el mejor tipo común será {} siempre y cuando no haya ninguna variable **any**. En ese caso será **any**.
 
 ```ts
-var x: any;var array = ["Carlos", {}] // {}[]
-var array2 = [x, "Carlos", {}] // any[]
-var array3 = [x, "Carlos", new Object()] // any[]
+let x: any;var array = ["Carlos", {}] // {}[]
+let array2 = [x, "Carlos", {}] // any[]
+let array3 = [x, "Carlos", new Object()] // any[]
 ```
 
 ### Entre primitivos {#entre-primitivos}
@@ -32,7 +32,7 @@ var array3 = [x, "Carlos", new Object()] // any[]
 Debido a la existencia de los tipos unión, el mejor tipo va a ser el tipo unión si en el array introducimos dos o más de estos tipos: **string**_,_ **number**_,_ **boolean** o _Array_
 
 ```ts
-var array = ["Carlos", 24] //  (string | number)[]
+let array = ["Carlos", 24] //  (string | number)[]
 ```
 
 ### Entre primitivos y objetos {#entre-primitivos-y-objetos}
@@ -40,7 +40,7 @@ var array = ["Carlos", 24] //  (string | number)[]
 Si introducimos un tipo primitivo y otro objeto relacionados (**number**_/Number_) el mejor tipo común será el del objeto.
 
 ```ts
-var array = [3, new Number(1)] // Number[]
+let array = [3, new Number(1)] // Number[]
 ```
 
 ### Entre tipos referencia {#entre-tipos-referencia}
@@ -50,7 +50,7 @@ Si rellenamos el array con instancias de clases o interfaces el mejor tipo comú
 ```ts
 class A { }
 class B { }
-var array = [new A(), new B()] // A[]
+let array = [new A(), new B()] // A[]
 ```
 
 Si existe más de un mejor tipo común posible, elige el primero que encuentra. En este caso _A_.
@@ -59,7 +59,7 @@ Si existe más de un mejor tipo común posible, elige el primero que encuentra. 
 class A { }
 class B extends A { }
 class C extends A { }
-var array = [new B(), new C()]; // B[]
+let array = [new B(), new C()]; // B[]
 ```
 
 Aunque _B_ y _C_ sean subclases de _A_, al no estar _A_ explícitamente en el array, no puede escogerla como mejor tipo común.

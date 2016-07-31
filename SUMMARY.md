@@ -48,7 +48,6 @@
    * [Selectivas](control_del_flujo/selectivas.md)
    * [Iterativas](control_del_flujo/iterativas.md)
    * [Sentencias útiles para los bucles](control_del_flujo/sentencias_utiles_para_los_bucles.md)
-   * [Código inalcanzable](control_del_flujo/codigo_inalcanzable.md)
 * [Objetos](objetos/README.md)
    * [Introducción](objetos/introduccion.md)
    * [Propiedades computadas (Computed properties)](objetos/propiedades_computadas_computed_properties.md)

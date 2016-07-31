@@ -338,13 +338,14 @@ La variable _x_ vale 10\. A la variable _z_ se le asigna un valor dependiendo de
 Para hacer un simil con ||, recordemos:
 
 ```ts
-let nombre: string;nombre = nombre || "Carlos";
+let name: string;
+name = name || "Carlos";
 ```
 
 Podríamos, también, expresarlo de la siguiente forma:
 
 ```ts
-nombre = nombre ? nombre: "José Carlos";
+name = name ? name: "José Carlos";
 ```
 
-A _nombre_ se le asigna un valor dependiendo de la condición dada. En este caso comprueba si _nombre_ es true o false (nombre es _null_ que como ya sabemos se evalúa como false). Si fuera true, a nombre se le asignaría el valor que ya tiene. Como es false se le asigna “Carlos”.
+A *name* se le asigna un valor dependiendo de la condición dada. En este caso comprueba si _nombre_ es true o false (nombre es _null_ que como ya sabemos se evalúa como false). Si fuera true, a nombre se le asignaría el valor que ya tiene. Como es false se le asigna “Carlos”.

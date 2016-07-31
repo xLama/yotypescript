@@ -14,26 +14,36 @@ Objeto literal fresco es simplemente un objeto literal cualquiera.
 
 Si asignamos ese objeto literal a un tipo objeto literal que no sea el objeto vacío {}, se va a comprobar que el objeto literal no tenga más propiedades que las del tipo, de lo contrario dará error:
 
-**type** Person = {name: **string** , age: **number** }**var** carlos : Person = { name: "Carlos", age : 26}; // Correcto**var** carlos2: Person = { name: "Carlos", age : 26, nationality: "spanish" } // Incorrecto. Tiene más propiedades.
-
+```ts
+type Person = {name: string , age: number }
+let carlos : Person = { name: "Carlos", age : 26}; // Correcto
+let carlos2: Person = { name: "Carlos", age : 26, nationality: "spanish" } /* Incorrecto. Tiene más propiedades. */
+```
 ¿Por qué hace esta comparación? Hemos dicho que es un objeto fresco y, además, no está capturado en una variable previamente, sino que se ha asignado directamente. Por otra parte tampoco se ha hecho una confirmación de tipo así que no cumplen los requisitos para que la comparación de exceso de atributos se realice.
 
 Si cumplimos con alguna de las dos, es decir, hacer una confirmación de tipo para que el objeto deje se ser fresco o capturarlo previamente en una variable cuyo tipo sea el mismo que el suyo (podemos dejar que la nferencia trabaje) la comparación de exceso no tendrá lugar:
 
 Hacer que el objeto deje de ser fresco:
 
-**type** Person = {name: **string** , age: **number** }**var** carlos2: Person = &lt;Person&gt; { name: "Carlos", age : 26, nationality: "spanish" } // Correcto. Confirmación de tipo.
-
+```ts
+type Person = {name: string , age: number }
+let carlos2: Person = { name: "Carlos", age : 26, nationality: "spanish" } as Person /* Correcto. Confirmación de tipo. */
+```
 Capturarlo en una variable:
 
-**type** Person = {name: **string** , age: **number** }**var** jc = { name: "Carlos", age : 26, nationality: "spanish" }; **var** carlos : Person = jc// Correcto
+```ts
+type Person = {name: string , age: number }
+let jc = { name: "Carlos", age : 26, nationality: "spanish" }; 
+let carlos : Person = jc // Correcto
 
-**var** carlos2: Person = &lt;Person&gt; { name: "Carlos", age : 26, nationality: "spanish" } // Correcto. Confirmación de tipo.
-
+let carlos2: Person =  { name: "Carlos", age : 26, nationality: "spanish" } as Person /* Correcto. Confirmación de tipo. */
+```
 Se puede, sin embargo, hacer que un tipo objeto literal sea infinito y admita todos las propiedades que queramos. Para ello hay que usar la signatura índice (index signature):
 
-**type** Person = {name: **string** , age: **number**,[more: **string** ] : **any** }**var** carlos : Person = { name: "Carlos", age : 26, nationality: "spanish" };
-
-Es correcto porque hemos indeterminado el número de propiedades haciendo que el nombre de la propiedad sea un **string** y su valor sea cualquier cosa.
+```ts
+type Person = {name: string , age: number,[more: string ] : any }
+let carlos : Person = { name: "Carlos", age : 26, nationality: "spanish" };
+```
+Es correcto porque hemos indeterminado el número de propiedades haciendo que el nombre de la propiedad sea un string y su valor sea cualquier cosa.
 
 Como esta característica puede hacer que código antiguo no funcione, se ha incluido un parámetro en el compilador para que esta comprobación no se haga nunca. Se puede configurar en el archivo tsconfig.json añadiendo "suppressExcessPropertyErrors": true

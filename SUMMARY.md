@@ -1,8 +1,6 @@
 # Summary
 
 * [YoTypeScript 1.8](README.md)
-   * [Control de bugs](control_de_bugs.md)
-       * Tipos no nullables
 * [Introducción](introduccion/README.md)
    * [¿A quién va dirigido este libro?](introduccion/a_quien_va_dirigido_este_libro.md)
    * [JavaScript](introduccion/javascript.md)
@@ -114,6 +112,8 @@
    * [Lanzando errores](control_de_errores/lanzando_errores.md)
    * [Lanzando errores manualmente](control_de_errores/lanzando_errores_manualmente.md)
    * [Finally](control_de_errores/finally.md)
+* [Control de bugs](control_de_bugs.md)
+   * Tipos no nullables
 * [DOM](dom/README.md)
    * [Introducción](dom/introduccion.md)
    * [Document](dom/document.md)

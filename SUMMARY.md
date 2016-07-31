@@ -2,6 +2,7 @@
 
 * [YoTypeScript 1.8](README.md)
    * [Control de bugs](control_de_bugs.md)
+       * Tipos no nullables
 * [Introducción](introduccion/README.md)
    * [¿A quién va dirigido este libro?](introduccion/a_quien_va_dirigido_este_libro.md)
    * [JavaScript](introduccion/javascript.md)

@@ -125,9 +125,7 @@ Si echamos un vistazo a la tabla, es de suponer que _this_ _name_ y _this.surnam
 
 #### this polimórfico {#this-polim-rfico}
 
-Hay que diferenciar entre el **this** usado en una expresión y el usado como un tipo. Esta característica sólo está disponible en métodos no estáticos.
-
-Si se usa como expresión, es decir, se utiliza el operador **this** en una sentencia cualquiera, como por ejemplo en un **return**, hace referencia a la instancia original:
+Ahora  **this** se refiere a la instancia de alguna clase que herede de la clase contenedora. 
 
 ```ts
 class HTMLElement { 
@@ -149,11 +147,3 @@ let div = new Div().setId("div").setWidth(5);
 ```
 
 Al invocar el método _setId,_ el cual es de _HTMLElement_, lo devolvería, con lo cual, al intentar invocar _setWidth,_ y no ser éste parte de esa clase, fallaría. Precisamente ese es el comportamiento que ha cambiado. Ahora sabe que lo que devuelve _setId_ no es _HTMLElement,_ sino cualquier clase que herede de ella y que esté invocando el método en ese instante.
-
-El otro uso del **this** polimórfico es como tipo. De esa forma se refiere al tipo de la clase concreta donde se esté usando:
-
-**class** HTMLElement { **public** clone(): this {
-
-//… }}**class** Div **extends** HTMLElement {}**var** div = **new** Div().clone();
-
-La clase _Div_ hereda el método _clone_ y lo que debe devolver es una instancia de _Div,_ no de _HTMLElement_.

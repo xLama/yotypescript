@@ -2,11 +2,16 @@
 
 Las funciones anónimas son aquéllas que no tienen ningún nombre especificado.
 
-(): **void** => { } **function** () { } // Falla por no especificar un nombre
+```ts
+(): void => { } function () { } // Falla por no especificar un nombre
+```
 
 Cuando declaramos una función con la palaba reservada _function_ seguido de un identificador es lo mismo que si asignáramos una función anónima a una variable pues internamente el identificar es una declaración de variable.
 
-**var** sumar = **function** () { } // es equivalente a**function** sumar() { }
+```ts
+let add = function () { } // es equivalente a, excepto por hoisting
+function sumar() { } 
+```
 
 El ejemplo no compila pues da un error de identificador duplicado.
 
@@ -18,21 +23,35 @@ TS nos proporciona otra sintaxis a la hora de declarar una función que resulta 
 
 Siguiendo con el ejemplo anterior, otra forma de declarar _sumar_ sería:
 
-**var** ejemplo = (x: **number**): **number** => { **return** 0 };
+```ts
+let example = (x: number) => {
+    return 0;
+};
+```
 
 Entre paréntesis se especifica la lista de parámetros seguido de : (dos puntos) para especificar el tipo devuelto por la función. Por último el => para definir el cuerpo de la función. Realmente no es necesario encerrarlo entre llaves {} pero si se hace debe aparecer la palabra clave _return_
 
 Son equivalentes:
 
-**var** ejemplo = (x: **number**): **number** => { **return** 0 };**var** ejemplo = (x: **number**): **number** => 0;
+```ts
+let example = (x: number): number => {
+    return 0;
+};
+let example = (x: number) => 0;
+```
 
 Incluso podemos usar los parámetros en el cuerpo sin llaves:
 
-**var** cuadrado = (x: **number**): **number** => x * x;
+```ts
+let square = (x: number) => x * x;
+```
 
 En el caso de las funciones flecha la única posibilidad es la de asignarla a una variable pues su sintaxis no permite darle un nombre en la propia declaración
 
-**var** funcion = (): **void** => {}
+```ts
+let funcion = (): void => { }
+```
+
 
 ### Tipado literal de una función {#tipado-literal-de-una-funci-n}
 
@@ -42,23 +61,31 @@ La cuestión que se nos plantea es que si en TS todo está tipado, ¿cómo se ti
 
 En nuestro ejemplo:
 
-**var** cuadrado = (x: **number**): **number** => x * x;
+```ts
+let square = (x: number) => x * x;
+```
 
 La variable _cuadrado_ ha sido tipada por [inferencia](../tipos/inferencia_de_tipos.md#expresiones-tipadas-por-el-contexto). Si no fuera así, y se nos olvidara tiparla, resultaría que a la hora de invocarla no tendríamos la ayuda del editor para saber qué parámetros tiene.
 
 Podríamos hacer esto:
 
-**var** cuadrado: Function = (x: **number**): **number** => x * x;
+```ts
+let square: Function = (x: number): number => x * x;
+```
 
 Pero el tipado no sería tan específico y no sabríamos, a la hora de invocar la función, que parámetros acepta y qué tipo de datos devuelve, si es que devuelve alguno.
 
 Nosotros podemos tiparla de forma explícita:
 
-**var** cuadrado: (x: **number**) => **number**;
+```ts
+let square: (x: number) => number;
+```
 
 Esta vez la flecha no se usa para indicar el cuerpo de la función, pues estamos tipando. Sino que se utiliza para especificar el tipo devuelto. Sólo podemos tipar funciones de esta forma con expresiones flecha. Una función estándar también queda tipada por una expresión flecha:
 
-**var** cuadrado:(x: **number**) => **number** = **function** (x: **number**): **number** {**return** x * x }
+```ts
+let square: (x: number) => number = function (x: number): number { return x * x }
+```
 
 ### Tipado mediante objetos literales {#tipado-mediante-objetos-literales}
 

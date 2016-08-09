@@ -24,7 +24,7 @@ Con esto conseguimos que la variable de nombre _carlos_ sea del tipo _Person_.
 
 ### Expresión {#expresi-n}
 
-ES6 introduce una sintaxis para crear clases, similar a como ya existe en las funciones. Se trata de las clases expresiones de clases. En ella se puede asignar una clase a una variable:
+ES6 introduce una sintaxis para crear clases similar a como ya existe en las funciones. Se trata de las expresiones de clases. En ella se puede asignar una clase a una variable:
 
 ```ts
 let Person = class { }

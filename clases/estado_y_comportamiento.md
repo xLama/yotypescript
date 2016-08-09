@@ -6,15 +6,31 @@ Una clase tiene atributos (se representan con variables) que definen su estado, 
 
 Los atributos de una clase son variables que se declaran dentro de la propia clase.
 
-Seguimos construyendo la clase _Persona_. Tenemos que pensar qué características tiene una persona cualquiera, qué es lo que nos define. En este caso hemos optado por su nombre y apellidos. También podría ser el DNI, altura, peso, todo lo que queramos o necesitemos.
+Seguimos construyendo la clase _Person_. Tenemos que pensar qué características tiene una persona cualquiera, qué es lo que nos define. En este caso hemos optado por su nombre y apellidos. También podría ser el DNI, altura, peso, todo lo que queramos o necesitemos.
 
-**class** Persona {**** nombre: **string**; apellido1: **string**; apellido2: **string**; **constructor**(nombre: **string**, apellido1: **string**, apellido2?: **string**) {}****}
+```ts
+class Person {
+    nombre: string;
+    apellido1: string;
+    apellido2: string;
+    constructor(nombre: string, apellido1: string, apellido2?: string) { }
+}
+```
 
 Hemos declarado sus atributos pero no están inicializados. Lo hacemos en el constructor.
 
-**class** Persona {
-
-nombre: **string**; apellido1: **string**; apellido2: **string**; **constructor**(nombre: **string**, apellido1: **string**, apellido2?: **string**) { **this**.nombre = nombre; **this**.apellido1 = apellido1; **this**.apellido2 = apellido2;}****}
+```ts
+class Persona {
+    nombre: string;
+    apellido1: string;
+    apellido2: string;
+    constructor(nombre: string, apellido1: string, apellido2?: string) {
+        this.nombre = nombre;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
+    }
+}
+```
 
 Como podemos ver lo que se introduce como argumento al constructor es lo que en su implementación se le asigna a los atributos. Normalmente cuando instanciemos una clase debemos inicializar su atributos pues es lo que va a definir a ese objeto en particular y lo va a diferenciar del resto de objetos de la misma clase.
 

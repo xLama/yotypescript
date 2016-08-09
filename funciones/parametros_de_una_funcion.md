@@ -66,20 +66,38 @@ function sum(x = 20, z: number): { } // Error
 Existe una forma de aceptar una lista infinita de argumentos por parámetro. En TS se llama “el resto de parámetros”.
 
 Es bastante sencillo:
-
-**function** mas(x: **number**, ...masParametros): **number**{ **return** x; }
+```ts
+function more(x: number, ...moreParams) {
+    return x;
+}
+```
 
 Como puedes observar, basta con definir un parámetro más anteponiendo… (tres puntos suspensivos) a su nombre. Será del tipo _Array_ de A_ny_. Podemos tiparlo para que sea un _Array_ de otra cosa pero siempre un _Array_.
 
-**function** mas(...masP: **number**[]):**void** {}
+```ts
+function more(...moreP: number[]) { }
+```
 
 Este parámetro especial no puede ser opcional ni puede estar inicializado.
 
-**function** mas(...masP?: **number**[]): **void** { **}**; // Error**function** mas(... masP: **number**[]=[]): **void** { **}**; // Error
+```ts
+function more(...moreP?: number[]): void { }; // Error
+function more(...moreP: number[] = []): void { }; // Error
+```
+
 
 Para usarlo lo hacemos como si de un _array_ cualquiera se tratara.
 
-**function** sumar(...masP: **number**[]): **number** { **var** total: **number** = 0; **for** (**var** i: **number** = 0; i < masP.length; i++) {**** total += masP[i];} **return** total;}**var** suma: **number** = sumar(3, 56, 89, 12, 56); // 216
+```ts
+function adder(...moreP: number[]) {
+    let total = 0;
+    for (let num of moreP) {
+        total += num;
+    }
+    return total;
+}
+let sum = adder(3, 56, 89, 12, 56); // 216
+```
 
 La función suma todos los números del array introducido como argumento y devuelve el resultado.
 
@@ -91,7 +109,13 @@ A la hora de pasar argumentos a una función, se puede hacer de dos formas: por 
 
 El paso por valor es el más sencillo. Cuando invocamos una función e introducimos un valor como argumento, se realiza una copia del valor hacia el parámetro de la función. Que sea una copia quiere decir que el valor pasado y el parámetro ya no tienen relación en la memoria en el momento de la ejecución.
 
-**var** x: **number** = 5;**function** valor(y: **number**): **void** {**** y++; // 6}****x; // 5
+```ts
+let x = 5;
+function value(y: number): void {
+    y++; // 6
+}
+x; // 5
+```
 
 Hemos creado una variable de tipo **number** con un valor inicializado de 5\. Hemos invocado la función pasando esta variable como argumento. En ese momento se ha creado una copia de la variable _x_ de fuera de la función hacia la variable _y_ de dentro de la función. Si modificamos la variable _y_ (en este caso hemos sumado uno) vemos como la _x_ se mantiene intacta.
 
@@ -101,7 +125,15 @@ En contraposición al paso por valor existe el paso por referencia. En éste no 
 
 Cuando se crea una variable se reserva un espacio de memoria donde almacenarla. Ese espacio de memoria tiene una dirección que maneja internamente la máquina virtual. Al hacer un paso por referencia lo que se le proporciona es esta dirección de memoria a otra variable. Dos variables, a priori distintas, que posean la misma dirección están apuntando al mismo lugar de la memoria por lo que en realidad son la misma variable.
 
-**var** x: Array<**number**> = [0, 0];x[0]; // 0**function** referencia(y: Array<**number**>): **void** { y[0] = 1; // 1}referencia(x);****x[0]; // 1
+```ts
+let x = [0, 0];
+x[0]; // 0
+function reference(y: number[]): void {
+    y[0] = 1; // 1
+}
+reference(x);
+x[0]; // 1
+```
 
 Tenemos un _Array_ de **number** con dos posiciones, ambas con valor 0.Le pasamos el array a la función y la posición 0 que vale 0, la cambiamos a 1.Al acabar la ejecución de la función y mostrar el contenido de la posición 0 del array, vemos que lo cambiado en la función persiste, al contrario de lo que pasaba con el ejemplo del paso por valor.
 

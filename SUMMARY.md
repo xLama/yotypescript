@@ -136,7 +136,6 @@
    * [Fusionando módulos con funciones y enums](modulos/fusionando_modulos_con_funciones_y_enums.md)
    * [Módulos externos](modulos/modulos_externos.md)
    * [Trabajando con librerías externas](modulos/trabajando_con_librerias_externas.md)
-   * [Evitar que una clase pueda ser superclase](modulos/evitar_que_una_clase_pueda_ser_superclase.md)
 * [Iteradores](iteradores/README.md)
    * [Introducción](iteradores/introduccion.md)
    * [La importancia de Symbol](iteradores/la_importancia_de_symbol.md)

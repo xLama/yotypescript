@@ -2,4 +2,7 @@
 
 Para eliminar un elemento se debe borrar como elemento hijo del padre que tenga. Como no sabemos, a priori, quién es su padre, lo más cómodo es usar el atributo _parentNode_ y, posteriormente, removeChild
 
-**var** capa = document.createElement("div");capa.parentNode.removeChild(capa);
+```ts
+let capa = document.createElement("div");
+capa.parentNode.removeChild(capa);
+```

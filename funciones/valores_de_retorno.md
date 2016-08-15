@@ -1,11 +1,11 @@
 ## Valores de retorno {#valores-de-retorno}
 
-Las funciones pueden devolver un valor si así lo precisamos. Para ello se debe especificar en la cabecera de la función el tipo de dato que queremos devolver: **number**, **string**, _Array_… Si la función no va a devolver nada, hay que especificarlo con la palabra reservada _void_.
+Las funciones pueden devolver un valor si así lo precisamos. Para ello se debe especificar en la cabecera de la función el tipo de dato que queremos devolver: *number*, *string*, _Array_… Si la función no va a devolver nada, hay que especificarlo con la palabra reservada _void_ y en ese caso devolvería de *undefined* de forma implícita..
 
 ```ts
 function retun(x: number, y: number) {
-    return 4;
-} // Devuelve un número
+    return 4; // Devuelve un número
+} 
 
 function noReturrn(x: number, y: number) {
     /* No devuelve nada */

@@ -9,7 +9,7 @@ function overLoad(x: number) {
     return x;
 }
 
-function sobreCarga(x: number, z: number) {
+function overLoad(x: number, z: number) {
     return x * z;
 }
 ```

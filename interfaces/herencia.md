@@ -11,13 +11,13 @@ Si una clase implementa la interfaz _Desplazable_, no sólo debe implementar tod
 Una clase que herede de otra clase que implemente una interfaz, estaría también implementándola de forma implícita.
 
 ```ts
-class Persona implements Desplazable, Inteligente {
+class Person implements Desplazable, Inteligente {
     //(...)
 }
 
-class Alumno extends Persona {
+class Student extends Person {
     //(...)
 }
 ```
 
-La clase _Alumno_ estaría implementando las interfaces _Desplazable_ y _Motriz_ a través de _Persona_, que es clase padre.
+La clase *Student* estaría implementando las interfaces _Desplazable_ y _Motriz_ a través de *Persona*, que es clase padre.

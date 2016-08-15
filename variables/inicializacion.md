@@ -1,6 +1,6 @@
 ## Inicialización {#inicializaci-n}
 
-Inicializar una variable es asignarle un valor. En TS las variables no se inicializan de forma automática como en otros lenguajes de programación donde, por ejemplo, las de tipo numérica se inicializan con el valor 0 si no le establecemos un valor explícitamente.
+Inicializar una variable consiste en asignarle un valor. En TS (ni en JS, por supuesto) las variables no se inicializan de forma automática como en otros lenguajes de programación donde, por ejemplo, las de tipo numérica se inicializan con el valor 0 si no le establecemos un valor explícitamente.
 
 ```ts
 let variable; /* undefined */

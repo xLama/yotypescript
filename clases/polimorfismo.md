@@ -4,26 +4,26 @@ Com su nombre indica (muchas formas) es la cualidad que tiene un objeto de un ti
 
 Recordando el ejemplo:
 
-Alumno Persona Mamifero SerVivo
+Stundent Person Mammal LivingBeing
 
 Podemos hacer esto:
 
 ```ts
-let ser: SerVivo = new Alumno();
+let be: LivingBeing = new Stundent();
 ```
 
-¿Por qué? Porque Alumno es-un SerVivo
+¿Por qué? Porque Student es-un LivingBeing
 
-Si en una función aceptamos como parámetro un SerVivo:
+Si en una función aceptamos como parámetro un LivingBeing:
 
 ```ts
-function ejemplo(ser: SerVivo): void { }
+function example(ser: LivingBeing): void { }
 ```
 
-¿Qué pasaría si la invocamos pasándole como argumento un _Alumno_?
+¿Qué pasaría si la invocamos pasándole como argumento un *Student*?
 
 ```ts
-ejemplo(new Alumno());
+example(new Stundent());
 ```
 
-¿Sería correcto? Sí. Pues un _Alumno_ es un _SerVivo_. No hay riesgo de ningún tipo pues _Alumno_ ha heredado de _SerVivo_ todos los miembros públicos por lo que estamos seguros que de los métodos se van a ejecutar sin problemas.
+¿Sería correcto? Sí. Pues un *Stundent* es un *LivingBeing*. No hay riesgo de ningún tipo pues *Stundent* ha heredado de *LivingBeing* todos los miembros públicos por lo que estamos seguros que de los métodos se van a ejecutar sin problemas.

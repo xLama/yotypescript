@@ -7,13 +7,14 @@ A su vez tenemos los tipos objeto que no son más que [clases](../clases/README.
 En TS los tipos primitivos y los objetos poseen el mismo nombre pero con la diferencia de que estos últimos se escriben con la primera letra en mayúsculas.
 
 | Primitivo | Objeto | Uso |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | **number** | Number | Números: enteros y decimales |
 | **string** | String | Caracteres o cadenas |
 | **boolean** | Boolean | Sólo admiten _true_ o _false_ |
 | **undefined** | Undefined | Sólo puede usarse como valor |
 | **null** | Null | Sólo puede usarse como valor |
 | **void** | Void | Ausencia de valor |
+| **never** | - | Valores que no pueden ocurrir |
 | **symbol** | Symbol | Valores únicos usados como token. |
 
 Si declaramos una variable con un tipo primitivo, no la podemos inicializar con el tipo objeto aunque sí se puede hacer lo inverso.
@@ -69,7 +70,7 @@ JS:
 let cadena = new String("Esto es una cadena"); // Correcto
 ```
 
-Al tipar la variable con *string*, en TS ya estamos indicando que debe contener un tipo primitivo o literal y no va a permitir algo distinto. Como en JS no tipamos la variable, podemos inicializarla con el primitivo o el objeto.
+Al tipar la variable con _string_, en TS ya estamos indicando que debe contener un tipo primitivo o literal y no va a permitir algo distinto. Como en JS no tipamos la variable, podemos inicializarla con el primitivo o el objeto.
 
 Un apunte a tener en cuenta es que las cadenas de caracteres se pueden inicializar tanto con dobles comillas como con las simples:
 
@@ -80,15 +81,16 @@ let str3: String = "Esto es una cadena";
 let str4: String = 'Esto es una cadena';
 ```
 
-### Template Strings (cadenas plantilla) {#template-strings-cadenas-plantilla}
+### Template Strings \(cadenas plantilla\) {#template-strings-cadenas-plantilla}
 
-Como hemos visto en el apartado anterior, una cadena de caracteres se inicializa de forma literal con “ (comillas dobles) o ‘ (comillas simple). Existe una tercera forma de inicialización con el acento grave `.
+Como hemos visto en el apartado anterior, una cadena de caracteres se inicializa de forma literal con “ \(comillas dobles\) o ‘ \(comillas simples\). Existe una tercera forma de inicialización con el acento grave \`.
 
 ```ts
 `esto es una cadena`
 ```
 
 Esto permite escribir texto en distintas líneas sin usar el operador de concatenación +:
+
 ```ts
 `esto es una cadena
 en varias
@@ -103,10 +105,9 @@ let b: = 2;
 console.log(`La suma de a y b es ${a + b}`)
 ```
 
-${a + b} no se muestra de forma literal, sino que es una expresión que se evalúa y se devuelve el resultado. En este caso es 4\.
+${a + b} no se muestra de forma literal, sino que es una expresión que se evalúa y devuelve el resultado. En este caso es 4.
 
 Podemos ir un paso más allá y controlarlo con una función:
-
 
 ```ts
 let a = 50;
@@ -118,7 +119,7 @@ let total = sum `La suma de a y b es ${a + b} y la multiplicación es ${a * b}`
 let total; // Resultado: 560
 ```
 
-La definición de la función requiere un argumento del tipo *string[]* y otros del tipo del resultado de las expresiones, en este caso *number*. De esa forma, al ejecutarse la función _suma_ con la plantilla, la parte correspondiente a cadenas de caracteres sería conseguible desde el primer parámetro. El segundo sirve para conseguir los resultados de las expresiones entre llaves. El cuerpo de la función, aunque no sea necesario saber qué hace ahora, suma todos los números contenidos en el _array_ y devuelve el resultado.
+La definición de la función requiere un argumento del tipo _string\[\]_ y otros del tipo del resultado de las expresiones, en este caso _number_. De esa forma, al ejecutarse la función _sum_ con la plantilla, la parte correspondiente a cadenas de caracteres sería conseguible desde el primer parámetro. El segundo sirve para conseguir los resultados de las expresiones entre llaves. El cuerpo de la función, aunque no sea necesario saber qué hace ahora, suma todos los números contenidos en el array y devuelve el resultado.
 
 De una forma más gráfica:
 
@@ -159,21 +160,24 @@ let y: Number = new Number(1);
 let z: Number = x + y; // Error
 ```
 
-Para los tipos *boolean/Boolean* y *string/String* la elección es más complicada. No existen diferencias más allá de las incompatibilidades de inicialización. Pero teniendo en cuenta que es preferible usar *number* a *Number*, son recomendables *boolean* y *string* para conseguir coherencia en el código.
+Para los tipos _boolean/Boolean_ y _string/String_ la elección es más complicada. No existen diferencias más allá de las incompatibilidades de inicialización. Pero teniendo en cuenta que es preferible usar _number_ a _Number_, son recomendables _boolean_ y _string_ para conseguir coherencia en el código.
 
-Además los objetos también nos permiten usar los métodos útiles que incorporan los tipos objeto por lo que no perdemos funcionalidad. Esto es así porque JS hace una [conversión de tipos](../clases/confirmaciones_de_tipo__type_assertions.md).
+Además los primitivos también nos permiten usar los métodos útiles que incorporan los tipos objeto por lo que no perdemos funcionalidad. Esto es así porque JS hace una [conversión de tipos](../clases/confirmaciones_de_tipo__type_assertions.md).
 
-A su vez también hace lo inverso, convertir los objetos a primitivos. Eso es necesario para poder usar los operadores aritméticos. Pero aunque JS lo permita, TS lo comprueba en tiempo de compilación y lo muestra como un error. Si queremos obtener el valor primitivo de un objeto debemos usar el método *valueOf()*:
+A su vez también hace lo inverso, convertir los objetos a primitivos. Eso es necesario para poder usar los operadores aritméticos. Pero aunque JS lo permita, TS lo comprueba en tiempo de compilación y lo muestra como un error. Si queremos obtener el valor primitivo de un objeto debemos usar el método _valueOf\(\)_:
 
 ```ts
 let obj:String = new String("cadena objeto");
 let primitive = obj.valueOf();
 ```
 
-Si queremos hacer cálculos con *Number* lo más fácil, en realidad, es convertirlos:
+Si queremos hacer cálculos con _Number_ lo más fácil, en realidad, es convertirlos:
 
 ```ts
 let obj:Number = new Number(2);
 let obj2: Number = new Number(2);
 let sum:number = +objeto + +objeto2;
 ```
+
+
+

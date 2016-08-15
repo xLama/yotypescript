@@ -24,7 +24,7 @@ Ejecuta la siguiente iteración sin haber acabado la actual.
 ```ts
 let nombres = ["Carlos", "José", "Lama"];
 for (let index in nombres) { 
-  if ( nombres[index] == "José" ){ 
+  if ( nombres[index] === "José" ){ 
     continue; 
   }
   // Más código… No se ejecuta.

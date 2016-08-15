@@ -1,10 +1,10 @@
 ## Comparando funciones {#comparando-funciones}
 
-Las funciones se comparan de la misma forma que se sobrecargan. Simplemente deben coincidir en número de parámetros, tipo de los mismos y devolver el mismo tipo de dato. Los tipos no han de ser exactos, basta con que sean compatibles.
+Las funciones se comparan de la misma forma que se sobrecargan. Simplemente deben coincidir en número de parámetros, tipos de los mismos y devolver el mismo tipo de dato. Los tipos no han de ser exactos, basta con que sean compatibles.
 
 ```ts
-let func1: (x: number, y: number) => number = (x: number, y: number) => x * y;
-let func2: (x: number) => number = (x: number) => x;
+let func1 = (x: number, y: number) => x * y;
+let func2 = (x: number) => x;
 func1 = func2 // Correcto
 func2 = func1 // Incorrecto
 ```

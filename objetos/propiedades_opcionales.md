@@ -7,9 +7,12 @@ type Person = {name: string , age?: number }
 let carlos2: Person = { name: "Carlos" } // Correcto.
 ```
 
-La propiedad age es opcional y aunque no la hayamos declarado en el objeto literal no muestra ningún error.
+La propiedad *age* es opcional y aunque no la hayamos declarado en el objeto literal no muestra ningún error.
 
-Atención: El siguiente apartado (weak type) no es aplicable ni siquiera a la versión 1.7 del lenguaje. Se muestra aquí para dar una idea del rumbo que está tomando. Aún no hay fecha para la implementación de esta característica.
+
+> Atención: El siguiente apartado (weak type) no es aplicable ni siquiera a la versión 1.7 del lenguaje. Se muestra aquí para dar una idea del rumbo que está tomando. Aún no hay fecha para la implementación de esta característica.
+
+
 
 El principal problema que se plantea es qué ocurre cuando en un objeto tipo literal todas sus propiedades son opcionales. A esto se le llama un tipo débil (weak type):
 

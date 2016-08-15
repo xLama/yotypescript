@@ -2,23 +2,39 @@
 
 ¿En qué consiste?
 
-**class** A { **** mostrarLetra () { **** alert("A"); }****}
+```ts
+class A {
+    mostrarLetra() {
+        alert("A");
+    }
+}
+class B extends A {
+    mostrarLetra() {
+        alert("B");
+    }
+}
+```
 
-**class** B **extends** A { **** mostrarLetra () { **** alert("B"); }****}
-
-Tenemos dos clases: _A_ y _B_. _B_ hereda de _A_. Ambas tienen definido el método _mostrarLetra()_. En _A_ la ejecución de ese método muestra un alert con la letra A y en _B_ muestra la letra B.
+Tenemos dos clases: _A_ y _B_. _B_ hereda de _A_. Ambas tienen definido el método _mostrarLetra\(\)_. En _A_ la ejecución de ese método muestra un alert con la letra A y en _B_ muestra la letra B.
 
 Si hacemos esto:
 
-**var** a: A = **new** A();**var** b: B = **new** B();
+```ts
+let a = new A();  
+let b = new B();
+a.mostrarLetra();
+b.mostrarLetra();
+```
 
-a.mostrarLetra();b.mostrarLetra();
 
 Lo que obtendremos primero es A y después B. Algo lógico.
 
 Pero ¿y si hacemos esto?
 
-**var** a: A = **new** B();a.mostrarLetra();
+```ts
+let a: A = new B();
+a.mostrarLetra();
+```
 
 ¿Qué mostrará el alert? ¿“A” o “B”? La respuesta es “B”.
 
@@ -32,6 +48,7 @@ Tenemos esta jerarquía de clases:
 
 Alumno Persona Mamifero SerVivo
 
-**function** mostrarNombre(ser: SerVivo): **void** { ser.mostrarNombre();}
+**function** mostrarNombre\(ser: SerVivo\): **void** { ser.mostrarNombre\(\);}
 
-Ejecutamos el método _mostrarNombre()_ del parámetro. Cada una de las clases de la jerarquía tiene implementado el método _mostrarNombre_() ya sea porque lo ha heredado o porque lo ha sobreescrito. Por lo tanto sea cual sea el tipo que introduzcamos como parámetro en la llamada a la función nos ejecutará el del tipo introducido y no el de _SerVivo_. Esto está estrechamente relacionado con el [polimorfismo](polimorfismo.md).
+Ejecutamos el método _mostrarNombre\(\)_ del parámetro. Cada una de las clases de la jerarquía tiene implementado el método _mostrarNombre_\(\) ya sea porque lo ha heredado o porque lo ha sobreescrito. Por lo tanto sea cual sea el tipo que introduzcamos como parámetro en la llamada a la función nos ejecutará el del tipo introducido y no el de _SerVivo_. Esto está estrechamente relacionado con el [polimorfismo](polimorfismo.md).
+

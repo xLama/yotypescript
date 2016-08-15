@@ -4,4 +4,4 @@ Dada la naturaleza de la propagación de eventos, los no visuales sólo tienen u
 
 Un ejemplo claro de este tipo son los eventos que disparan los objetos de la clase _XMLHttpRequest_ (Ajax).
 
-El registrar un _handler_ estableciendo el capture a **true** en el método _addEventListener_ no supone ninguna diferencia.
+El registrar un _handler_ estableciendo el capture a *true* en el método _addEventListener_ no supone ninguna diferencia.

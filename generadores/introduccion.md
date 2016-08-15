@@ -10,7 +10,7 @@ Para declarar una función como generador se usa el operador * (asterisco):
 function* generator() {}
 ```
 
-Para hacer que se pause se utiliza la palabra reservada **yield.**
+Para hacer que se pause se utiliza la palabra reservada *yield.*
 
 ```ts
 function* generator() { 
@@ -43,13 +43,13 @@ gen.next(); // devuelve {value: undefined, done: true} "Carlos"
 
 El objeto que devuelve _next()_ es el mismo que vimos en los iteradores.
 
-En el ejemplo podemos ver que al ejecutar _next()_ se ha mostrado por consola el texto _José._ Como la siguiente sentencia de la función es **yield**, la función se pausa. ¿Hasta cuándo? Pues hasta que se invoca de nuevo el método _next()._ En ese caso la función continúa hasta que termine o hasta que encuentre otra sentencia **yield** donde de nuevo se pausaría.
+En el ejemplo podemos ver que al ejecutar _next()_ se ha mostrado por consola el texto _José._ Como la siguiente sentencia de la función es *yield*, la función se pausa. ¿Hasta cuándo? Pues hasta que se invoca de nuevo el método _next()._ En ese caso la función continúa hasta que termine o hasta que encuentre otra sentencia *yield* donde de nuevo se pausaría.
 
-Si te fijas, cuando llega al final de la función, el valor de la propiedad _done_ del objeto devuelto por _next()_ es **true**.
+Si te fijas, cuando llega al final de la función, el valor de la propiedad _done_ del objeto devuelto por _next()_ es *true*.
 
 Puedes crear funciones generadoras allí donde puedes crear funciones: declaraciones de funciones, expresiones de funciones, clases y funciones pertenecientes a objetos.
 
-Para devolver valores en la propiedad _value_ se debe escribir el valor después de **yield**:
+Para devolver valores en la propiedad _value_ se debe escribir el valor después de *yield*:
 
 ```ts
 function* generator() { 
@@ -62,7 +62,7 @@ gen.next(); // {value: José, done: false}
 gen.next(); // {value: Carlos, done: true}
 ```
 
-Podemos hacer que la función devuelva un valor con **return** que se comportará de la misma forma que **yield** con la diferencia de que la función ya no puede ser continuada, es decir, **return** no la pausa.
+Podemos hacer que la función devuelva un valor con *return* que se comportará de la misma forma que *yield* con la diferencia de que la función ya no puede ser continuada, es decir, *return* no la pausa.
 
 ```ts
 function* generator() {
@@ -104,7 +104,7 @@ for ( let n of numIterator(2387) ){
 }
 ```
 
-Es bastante más simple que el uso de iteradores. De esta forma tenemos la función generadora fuera del prototipo por lo que no podemos iterar directamente el número, ya sea con **for-of** o con el operador de expansión (…). Si queremos que también sea posible:
+Es bastante más simple que el uso de iteradores. De esta forma tenemos la función generadora fuera del prototipo por lo que no podemos iterar directamente el número, ya sea con *for-of* o con el operador de expansión (…). Si queremos que también sea posible:
 
 ```ts
 function* numIterator(num: number) { 

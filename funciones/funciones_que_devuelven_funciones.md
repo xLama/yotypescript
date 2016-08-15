@@ -8,6 +8,6 @@ function devolverFuncion(): (x: string) => number {
 }
 ```
 
-En este caso tenemos una función llamada _devolverFuncion_ sin parámetros. El tipo devuelto por la función es otra función que tiene como parámetro una variable del tipo **string** y su tipo de retorno es un **number**.
+En este caso tenemos una función llamada _devolverFuncion_ sin parámetros. El tipo devuelto por la función es otra función que tiene como parámetro una variable del tipo *string* y su tipo de retorno es un *number*.
 
 En el _return_ devolvemos una función flecha literalmente. _Fun_ queda tipada por inferencia.

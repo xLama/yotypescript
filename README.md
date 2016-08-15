@@ -1,9 +1,9 @@
-# Yo: TypeScript 1.8 {#yotypescriptquinta}
+# Yo: TypeScript 2.1 {#yotypescriptquinta}
 
 
 José Carlos Lama Ponce
 
-Quinta edición: mayo 2016
+Quinta edición: enero 2017
 
-Versión TypeScript: 1.8.10
+Versión TypeScript: 2.1
 

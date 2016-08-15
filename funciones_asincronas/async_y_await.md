@@ -1,12 +1,12 @@
 ## Async y await. {#async-y-await}
 
-Son dos las palabras reservadas para usarlas: **async** y **await**. Para declarar una función como asíncrona se debe anteponer la palabra a function.
+Son dos las palabras reservadas para usarlas: *async* y *await*. Para declarar una función como asíncrona se debe anteponer la palabra a function.
 
 ```ts
 async function asyncFunction(){}
 ```
 
-¿Qué conseguimos con esto? Lo que conseguimos es que lo devuelto por la función se envuelva en un **Promise** de forma automática y transparente para el desarrollador. Pero hay que tener claro que lo que devuelve en realidad no es un objeto Promise, sino el valor en sí.
+¿Qué conseguimos con esto? Lo que conseguimos es que lo devuelto por la función se envuelva en un *Promise* de forma automática y transparente para el desarrollador. Pero hay que tener claro que lo que devuelve en realidad no es un objeto Promise, sino el valor en sí.
 
 ```ts
 async function asyncFunction{ // El tipo devuelto es Promise<number>
@@ -14,7 +14,7 @@ async function asyncFunction{ // El tipo devuelto es Promise<number>
 }
 ```
 
-Pero la verdadera potencia no radica ahí, sino en el **await**. **Await** para la ejecución de la función hasta que se resuelva la operación. Para usar **await** la función debe devolver un Promise, ya sea de forma explícita o porque esa misma función también sea **async**:
+Pero la verdadera potencia no radica ahí, sino en el *await*. *Await* para la ejecución de la función hasta que se resuelva la operación. Para usar *await* la función debe devolver un Promise, ya sea de forma explícita o porque esa misma función también sea *async*:
 
 ```ts
 async function anotherAsyncFunction(){ 

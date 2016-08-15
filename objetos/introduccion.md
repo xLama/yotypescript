@@ -12,16 +12,17 @@ let objeto2: {}; // Objeto literal
 Y se puede inicializar así:
 
 ```ts
-let objeto: Object = new Object();
-let objeto: Object = {};
-let objeto: Object = {clave: "valor", clave2: "valor2"};
+let objeto = new Object();
+let objeto = {};
+let objeto = {clave: "valor", clave2: "valor2"}; // Las propiedades de éste ya no podrán ser otras
 ```
 
 Es un [tipo dinámico](../clases/objetos_dinamicos.md). Esto quiere decir que le podemos crear más claves-valor en tiempo de ejecución.
 
 ```ts
-let objeto: Object = {};
-objeto["clave1"] = "valor1";
+let obj= {};
+obj["key1"] = "value1";
 ```
 
 Hay que tener en cuenta las claves sólo pueden ser numéricas o cadenas de caracteres. El campo valor, sin embargo, puede ser de cualquier tipo.
+

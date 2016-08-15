@@ -15,4 +15,4 @@ Animal[0] = "Rabbit";
 Animal[0]; // Rabbit
 ```
 
-Como los **const enum** no son accesibles por índice numérico, no es posible hacer lo de arriba. Podemos concluir que son enumerados constantes.
+Como los *const enum* no son accesibles por índice numérico, no es posible hacer lo de arriba. Podemos concluir que son enumerados constantes.

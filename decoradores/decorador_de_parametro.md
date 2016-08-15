@@ -3,8 +3,8 @@
 Parámetros:
 
 *   target : Object - El prototype de la clase.
-*   propertyName : **string** | **symbol** - El nombre del atributo.
-*   parameterIndex : **number** – Número que determina la posición del parámetro.
+*   propertyName : *string* | *symbol* - El nombre del atributo.
+*   parameterIndex : *number* – Número que determina la posición del parámetro.
 
 Los parámetros también se pueden decorar:
 

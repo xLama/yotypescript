@@ -27,7 +27,7 @@ class Person {
   private name: string;
 }
 
-class Perro { 
+class Dog { 
   private name: string;
 }
 
@@ -38,7 +38,7 @@ person = dog; // Incorrecto
 dog = person; // Incorrecto
 ```
 
-No son compatibles porque tienen un miembro privado. No importa si lo tienen los dos o sólo uno, lo que importa es que lo tienen. Para que dos clases sean iguales teniendo miembros privados éstos deben ser los mismos.
+No son compatibles porque tienen un miembro privado. No importa si lo tienen los dos o sólo uno, lo que importa es que lo tienen. Para que dos clases sean iguales teniendo miembros privados estos deben ser los mismos.
 
 ```ts
 class Animal {
@@ -53,9 +53,9 @@ animal = dog; // Correcto
 dog = animal; // Correcto
 ```
 
-Es correcto porque el miembro privado de _Perro_ (aunque parezca que no tenga porque recordemos que los miembros privados no se heredan) es el mismo que el de _Animal_ ya que hereda de él. Si a _Perro_ le añadimos un miembro privado con el mismo nombre que el de _Animal_, no compilaría pues se llama igual y no lo permite.
+Es correcto porque el miembro privado de *Dog* (aunque parezca que no tenga porque recordemos que los miembros privados no se heredan) es el mismo que el de *Animal* ya que hereda de él. Si a *Dog* le añadimos un miembro privado con el mismo nombre que el de *Animal*, no compilaría pues se llama igual y no lo permite.
 
-Si a _Perro_ le añadimos un miembro privado de distinto nombre:
+Si a *Dog* le añadimos un miembro privado de distinto nombre:
 
 ```ts
 class Animal {
@@ -71,4 +71,4 @@ animal = dog; // Correcto
 dog = animal; // Incorrecto
 ```
 
-A _animal_ se le puede asignar _perro_ porque _Perro_ tiene todo lo de _Animal_, aunque también posee miembros adicionales. Pero a _perro_ no se le puede asignar _animal_ porque a _Animal_ le falta el miembro privado adicional que posee _Perro_, _raza_. La mecánica es la misma que en el apartado de las interfaces y objetos literales: el objeto con más miembros puede ser asignado al objeto con menos pero no al revés. Si los miembros fueran _protected_, el comportamiento sería el mismo.
+A *animal* se le puede asignar *perro* porque *Dog* tiene todo lo de *Animal*, aunque también posee miembros adicionales. Pero a *perro* no se le puede asignar _animal_ porque a *Animal* le falta el miembro privado adicional que posee *Dog*, _raza_. La mecánica es la misma que en el apartado de las interfaces y objetos literales: el objeto con más miembros puede ser asignado al objeto con menos pero no al revés. Si los miembros fueran *protected*, el comportamiento sería el mismo.

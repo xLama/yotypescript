@@ -146,7 +146,7 @@
 * [Funciones asíncronas](funciones_asincronas/README.md)
    * [Introducción](funciones_asincronas/introduccion.md)
    * [Async y await.](funciones_asincronas/async_y_await.md)
-   * [Await*.](funciones_asincronas/await.md)
+   * [Promise.all](funciones_asincronas/await.md)
 * [Decoradores](decoradores/README.md)
    * [Introducción](decoradores/introduccion.md)
    * [Decorador de clase](decoradores/decorador_de_clase.md)

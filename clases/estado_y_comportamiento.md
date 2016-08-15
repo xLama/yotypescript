@@ -32,22 +32,34 @@ class Persona {
 }
 ```
 
-Como podemos ver lo que se introduce como argumento al constructor es lo que en su implementación se le asigna a los atributos. Normalmente cuando instanciemos una clase debemos inicializar su atributos pues es lo que va a definir a ese objeto en particular y lo va a diferenciar del resto de objetos de la misma clase.
+Como podemos ver lo que se introduce como argumento al constructor es lo que en su implementación se le asigna a las propiedades. Normalmente cuando instanciemos una clase debemos inicializar sus propiedades pues es lo que va a definir a ese objeto en particular y lo va a diferenciar del resto de objetos de la misma clase.
 
-Hay que puntualizar que las clases no aceptan atributos opcionales.
+Hay que puntualizar que las clases también aceptan propiedades opcionales.
 
-**class** Persona {**** nombre?:**string**; apellido1: **string**; apellido2: **string** /* (…) */}
+```ts
+class Persona {
+    nombre?: string;
+    apellido1: string;
+    apellido2: string /* (…) */
+}
+```
 
 #### Otra forma de declarar atributos {#otra-forma-de-declarar-atributos}
 
-Los parámetros de entrada de un constructor pueden ser miembros de la clase (atributos) de forma automática sin declararlos de forma explícita.
+Los parámetros de entrada de un constructor pueden ser miembros de la clase (propiedades) de forma automática sin declararlos de forma explícita.
 
-**class** Persona { **constructor**(**private** nombre: **string**, **private** apellido1: **string**, **private** apellido2?: **string**) {}
-
-**public** mostrarNombre(): **void** { **** alert(**this**.nombre + " " + **this**.apellido1 + " " + **this**.apellido2);}****}
+```ts
+class Persona {
+    constructor(private nombre: string, private apellido1: string, private apellido2?: string) { }
+    public mostrarNombre(): void {
+        alert(this.nombre + " " + this.apellido1 + " " + this.apellido2);
+    }
+}
+```
 
 La diferencia ha sido la de escribir la palabra reservada _private_ (con _public_ y _protected_ también funciona) en la propia definición del método constructor. De esta forma estamos declarando de forma automática esos atributos como miembros de la clase. Y, a la hora de introducirlos como argumentos del constructor, ya se estarían inicializando.
 
+NUEVO DE LA 2.0 CONSTRUCTORES PRIVADOS
 El constructor siempre es público. Es el único caso en que se debe omitir. En algunos lenguajes de programación existen los constructores privados pero en TS no están soportados.
 
 ### El comportamiento {#el-comportamiento}
@@ -58,11 +70,20 @@ El constructor siempre es público. Es el único caso en que se debe omitir. En 
 
 Para el ejemplo crearemos un método llamado _decirNombre()_ que mostrará en un _alert()_ el nombre de la persona junto con sus apellidos.
 
-**class** Persona {
+```ts
+class Persona {
 
-nombre: **string**; apellido1: **string**; apellido2: **string**; **constructor**(nombre: **string**, apellido1: **string**, apellido2?: **string**) { **this**.nombre = nombre; **this**.apellido1 = apellido1; **this**.apellido2 = apellido2;}
+    nombre: string; apellido1: string; apellido2: string; constructor(nombre: string, apellido1: string, apellido2?: string) {
+        this.nombre = nombre;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
+    }
 
-mostrarNombre(): **void** { alert(**this**.nombre + " " + **this**.apellido1 + " " + **this**.apellido2); }****}
+    mostrarNombre(): void {
+        alert(this.nombre + " " + this.apellido1 + " " + this.apellido2);
+    }
+}
+```
 
 Puedes observar que muestra la concatenación de los atributos que hemos insertado como argumentos a la hora de instanciar la clase.
 
@@ -70,17 +91,23 @@ Bien, hemos creado unos atributos y un método que define un comportamiento. ¿C
 
 Al instanciar la clase:
 
-**var** persona: Persona = **new** Persona("Carlos", "Lama");
+```ts
+let persona: Persona = new Persona("Carlos", "Lama");
+```
 
 Podemos acceder a sus miembros con el nombre de la variable seguido de un punto, seguido del miembro al que deseemos acceder. Si es un atributo.
 
 Podemos leer el valor o modificarlo.
 
+```ts
 persona.nombre = "Carlos";
+```
 
 Si es una función podemos invocarla:
 
+```ts
 persona.mostrarNombre();
+```
 
 ### Operador this {#operador-this}
 

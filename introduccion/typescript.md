@@ -24,7 +24,7 @@ Hay ciertas características de TS que son traducibles a JS de una forma más o 
 
 El objetivo de TS, además de ofrecernos un lenguaje más cercano, es el de unificar las características de las distintas versiones de ECMAScript. Éstas se van sucediendo con el paso del tiempo añadiendo nuevas y buenas funcionalidades. TS intenta unificarlas añadiendo lo nuevo a las versiones anteriores, de forma que podamos usarlas en navegadores más antiguos. Es evidente que lo hace de forma que la funcionalidad en sí sea la misma, habiendo diferencias en el código generado.
 
-Para ejemplarizarlo, podemos tener en cuenta la sentencia _let._ Ésta permite declarar una variable cuyo ámbito es de bloque y no de función. No existe en ECMAScript 3 y 5 pero sí en la 6 y superiores. Si usamos esta característica, el JS generado será distinto si lo traducimos para 3 y 5 que si lo hiciéramos para la 6. En los dos primeros, seguiría usando la sentencia *var* (_let daría un error) y la comprobación del ámbito la haría TS en tiempo de compilación. Si observamos el código generado para la 6, veremos que no cambiaría con respecto original.
+Para ejemplarizarlo, podemos tener en cuenta la sentencia _let._ Ésta permite declarar una variable cuyo ámbito es de bloque y no de función. No existe en ECMAScript 3 y 5 pero sí en la 6 y superiores. Si usamos esta característica, el JS generado será distinto si lo traducimos para 3 y 5 que si lo hiciéramos para la 6. En los dos primeros, seguiría usando la sentencia *var* (_let daría un error) y la comprobación del ámbito la haría TS en tiempo de compilación. Si observamos el código generado para la 6, veremos que no cambiaría con respecto al original.
 
 No todos los navegadores webs con compatibles con todas las funcionalidades de todos los estándares de ECMAScript, por lo que hay que tener cuidado a la hora escribir nuestro código TS, pues el uso de ciertas características lo haría inejecutable en algunos navegadores.
 
@@ -45,7 +45,7 @@ El principal requsito para trabajar con TS es Node.js. Si instalamos el IDE Visu
 Una vez lo tengamos, podemos escribir en una consola de comandos:
 
 ```
-npm install -g typescript
+npm i -g typescript
 ```
 
 Y TS se instalará de forma automática. Desde la misma consola podemos comprobar que lo tenemos con el comando _tsc_ que nos mostrará la versión del compilador y la lista de parámetros que admite. El compilador se añade de forma automática a la variable PATH del sistema por lo que podemos invocarlo desde cualquier parte.
@@ -53,7 +53,8 @@ Y TS se instalará de forma automática. Desde la misma consola podemos comproba
 Si queremos instalar versiones posteriores a la oficiales y que todavía están en desarrollo y no cerradas:
 
 ```
-npm install -g typescript@next
+npm i -g typescript@beta
+npm i -g typescript@next
 ```
 
 Para compilar TS manualmente lo normal sería escribir:
@@ -62,4 +63,4 @@ Para compilar TS manualmente lo normal sería escribir:
 tsc -target ES5 --removeComments --declaration --out app.ts app.js
 ```
 
-Tiene bastantes opciones que es [útil conocer](../anexo_iv_tsconfigjson.md).
+Tiene bastantes opciones que son [útiles conocer](../anexo_iv_tsconfigjson.md).

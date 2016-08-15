@@ -25,7 +25,7 @@ No todos los elementos tienen su propia interfaz. Algunos deben tiparse con _HTM
 Selecciona todos los elementos que coincidan con el nombre de la etiqueta proporcionada como argumento.
 
 ```ts
-**var** divs = document.getElementsByTagName("div");
+let divs = document.getElementsByTagName("div");
 ```
 
 Es una función especializada porque introduciendo “div” como argumento el tipo devuelto es _NodeListOf&lt;HTMLDivelement&gt;_

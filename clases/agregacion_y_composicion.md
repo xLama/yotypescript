@@ -6,7 +6,12 @@ Si en la herencia establecíamos una relación de es-un, en la composición la r
 
 Cuando empezamos a ver los miembros de una clase, pudimos observar que no sólo podrían declararse variables de tipos primitivos o objeto, sino que podíamos usar los propios.
 
-**class** Persona { **private** direccion: Direccion; **private** identificacion: Nif;}
+```ts
+class Persona {
+    private direccion: Direccion;
+    private identificacion: Nif;
+}
+```
 
 En la clase _Alumno_ podemos declarar una variable dirección del tipo _Dirección_ que agrupe toda la información necesaria: calle, número, código postal, etc. Y otra del tipo _Nif_ que contiene el número, la letra, los dígitos de control, etc. Esa relación entre _Persona_ y _Dirección_ y _Persona_ y _Nif_ es lo que se conoce como usa-un.
 

@@ -91,17 +91,26 @@ let square: (x: number) => number = function (x: number): number { return x * x 
 
 Además de las formas de declarar una función que conocemos mediante _function_ o las expresiones _lambda_, podemos hacerlo mediante un objeto.
 
-**var** funcion: { (x: **number**): **string** };
+```ts
+let funcion: { (x: number): string };
+```
 
 Su equivalencia es forma corta es:
-
-**var** funcion: (x: **number**) => **string**;
+```ts
+let funcion: (x: number) => string;
+```
 
 Lo que aquí nos permite la primera forma es poder sobrecargar la función con más definiciones. La segunda forma sólo permite una.
 
-**var** funcion: { (x: **number**): **string**; (x: **string**): **number** } = sobrecargada
+```ts
+let funcion: { (x: number): string; (x: string): number } = sobrecargada
 
-**function** sobrecargada (x: **string**): **numberfunction** sobrecargada (x:**number**):**stringfunction** sobrecargada (x:**any**):**any**{ **return** "sobrecargada";}
+function sobrecargada(x: string): number
+function sobrecargada(x: number): string
+function sobrecargada(x: any): any {
+    return "sobrecargada";
+}
+```
 
 Hemos sobrecargado la _function_ funcion con otra definición. Hay que tener en cuenta que en el tipo no hay que definir una función que englobe a las demás.
 
@@ -109,7 +118,11 @@ Hemos sobrecargado la _function_ funcion con otra definición. Hay que tener en 
 
 Ahora imagina que tenemos una función cualquiera que tiene como parámetro otra función pero con una determinada definición. ¿Cómo lo haríamos?
 
-**function** ejemplo(func: (x: **string**) => **number**): **void** { **** //(...)}
+```ts
+function ejemplo(func: (x: string) => number): void {  
+  //(...)
+}
+```
 
 La función _ejemplo_ acepta como parámetro una función sólo si esa función acepta como parámetro un dato del tipo **string** y devuelve uno del tipo **number**.
 
@@ -117,22 +130,47 @@ La función _ejemplo_ acepta como parámetro una función sólo si esa función 
 
 Una función flecha conserva el contexto donde se ha declarado.
 
-**class** A { **** mostrar() { **this**.mostrarLetra(); } **** mostrarLetra() { **** alert("A"); }****}
+```ts
+class A {
+    show() {
+        this.showLetter();
+    }
+    showLetter() {
+        alert("A");
+    }
+}
 
-**var** a: A = **new** A();**var** mostrar = a.mostrar;mostrar();
+let a: A = new A(); 
+let show = a.show; 
+show();
+```
 
-La ejecución fallará porque el contexto de la ejecución _mostrar()_ es _window_ por lo que asigna _this_ a _window_. _Window_ no tiene la función _mostrarLetra()_ y falla.
+La ejecución fallará porque el contexto de la ejecución _show()_ es _window_ por lo que asigna _this_ a _window_. _Window_ no tiene la función _showLetter()_.
 
 Pero, sin embargo, escribimos esto:
 
-**class** A { **** mostrar = () => { **this**.mostrarLetra(); } **** mostrarLetra() { **** alert("A"); }****}
+```ts
+class A {
+    show = () => {
+        this.showLetter();
+    }
+    showLetter() {
+        alert("A");
+    }
+}
 
-**var** a: A = **new** A();**var** mostrar = a.mostrar;mostrar();
+let a: A = new A();
+let show = a.show;
+show();
+```
 
-Funcionará correctamente. Lo que hace el compilador es referenciar el _this_ en otra variable llamada __this_ justo antes de la declaración del método. Cuando el método se ejecuta y hace _this.mostrarLetra()_, ese _this_ es, en realidad, el __this_ que antes se creó. __this_ sí hace referencia al objeto en sí y no a _window_ por lo que puede ejecutar _this.mostrarLetra()_ sin problemas. Para entenderlo mejor es recomendable leer [este apartado.](../clases/estado_y_comportamiento.md#operador-this)
+Funcionará correctamente. Lo que hace el compilador es referenciar el _this_ en otra variable llamada __this_ justo antes de la declaración del método. Cuando el método se ejecuta y hace _this.showLetter()_, ese _this_ es, en realidad, el __this_ que antes se creó. __this_ sí hace referencia al objeto en sí y no a _window_ por lo que puede ejecutar _this.showLetter()_ sin problemas. Para entenderlo mejor es recomendable leer [este apartado.](../clases/estado_y_comportamiento.md#operador-this)
 
 ### Funciones anónimas autoejecutables {#funciones-an-nimas-autoejecutables}
 
 Este tipo de funciones se pueden invocar de forma automática encerrándolas entre paréntesis y añadiendo () al final. Mucho cuidado con hacer esto si queremos declarar y ejecutar de forma automática más de una función porque en este caso sí es necesario acabar la sentencia con ; (punto y coma)
 
-( (): **void** => { alert("función flecha")} )(); // ; necesario(**function** () { alert("función") })();
+```ts
+( (): void => { alert("función flecha")} )(); // ; necesario
+(function () { alert("función") })();
+```

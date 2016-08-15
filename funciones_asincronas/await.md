@@ -1,4 +1,4 @@
-## Await*. {#await}
+## Promise.all*. {#promise.all}
 
 Otra utilidad que tiene es la de controlar que todas las operaciones han sido ejecutadas de forma correcta antes de proceder. 
 
@@ -25,7 +25,7 @@ Con funciones asíncronas:
 ```ts
 async function callService() {
     try {
-        var results = await* [service1(), service2(), service3()];
+        var results = Promise.all( [service1(), service2(), service3()] );
         // Hacemos algo con results si ha ido bien
     }
     catch (error) { 
@@ -34,5 +34,14 @@ async function callService() {
 }
 ```
 
-Con await* la función espera hasta que completen todas las llamadas pasadas dentro del array. 
+Con Promise.all la función espera hasta que completen todas las llamadas pasadas dentro del array. 
 Results será un array en el que cada posición (en este caso 3) será el valor devuelvo (si lo hubiera) por cada una de las llamadas. La comodidad salta a la vista, ¿cierto?
+
+Si lo combinamos junto con la deconstrucción, se hace aún más sencillo:
+
+```ts
+ var [resultS1, resultS2, resultS3] = Promise.all( [service1(), service2(), service3()] );
+ ```
+Hemos descompuesto el array de resultados en 3 partes: resultS1, resultS2, resultS3, los cuales son los resultados de las llamadas a los servicios por separados. Si todo ha ido bien, en la siguiente línea se pueden utilizar  estas variables de forma independiente.
+
+La antigua sitaxis await* ha sido desechada en el estándar por lo que actualmente se debe utilizar Promise.all()

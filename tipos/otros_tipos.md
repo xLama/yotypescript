@@ -25,14 +25,14 @@ Representa valores que nunca pueden ocurrir.
 
 ### [Enum](../control_del_flujo/sentencias_utiles_para_los_bucles.md#757309351116418-_Enumerados) {#enum}
 
-Es una forma más amigable de representar los números.
+Es una forma más amigable de representar números.
 
 ```ts
 enum Animals { Dog, Cat };
 let dog = Animals.Dog;
 ```
 
-Perro representaría el 0, Gato el 1 y así sucesivamente.
+*Dog* representaría el 0, *Cat* el 1 y así sucesivamente.
 
 ### [Function](../enumerados/obteniendo_el_nombre_del_valor.md#757309351116418-_Funciones) {#function}
 
@@ -44,11 +44,11 @@ let funcion: Function;
 
 ### [Array](../modulos/evitar_que_una_clase_pueda_ser_superclase.md#757309351116418-_Anexo_I._) {#array}
 
-Los arrays son colecciones de datos. Podemos declarar un _array_ de dos formas:
+Los arrays son colecciones de datos. Podemos declarar un array de dos formas:
 
 ```ts
 let array1: Array<tipoDato>;
-let array2: tipoDato[];
+let array2: tipoDato[]; /* Personalmente uso esta forma */
 ```
 
 Son compatibles entre sí al 100% y se pueden asignar de forma recíproca.
@@ -56,14 +56,14 @@ Son compatibles entre sí al 100% y se pueden asignar de forma recíproca.
 tipoDato se refiere al tipo de dato de los objetos que va almacenar el array:
 
 ```ts
-let array1: Array<number>;
-let array2: Array<string>;
+let array1: number[];
+let array2: string[];
 ```
 
 Incluso otro array;
 
 ```ts
-let arrayDeArrays: Array<Array<number>>;
+let arrayDeArrays: number[][];
 ```
 
 Para inicializarlos tenemos, a su vez, dos formas:
@@ -76,10 +76,10 @@ let array2: number[] = [];
 En *array2* podríamos incluso introducir valores separados por comas:
 
 ```ts
-let array2: number[] = [1, 2, 3, 4, 90];
+let array2 = [1, 2, 3, 4, 90];
 ```
 
-No hace falta determinar el tamaño del array. Este tipo tiene un tamaño dinámico que puede ir creciendo según las necesidades.
+No hace falta determinar el tamaño del array. Este tipo tiene un tamaño dinámico que puede ir cambiando según las necesidades.
 
 ### Object {#object}
 
@@ -89,31 +89,47 @@ Toda la información relevante a este tipo está disponible en [este tema](../ob
 
 Sólo existen a partir de la ES6 por lo que para usarlo debes compilar TS con el target "ES6"
 
-Son valores únicos e inmutables, es decir, una vez declarados e inicializados no se pueden modificar y no puede haber dos iguales. Para instanciarlos se usa la función *Symbol*. No es posible utilizar el operador _new_ ya que daría un _TypeError_. El tipo es **symbol**
+Son valores únicos e inmutables, es decir, una vez declarados e inicializados no se pueden modificar y no puede haber dos iguales. Para instanciarlos se usa la función *Symbol*. No es posible utilizar el operador _new_ ya que daría un _TypeError_. El tipo es *symbol*
 
-```**var** aSymbol : **symbol** = Symbol();**var** otherSymbol : **symbol** = **new** Symbol(); // Error```
+```ts
+let aSymbol  = Symbol();
+let otherSymbol = **new** Symbol(); // Error
+```
 
-Se le puede pasar un **string** como argumento a la función _Symbol_ que sirve como identificador:
+Se le puede pasar un *string* como argumento a la función _Symbol_ que sirve como identificador:
 
-```**var** aSymbol : **symbol** = Symbol("aSymbol");```
+```ts
+let aSymbol = Symbol("aSymbol");
+```
 
-Esto no quiere decir que si creamos dos **symbol** con un mismo indentificador, éstos sean iguales:
+Esto no quiere decir que si creamos dos *symbol* con un mismo indentificador, éstos sean iguales:
 
-```Symbol("aSymbol") === Symbol("aSymbol"); // False```
+```ts
+Symbol("aSymbol") === Symbol("aSymbol"); // False
+```
 
-Una de las grandes utilidades de los **symbol** es que pueden ser usados como [propiedades de objetos](../objetos/propiedades_computadas_computed_properties.md#propiedades-symbol). Además existen los llamados “bien conocidos” que son **symbol** predefinidos que sirven para identificar funcionalidades específicas, como los [iteradores.](../iteradores/README.md)
+Una de las grandes utilidades de los *symbol* es que pueden ser usados como [propiedades de objetos](../objetos/propiedades_computadas_computed_properties.md#propiedades-symbol). Además existen los llamados “bien conocidos” que son *symbol* predefinidos que sirven para identificar funcionalidades específicas, como los [iteradores.](../iteradores/README.md)
 
 ### Tipos Alias. (Alias Types) {#tipos-alias-alias-types}
 
 Este tipo es simplemente llamar de otra forma a un tipo ya definido. Se usa la palabra reservada _type._ Es útil para los tipos unión e intersección
 
-**type** numberAndString = **number** | **string**;**var** g :numberAndString // Es del tipo string | number
+```ts
+type numberAndString = number | string;
+let numstr :numberAndString // Es del tipo string | number
+```
 
 También es compatible con los [genéricos](../genericos/README.md):
+```ts
+class Collection<T> {
+	private list: T[];
+}
+type List<T> = T[] | Collection<T>;
+type ListNumber = List<number>;
 
-**class** Collection&lt;T&gt; { **private** list:T[];} **type** List&lt;T&gt; = T[] | Collection&lt;T&gt; ;**type** ListNumber = List<**number**> ;
-
-**var** list: ListNumber = []; **var** list2: ListNumber = **new** Collection<**number**>();
+let list: ListNumber = [];
+let list2: ListNumber = new Collection<number>();
+```
 
 ### Tuple Types (Tipos tupla) {#tuple-types-tipos-tupla}
 

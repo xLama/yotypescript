@@ -82,7 +82,7 @@ let str4: String = 'Esto es una cadena';
 
 ### Template Strings (cadenas plantilla) {#template-strings-cadenas-plantilla}
 
-Como hemos visto en el apartado anterior, una cadena de caracteres se inicializa de forma literal con “ (comillas dobles) o ‘ (comillas simple). Existe una tercera forma de inicialización con el acento grave `.
+Como hemos visto en el apartado anterior, una cadena de caracteres se inicializa de forma literal con “ (comillas dobles) o ‘ (comillas simples). Existe una tercera forma de inicialización con el acento grave `.
 
 ```ts
 `esto es una cadena`
@@ -103,7 +103,7 @@ let b: = 2;
 console.log(`La suma de a y b es ${a + b}`)
 ```
 
-${a + b} no se muestra de forma literal, sino que es una expresión que se evalúa y se devuelve el resultado. En este caso es 4\.
+${a + b} no se muestra de forma literal, sino que es una expresión que se evalúa y devuelve el resultado. En este caso es 4.
 
 Podemos ir un paso más allá y controlarlo con una función:
 
@@ -118,7 +118,7 @@ let total = sum `La suma de a y b es ${a + b} y la multiplicación es ${a * b}`
 let total; // Resultado: 560
 ```
 
-La definición de la función requiere un argumento del tipo *string[]* y otros del tipo del resultado de las expresiones, en este caso *number*. De esa forma, al ejecutarse la función _suma_ con la plantilla, la parte correspondiente a cadenas de caracteres sería conseguible desde el primer parámetro. El segundo sirve para conseguir los resultados de las expresiones entre llaves. El cuerpo de la función, aunque no sea necesario saber qué hace ahora, suma todos los números contenidos en el _array_ y devuelve el resultado.
+La definición de la función requiere un argumento del tipo *string[]* y otros del tipo del resultado de las expresiones, en este caso *number*. De esa forma, al ejecutarse la función *sum* con la plantilla, la parte correspondiente a cadenas de caracteres sería conseguible desde el primer parámetro. El segundo sirve para conseguir los resultados de las expresiones entre llaves. El cuerpo de la función, aunque no sea necesario saber qué hace ahora, suma todos los números contenidos en el array y devuelve el resultado.
 
 De una forma más gráfica:
 
@@ -161,7 +161,7 @@ let z: Number = x + y; // Error
 
 Para los tipos *boolean/Boolean* y *string/String* la elección es más complicada. No existen diferencias más allá de las incompatibilidades de inicialización. Pero teniendo en cuenta que es preferible usar *number* a *Number*, son recomendables *boolean* y *string* para conseguir coherencia en el código.
 
-Además los objetos también nos permiten usar los métodos útiles que incorporan los tipos objeto por lo que no perdemos funcionalidad. Esto es así porque JS hace una [conversión de tipos](../clases/confirmaciones_de_tipo__type_assertions.md).
+Además los primitivos también nos permiten usar los métodos útiles que incorporan los tipos objeto por lo que no perdemos funcionalidad. Esto es así porque JS hace una [conversión de tipos](../clases/confirmaciones_de_tipo__type_assertions.md).
 
 A su vez también hace lo inverso, convertir los objetos a primitivos. Eso es necesario para poder usar los operadores aritméticos. Pero aunque JS lo permita, TS lo comprueba en tiempo de compilación y lo muestra como un error. Si queremos obtener el valor primitivo de un objeto debemos usar el método *valueOf()*:
 

@@ -5,21 +5,21 @@ Sólo puede estar formado por letras, números y los símbolos $ (dólar) y _ (g
 Ejemplos correctos de variables:
 
 ```ts
-var variable1;
-var variable2;
-var numeroDeElementos;
-var ლ_ಠ益ಠ_ლ = 65;
+let variable1;
+let variable2;
+let numeroDeElementos;
+let ლ_ಠ益ಠ_ლ = 65;
 ```
 
 Ejemplos erróneos:
 
 ```ts
-var var; /* Palabra reservada */
+let var; /* Palabra reservada */
 var 1cosa; /* El primer carácter es un número */
 ```
 
 Se pueden declarar varias en la misma línea separadas por coma.
 
 ```ts
-var variable1, variable2, variable3;
+let variable1, variable2, variable3;
 ```

@@ -383,8 +383,25 @@ No se puede tener más de una expression de guarda por función. Si no entiendes
 
 ### Guardas basadas en this {#guardas-basadas-en-this}
 
-Simplemente producen estrechamiento al tipo de this si se cumple la condición. Esto es útil en contadas ocasiones porque parte de la premisa que una clase padre conoce a sus clases hijas y eso, desde un punto de vista de diseño de software, no es recomendable. Pero eso no quiere decir que sea algo inútil. Las guardas basadas en this siguen la expresión “this is C”, muy parecida a la anterior “x is C”, pero ahora x es this, porque estas guardas se utilizan en métodos.
+Simplemente producen estrechamiento al tipo de *this* si se cumple la condición. Esto es útil en contadas ocasiones porque parte de la premisa que una clase padre conoce a sus clases hijas y eso, desde un punto de vista de diseño de software, no es recomendable. Pero eso no quiere decir que sea algo inútil. Las guardas basadas en *this* siguen la expresión “this is C”, muy parecida a la anterior “x is C”, pero ahora *x* es *this*, porque estas guardas se utilizan en métodos.
 
-class Structure { isDirectory() : this is Directory { return this instanceof Directory} isFile() : this is File { return this instanceof File}}class File extends Structure {}class Directory extends Structure {}let file : Structure = // Código para leer una estructura
+```ts
+class Structure {
+	isDirectory(): this is Directory {
+		return this instanceof Directory
+	}
+	isFile(): this is File {
+		return this instanceof File
+	}
+}
+class File extends Structure { }
+class Directory extends Structure { }
+let file: Structure = // Código para leer una estructura
 
-if (file.isFile()){ file.studentId; // Aquí file es un Directory } else if (file.isDirectory()){ file.teacherId; // Aquí file es un File }
+if (file.isFile()) {
+	file.studentId; // Aquí file es un Directory 
+}
+else if (file.isDirectory()) {
+	file.teacherId; // Aquí file es un File 
+}
+```

@@ -11,4 +11,4 @@ let surname;
 
 Puedes declarar una variable en cualquier momento. Aunque lo más recomendable es que se declaren todas antes de empezar la lógica que estemos desarrollando. De esta forma conseguiremos un código mejor estructurado y legible.
 
-La diferencia entre _var y let_ se discute en [este apartado](ambito_de_una_variable.md). Como normal genera, y así serán los ejemplos de este libro, se recomienda usar *let*.
+La diferencia entre *var* y *let* se discute en [este apartado](ambito_de_una_variable.md). Como normal genera, y así serán los ejemplos de este libro, se recomienda usar *let*.

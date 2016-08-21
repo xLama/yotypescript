@@ -1,6 +1,6 @@
 ## Destructuring (deconstrucción) {#destructuring-deconstrucci-n}
 
-Permite manipular _arrays_ y objetos de una forma fácil y amena.
+Permite manipular *arrays* y objetos de una forma fácil y amena.
 
 ### Arrays {#arrays}
 
@@ -41,7 +41,7 @@ Además podemos ignorar valores no deseados:
 function numbers() {
     return [1, 2, 3]
 }
-let [x, , z] = numbers();// Sólo obtenemos x, z.
+let [x, , z] = numbers();// Sólo obtenemos 1 y 3.
 ```
 
 ### Objetos {#objetos}
@@ -53,7 +53,7 @@ let person = { name: "José Carlos", surname: "Lama" };
 let {name, surname } = person;
 ```
 
-Se han creado dos variables _name_ y _surname_,inicializados con los valores correpondientes a los atributos del mismo nombre. El compilador mostraría un error si cambiaráramos algún nombre:
+Se han creado dos variables *name* y *surname*,inicializados con los valores correpondientes a los atributos del mismo nombre. El compilador mostraría un error si cambiáraramos algún nombre:
 
 ```ts
 let person = { name: "José Carlos", surname: "Lama" };

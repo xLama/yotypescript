@@ -85,9 +85,7 @@ function countLines(text?: string[]): number {
         if (line.length !== 0) {
             count = count + 1; // count usada antes de ser inicializada
         }
-
     }
-
     return count; // count usada antes de ser inicializada
 }
 
@@ -110,7 +108,6 @@ function countLines(text?: string[]): number {
             count = count + 1;
         }
     }
-
     return count;
 }
 ```
@@ -126,7 +123,6 @@ function countLines(text?: string[]): number {
             count = count + 1;
         }
     }
-
     return count;
 }
 ```

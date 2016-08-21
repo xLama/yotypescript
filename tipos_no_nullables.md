@@ -74,15 +74,111 @@ function countWords(str: string | null) {
     }
 }
 ```
-¿Qué ventajas supone? Una de las grandes ventajas es que , gracias al control del fujo, podemos evitar busg que de otra forma solo serian detectables 
-en tiempo de ejecución.
+¿Qué ventajas supone? El control de bugs, como has podido observar. Además son bugs que hasta ahora sólo eran detectables en tiempo de ejecución.
 
-Un ejemplo sencillo para ir entrando en materia.
+Un ejemplo más elaborado explicado paso a paso tomado de una conferencia que dio Anders Hejlsberg:
 
-function getLast(name: string){
-    return name....  // Error. Object es posiblemente undefined
+```ts
+function countLines(text?: string[]): number {
+    let count: number;
+    for (const line of text) { // Object (text) es posiblemente undefined
+        if (line.length !== 0) {
+            count = count + 1; // count usada antes de ser inicializada
+        }
 
+    }
 
+    return count; // count usada antes de ser inicializada
 }
 
-¿Por qué ese error? Como hemos dicho, ni null ni undefined son asignables a string
+let a = countLines(["one", "two", "", "three"]);
+let b = countLines(["hello", null, "world"]); // El array no admite nullos.
+let c = countLines();
+```
+
+Para solucionar esto habría que darnos cuenta de dos cosas: podemos no pasar argumento alguna, ya que es opcional y eso lo convierte en *undefined* por defecto. Y que el argumento es un array de string que no admite valores *null* ni *undefined*
+
+Podemos empezar por solucionar el problema con *text*
+
+```ts
+function countLines(text?: string[]): number {
+    if (!text) return;
+
+    let count: number;
+    for (const line of text) { // Object (text) es posiblemente undefined
+        if (line.length !== 0) {
+            count = count + 1;
+        }
+    }
+
+    return count;
+}
+```
+Con el *if* nos hemos asegurado de que *text* no es *undefined*, y si no lo es, lo único que puede ser es un array el cual podemos iterar. Pero hay otro problema. Cuando una función devuelve algo vacío, como en este caso, lo que en realidad devuelve es *undefined* y *undefined* no es asignable a *number*. Así que hay que solucionarlo:
+
+```ts
+function countLines(text?: string[]): number {
+    if (!text) return 0; 
+
+    let count: number;
+    for (const line of text) { 
+        if (line.length !== 0) {
+            count = count + 1;
+        }
+    }
+
+    return count;
+}
+```
+
+Ahora se devuelve 0 si *text* es undefined. A partir de esa línea, el compilador reconocerá *text* como *string[]* y no como *string[] | undefined*
+
+Ahora lo que queda es solucionar el problema con *count*. Simplemente hay que inicializarla:
+
+```ts
+function countLines(text?: string[]): number {
+    if (!text) return 0; 
+    let count = 0;
+    for (const line of text) { 
+        if (line.length !== 0) {
+            count = count + 1;
+        }
+    }
+    return count;
+}
+```
+
+Y con esto el código no tiene bugs.
+
+¿Qué pasaría si quisiéramos que el parámetro fuera del tipo (string | null)[]? 
+
+
+```ts
+function countLines(text?: (string | null)[]): number {
+    if (!text) return 0; 
+    let count = 0;
+    for (const line of text) { 
+        if (line.length !== 0) { // Object (line) es posiblemente null
+            count = count + 1;
+        }
+    }
+    return count;
+}
+```
+
+Nos daría el error en *line* pues podría ser *null*. Para solucionarlo simplemente hay que asegurarnos de que *line* no es *null*.
+
+
+```ts
+function countLines(text?: (string | null)[]): number {
+    if (!text) return 0; 
+    let count = 0;
+    for (const line of text) { 
+        if (line && line.length !== 0) { 
+            count = count + 1;
+        }
+    }
+    return count;
+}
+```
+Con *if (line && line.length !== 0)* es suficiente para comprobarlo. Ahora dentro del bloque *if*, *line* es *string*.

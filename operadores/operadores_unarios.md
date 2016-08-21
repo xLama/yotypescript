@@ -4,7 +4,7 @@ Los operadores unarios son aquéllos que sólo necesitan un operando para poder 
 
 ### Operadores ++ y -- {#operadores-y}
 
-Sólo para **any**_,_ **number** _y_ **enum**.
+Sólo para *any*, *number* y *enum*.
 
 Son los llamados incremento (++) y decremento (--). Sirven para sumar o restar una unidad a un número. A su vez, dependiendo de dónde lo escribamos, pueden ser preincremento/predecremento o postincremento/postdecremento.
 
@@ -33,7 +33,7 @@ let num = 1;
 let num2 = --num;
 ```
 
-¿Cuál será el valor de _num2_? 0\. ¿Por qué es 0? Porque primero se ejecuta el operador, es decir, se reduce en 1 la variable _num_ y luego se asigna a _num2_.
+¿Cuál será el valor de *num2*? 0\. ¿Por qué es 0? Porque primero se ejecuta el operador, es decir, se reduce en 1 la variable *num* y luego se asigna a *num2*.
 
 Pero si hacemos esto:
 
@@ -42,9 +42,9 @@ let num = 1;
 let num2 = num--;
 ```
 
-El valor de _num2_ será 1\. Pues primero se ha asignado el valor de _num_ a _num2_ y después se la ha restado uno.
+El valor de *num2* será 1\. Pues primero se ha asignado el valor de *num* a *num2* y después se la ha restado uno.
 
-Si se usa con **any** sólo tiene sentido si almacena un número o una cadena que representa un número.
+Si se usa con *any* sólo tiene sentido si almacena un número o una cadena que representa un número.
 
 ```ts
 let example: any = 10;
@@ -58,18 +58,20 @@ example ++; // NaN. No puede sumarle 1 a la letra a```
 
 ### Operadores +, – {#operadores}
 
-Sólo sirven para **number**,**string**,**any** y **enum**
+Sólo sirven para *number*,*string*,*any* y *enum*
 
-Convierten un valor del tipo **any** a **number**.
+Convierten un valor del tipo *any* a *number*.
 
 ```ts
 let num = +"1"; // string “1” a number 1
 let num2 = -"1"; // string “1” a number -1
 ```
 
-El operador - también puede usarse con **number** para negativizar.
+El operador - también puede usarse con *number* para negativizar.
 
-```**var** num: **number** = -1;```
+```ts
+let num = -1;
+```
 
 ### Operador ~ {#operador}
 
@@ -83,7 +85,7 @@ let z = ~~10; // 10. El complemento del complemento es el número original */
 
 ### Operador ! {#operador-0}
 
-Sirve para negar una expresión o un tipo de datos **boolean** o _Boolean_.
+Sirve para negar una expresión o un tipo de datos *boolean* o *Boolean*.
 
 Si tenemos esto:
  
@@ -92,15 +94,15 @@ let truly = true; // true
 let falsy = !truly; // false
 ```
 
-Si negamos **true**, lo convertiremos en **false**. Si negamos **false** lo convertiremos en **true**.
+Si negamos *true*, lo convertiremos en *false*. Si negamos *false* lo convertiremos en *true*.
 
-También puede ser usado para convertir a **boolean**.
+También puede ser usado para convertir a *boolean*.
 
 ```ts
 let truly = !"true";
 ```
 
-Estamos convirtiendo el **string** “true” a **boolean****false**. Si queremos convertirlo a **boolean****true**, basta con negar dos veces.
+Estamos convirtiendo el *string* “true” a *boolean**false*. Si queremos convertirlo a *boolean**true*, basta con negar dos veces.
 
 ```ts
 let falsy = !!"true";
@@ -110,9 +112,9 @@ let falsy = !!"true";
 
 Borra propiedades de objetos o elementos de un array.
 
-Si se borra la posición de un array, éste no se redimensiona, sino que convierte esa posición en _undefined_.
+Si se borra la posición de un array, éste no se redimensiona, sino que convierte esa posición en *undefined*.
 
-Devuelve **true** o **false** dependiento de si ha podido eliminar o no el elemento.
+Devuelve *true* o *false* dependiento de si ha podido eliminar o no el elemento.
 
 ```ts
 let x = 1;
@@ -124,9 +126,9 @@ delete obj["x"] // true
 
 ### Operador void {#operador-void}
 
-Evalúa una expression cualquiera y siempre devuelve _undefined_.
+Evalúa una expression cualquiera y siempre devuelve *undefined*.
 
-Suele usarse en el _href_ de los enlaces anchor para realizar alguna acción evitando que se comporte por defecto.
+Suele usarse en el *href* de los enlaces anchor para realizar alguna acción evitando que se comporte por defecto.
 
 ```html
 <a href="javascript:void(document.body.style.backgroundColor='green');">Click here for green background</a>
@@ -134,9 +136,9 @@ Suele usarse en el _href_ de los enlaces anchor para realizar alguna acción evi
 
 ### Operador … (spread) {#operador-spread}
 
-Expande un _array._ Ni más ni menos. De esta forma evitamos el uso de bucles.
+Expande un *array.* Ni más ni menos. De esta forma evitamos el uso de bucles.
 
-Se puede utilizar para añadir los elementos de un _array_ en otro en el orden que queramos:
+Se puede utilizar para añadir los elementos de un *array* en otro en el orden que queramos:
 
 ```ts
 let numbers  = [1,2];
@@ -151,7 +153,7 @@ let numbers: number[] = [4,5,9,10];
 sum(1, ...numbers); // pasamos el array expandido
 ```
 
-Incluso después de usar el _array_, podemos seguir pasando argumentos:
+Incluso después de usar el *array*, podemos seguir pasando argumentos:
 
 ```ts
 function sum (a: number, ...more: number ){ }
@@ -167,6 +169,6 @@ let number = [4,5];
 sum(...numbers);
 ```
 
-Siempre se necesita que uno de los parámetros use también el operador … Con él conseguimos pasar un _array_ como argumento hacia una función que admite infinitos parámetros, y sin usar bucles.
+Siempre se necesita que uno de los parámetros use también el operador … Con él conseguimos pasar un *array* como argumento hacia una función que admite infinitos parámetros, y sin usar bucles.
 
-Realmente lo que hace es iterar el iterable (en este caso un _array_).
+Realmente lo que hace es iterar el iterable (en este caso un *array*).

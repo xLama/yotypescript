@@ -1,7 +1,7 @@
 # Tipos no nullables
 
 
-Para activar esta característica se debe hacer desde el archivo tsconfig.json stricnullshceck true...
+Para activar esta característica se debe hacer desde el archivo tsconfig.json strictNullChecks *true*
 
 ¿Qué es lo que hace? Hemos estudiado que hay una compatibilidad de tipos predefinida en el lenguaje, es decir, any es compatible con todos los tipos, object (sin propiedades) también,
 string, number y boolean solo con los suyos y así sigue. Lo que quizás no te has percatado es que puedes asignar el valor null o undefined a cualquier tipo. Y cuando

@@ -2,7 +2,7 @@
 
 El funcionamiento es el que sigue:
 
-Un objeto literal se considera fresco en cuanto se inicializa. Esa frescura desaparece cuando se realiza una confirmación de tipo (_type assertion_). Sólo las propiedades de los objetos frescos no capturados en variables son comparados para comprobar que no tienen más propiedades que las de su tipo, siempre que éste (el tipo) no sea el objeto vacío {}, por lo que la comparación ya no se realiza.
+Un objeto literal se considera fresco en cuanto se inicializa. Esa frescura desaparece cuando se realiza una confirmación de tipo (*type assertion*). Sólo las propiedades de los objetos frescos no capturados en variables son comparados para comprobar que no tienen más propiedades que las de su tipo, siempre que éste (el tipo) no sea el objeto vacío {}, por lo que la comparación ya no se realiza.
 
 Expliquemos paso por paso.
 

@@ -34,7 +34,7 @@ let sym : symbol = Symbol("sym");
 let obj: {} = { [sym] : "symbol"};
 ```
 
-¿Qué nos aporta? Las propiedades que sean **symbol** no son accesibles de forma habitual, esto es a través de JSON.stringify, usando el método Object.getOwnPropertyNames o iterándolo con un for. Es “invisible” por lo que podría usarse para identificar a un objeto (o grupo de ellos) de forma unívoca a la vez que su valor no es manipulable de una forma sencilla:
+¿Qué nos aporta? Las propiedades que sean *symbol* no son accesibles de forma habitual, esto es a través de *JSON.stringify*, usando el método *Object.getOwnPropertyNames* o iterándolo con un for. Es “invisible” por lo que podría usarse para identificar a un objeto (o grupo de ellos) de forma unívoca a la vez que su valor no es manipulable de una forma sencilla:
 
 ```ts
 let metadata : symbol = Symbol("medatada");
@@ -46,13 +46,13 @@ for (let value in obj){
 }
 ```
 
-La forma de obtener las propiedades que sean **symbol** es la siguiente:
+La forma de obtener las propiedades que sean *symbol* es la siguiente:
 
 ```ts
 Object.getOwnPropertySymbols(obj); // [Symbol(medatada)]
 ```
 
-Por supuesto podemos obtener su valor con el **symbol:**
+Por supuesto podemos obtener su valor con el *symbol:*
 
 ```ts
 obj[metadata]; // {date: /*...*/}

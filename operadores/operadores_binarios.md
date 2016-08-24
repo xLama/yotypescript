@@ -66,7 +66,7 @@ Se representa ||
 
 Será true si alguno de los operandos es true.
 
-| expresión1 | expresión2 | expresión1 || expresión2 |
+| expresión1 | expresión2 | expresión1 OR expresión2 |
 | --- | --- | --- |
 | true | true | tue |
 | true | false | true |

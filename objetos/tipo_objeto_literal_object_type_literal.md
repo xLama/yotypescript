@@ -27,7 +27,7 @@ Para poder saltarnos la restricción de número de propiedades, podemos hacer un
 
 ```ts
 type obj = {a: string , n: number }
-let a : obj = { cad: "cadena", n : 1 }
-let b : obj = <obj> { cad: "cadena", n : 1,x: 1} 
-let c : obj = <obj> { cad: "cadena" }
+let a : obj = { cad: "cadena", n : 1 };
+let b : obj = { cad: "cadena", n : 1,x: 1} as obj; 
+let c : obj = { cad: "cadena" }  as obj;
 ```

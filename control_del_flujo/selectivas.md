@@ -9,7 +9,7 @@ if (/*condición*/) {
   //Código 
 }
 let x = 5;
-if (x == 5) { 
+if (x === 5) { 
   /* Se ejecuta si x es igual a 5 */
 }
 ```
@@ -17,7 +17,7 @@ if (x == 5) {
 Se puede usar el bloque _else_ que engloba todo lo que no lo hace la condición original.
 
 ```ts
-if(x == 5) {
+if(x === 5) {
   /* Se ejecuta si x es igual a 5 */
 }
 else{ 
@@ -28,10 +28,10 @@ else{
 Además se puede usar el bloque _else if_ para determinar más casos.
 
 ```ts
-if(x == 5){ 
+if(x === 5){ 
   // Se ejecuta si x es igual a 5 
 }
-else if (x == 6) { 
+else if (x === 6) { 
   // Si es igual a 6 
 }
 else { 
@@ -44,7 +44,7 @@ En la condición puedes usar todos los operadores de comparación que quieras ju
 ```ts
 let x = 5;
 let y = 10;
-if (x == 5 && y == 10) {
+if (x === 5 && y === 10) {
   /* Se ejecuta si x es igual a 5 y, además, y es igual a 10 */
 }
 ```

@@ -1,6 +1,6 @@
 ## Funciones especializadas {#funciones-especializadas}
 
-Son aquéllas que poseen un parámetro con valor por defecto y ese valor es un **string**.
+Son aquéllas que poseen un parámetro con valor por defecto y ese valor es un *string*.
 
 ```ts
 function especializada(name: "espe"): string;
@@ -26,4 +26,4 @@ function especializada(name: string): number {
 }
 ```
 
-Y no lo es porque la segunda definición tiene como parámetro un **number** el cual no es compatible con **string**_._ A su vez es necesaria una tercera definición que es la que contendrá el cuerpo de la función con la implementación de la misma.
+Y no lo es porque la segunda definición tiene como parámetro un *number* el cual no es compatible con *string*_._ A su vez es necesaria una tercera definición que es la que contendrá el cuerpo de la función con la implementación de la misma.

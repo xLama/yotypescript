@@ -72,9 +72,9 @@ public setName(name:string):void {
 }
 ```
 
-El método _getName()_ devuelve el nombre, por ello el tipo de retorno debe ser el mismo que el de _nombre_. El método _setName(name:_ **string**_)_ no devuelve nada porque se usa para establecer un nuevo valor a _nombre_. Se exige pasar como argumento una variable del tipo del atributo.
+El método _getName()_ devuelve el nombre, por ello el tipo de retorno debe ser el mismo que el de _nombre_. El método _setName(name:_ *string*_)_ no devuelve nada porque se usa para establecer un nuevo valor a *name*. Se exige pasar como argumento una variable del tipo de la propiedad.
 
-¿Por qué se hace así? De esta forma podemos hacer comprobaciones antes de asignar valores a los atributos del objeto. Si pudiéramos asignar libremente, es posible que pudieran contener valores no deseados.
+¿Por qué se hace así? De esta forma podemos hacer comprobaciones antes de asignar valores a las propiedades del objeto. Si pudiéramos asignar libremente, es posible que pudieran contener valores no deseados.
 
 En este caso un nombre no puede contener números, es absurdo. Como un _string_ acepta como cadena cualquier cosa, habría que comprobar que no contiene números. En el caso de que los contenta no se asigna.
 
@@ -94,24 +94,24 @@ Es una forma muy interesante de construir _getters_ y _setters_ pues sintáctica
 En el apartado anterior hacíamos esto:
 
 ```ts
-public getNombre():string{ 
-    return this.nombre;
+public getName():string{ 
+    return this.name;
 }
 
-public setNombre(nombre:string):void {
-    this.nombre = nombre;
+public setName(name:string):void {
+    this.name = name;
 }
 ```
 
 Ahora podemos hacer esto:
 
 ```ts
-public get nombre():string{ 
-    return this.nombre;
+public get name():string{ 
+    return this.name;
 }
 
-public set nombre(nombre:string) {
-    this.nombre = nombre;
+public set name(name:string) {
+    this.name = name;
 }
 ```
 
@@ -119,7 +119,7 @@ _get_ y _set_ son palabras reservadas del lenguaje. Usadas en un método seguido
 
 Hay que tener en cuenta que el nombre del _getter_ y _setter_ implícito no puede coincidir con el del atributo pues nos daría un error de duplicado.
 
-Para evitar esto lo que se suele hacer es anteponer un guion bajo en los nombres de los atributos. Así quedaría la clase _Persona_ sólo con un atributo para hacerlo más simple:
+Para evitar esto lo que se suele hacer es anteponer un guion bajo en los nombres de las propiedades. Así quedaría la clase *Person* sólo con un atributo para hacerlo más simple:
 
 ```ts
 class Person {

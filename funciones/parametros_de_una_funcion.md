@@ -16,7 +16,7 @@ _listaParametros_ representa una lista de parámetros separados por coma. Los pa
 funcion (x: number, z: number) { }
 ```
 
-Hemos declarado dos parámetros llamados _x_ y _z_ respectivamente del tipo **number**. Esto quiere decir que para poder utilizar esa función debemos pasarle como argumentos dos números o algún tipo de dato compatible con **number**.
+Hemos declarado dos parámetros llamados _x_ y _z_ respectivamente del tipo *number*. Esto quiere decir que para poder utilizar esa función debemos pasarle como argumentos dos números o algún tipo de dato compatible con *number*.
 
 ### Parámetros opcionales y por defecto {#par-metros-opcionales-y-por-defecto}
 
@@ -117,7 +117,7 @@ function value(y: number): void {
 x; // 5
 ```
 
-Hemos creado una variable de tipo **number** con un valor inicializado de 5\. Hemos invocado la función pasando esta variable como argumento. En ese momento se ha creado una copia de la variable _x_ de fuera de la función hacia la variable _y_ de dentro de la función. Si modificamos la variable _y_ (en este caso hemos sumado uno) vemos como la _x_ se mantiene intacta.
+Hemos creado una variable de tipo *number* con un valor inicializado de 5\. Hemos invocado la función pasando esta variable como argumento. En ese momento se ha creado una copia de la variable _x_ de fuera de la función hacia la variable _y_ de dentro de la función. Si modificamos la variable _y_ (en este caso hemos sumado uno) vemos como la _x_ se mantiene intacta.
 
 #### Por referencia {#por-referencia}
 
@@ -135,6 +135,6 @@ reference(x);
 x[0]; // 1
 ```
 
-Tenemos un _Array_ de **number** con dos posiciones, ambas con valor 0.Le pasamos el array a la función y la posición 0 que vale 0, la cambiamos a 1.Al acabar la ejecución de la función y mostrar el contenido de la posición 0 del array, vemos que lo cambiado en la función persiste, al contrario de lo que pasaba con el ejemplo del paso por valor.
+Tenemos un _Array_ de *number* con dos posiciones, ambas con valor 0.Le pasamos el array a la función y la posición 0 que vale 0, la cambiamos a 1.Al acabar la ejecución de la función y mostrar el contenido de la posición 0 del array, vemos que lo cambiado en la función persiste, al contrario de lo que pasaba con el ejemplo del paso por valor.
 
 Como hemos dicho lo que ha ocurrido es que a la función se le ha pasado la dirección de memoria del array. Gracias a esto, al usar la variable lo que estamos haciendo es trabajar directamente sobre el array original.

@@ -10,7 +10,7 @@ Para declarar una función como generador se usa el operador * (asterisco):
 function* generator() {}
 ```
 
-Para hacer que se pause se utiliza la palabra reservada **yield.**
+Para hacer que se pause se utiliza la palabra reservada *yield.*
 
 ```ts
 function* generator() { 

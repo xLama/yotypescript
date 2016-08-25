@@ -1,6 +1,6 @@
 ## Estado y comportamiento {#estado-y-comportamiento}
 
-Una clase tiene atributos (se representan con variables) que definen su estado, y métodos (funciones) que definen su comportamiento. Son los llamados miembros de clase.
+Una clase tiene propiedades (se representan con variables) que definen su estado, y métodos (funciones) que definen su comportamiento. Son los llamados miembros de clase.
 
 ### El estado {#el-estado}
 
@@ -17,7 +17,7 @@ class Person {
 }
 ```
 
-Hemos declarado sus atributos pero no están inicializados. Lo hacemos en el constructor.
+Hemos declarado sus propiedades pero no están inicializados. Lo hacemos en el constructor.
 
 ```ts
 class Persona {
@@ -44,7 +44,7 @@ class Persona {
 }
 ```
 
-#### Otra forma de declarar atributos {#otra-forma-de-declarar-atributos}
+#### Otra forma de declarar propiedades {#otra-forma-de-declarar-atributos}
 
 Los parámetros de entrada de un constructor pueden ser miembros de la clase (propiedades) de forma automática sin declararlos de forma explícita.
 

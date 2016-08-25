@@ -1,12 +1,12 @@
 ## Obteniendo el nombre del valor {#obteniendo-el-nombre-del-valor}
 
-Con nuestro **enum** de ejemplo:
+Con nuestro *enum* de ejemplo:
 
 ```ts
 enum Animal { Dog, Cat, Rabbit }
 ```
 
-Podemos obtener el nombre del animal como **string** si conocemos su número.
+Podemos obtener el nombre del animal como *string* si conocemos su número.
 
 ```ts
 let animal = Animal[1]; // Cat

@@ -4,12 +4,12 @@ Com su nombre indica (muchas formas) es la cualidad que tiene un objeto de un ti
 
 Recordando el ejemplo:
 
-Alumno Persona Mamifero SerVivo
+Stundent Person Mamifero SerVivo
 
 Podemos hacer esto:
 
 ```ts
-let ser: SerVivo = new Alumno();
+let ser: SerVivo = new Stundent();
 ```
 
 ¿Por qué? Porque Alumno es-un SerVivo
@@ -17,13 +17,13 @@ let ser: SerVivo = new Alumno();
 Si en una función aceptamos como parámetro un SerVivo:
 
 ```ts
-function ejemplo(ser: SerVivo): void { }
+function example(ser: SerVivo): void { }
 ```
 
 ¿Qué pasaría si la invocamos pasándole como argumento un _Alumno_?
 
 ```ts
-ejemplo(new Alumno());
+ejemplo(new Stundent());
 ```
 
 ¿Sería correcto? Sí. Pues un _Alumno_ es un _SerVivo_. No hay riesgo de ningún tipo pues _Alumno_ ha heredado de _SerVivo_ todos los miembros públicos por lo que estamos seguros que de los métodos se van a ejecutar sin problemas.

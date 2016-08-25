@@ -10,7 +10,7 @@ Cuando declaramos una función con la palaba reservada _function_ seguido de un 
 
 ```ts
 let add = function () { } // es equivalente a, excepto por hoisting
-function sumar() { } 
+function add() { } 
 ```
 
 El ejemplo no compila pues da un error de identificador duplicado.
@@ -19,7 +19,7 @@ El problema de no tener ninguna referencia a la función es no poder invocarla m
 
 ### Expresiones lambda (funciones flecha) {#expresiones-lambda-funciones-flecha}
 
-TS nos proporciona otra sintaxis a la hora de declarar una función que resulta bastante interesante llamada funciones flecha.
+TS nos proporciona otra sintaxis a la hora de declarar una función que resulta bastante interesante, llamada funciones flecha.
 
 Siguiendo con el ejemplo anterior, otra forma de declarar _sumar_ sería:
 
@@ -124,7 +124,7 @@ function ejemplo(func: (x: string) => number): void {
 }
 ```
 
-La función _ejemplo_ acepta como parámetro una función sólo si esa función acepta como parámetro un dato del tipo **string** y devuelve uno del tipo **number**.
+La función _ejemplo_ acepta como parámetro una función sólo si esa función acepta como parámetro un dato del tipo *string* y devuelve uno del tipo *number*.
 
 ### Contexto {#contexto}
 
@@ -164,7 +164,7 @@ let show = a.show;
 show();
 ```
 
-Funcionará correctamente. Lo que hace el compilador es referenciar el _this_ en otra variable llamada __this_ justo antes de la declaración del método. Cuando el método se ejecuta y hace _this.showLetter()_, ese _this_ es, en realidad, el __this_ que antes se creó. __this_ sí hace referencia al objeto en sí y no a _window_ por lo que puede ejecutar _this.showLetter()_ sin problemas. Para entenderlo mejor es recomendable leer [este apartado.](../clases/estado_y_comportamiento.md#operador-this)
+Funcionará correctamente. Lo que hace el compilador es referenciar el _this_ en otra variable llamada *_this* justo antes de la declaración del método. Cuando el método se ejecuta y hace _this.showLetter()_, ese *this* es, en realidad, el _this que antes se creó. _this sí hace referencia al objeto en sí y no a *window* por lo que puede ejecutar _this.showLetter()_ sin problemas. Para entenderlo mejor es recomendable leer [este apartado.](../clases/estado_y_comportamiento.md#operador-this)
 
 ### Funciones anónimas autoejecutables {#funciones-an-nimas-autoejecutables}
 

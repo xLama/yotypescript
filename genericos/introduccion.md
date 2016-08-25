@@ -4,7 +4,9 @@ Los genéricos permiten parametrizar directamente las clases e interfaces. Son u
 
 Hasta ahora habíamos definido clases no genéricas como _Concesionario_:
 
+```ts
 class Concesionario { }
+```
 
 Esta clase es capaz de englobar todos los concesionarios de las marcas de los coches. En ella iremos guardando una lista de los coches de cada concesionario.
 

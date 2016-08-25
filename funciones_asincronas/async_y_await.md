@@ -14,7 +14,7 @@ async function asyncFunction{ // El tipo devuelto es Promise<number>
 }
 ```
 
-Pero la verdadera potencia no radica ahí, sino en el **await**. **Await** para la ejecución de la función hasta que se resuelva la operación. Para usar **await** la función debe devolver un Promise, ya sea de forma explícita o porque esa misma función también sea **async**:
+Pero la verdadera potencia no radica ahí, sino en el *await*. *Await* para la ejecución de la función hasta que se resuelva la operación. Para usar *await* la función debe devolver un Promise, ya sea de forma explícita o porque esa misma función también sea *async*:
 
 ```ts
 async function anotherAsyncFunction(){ 

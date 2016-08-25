@@ -21,11 +21,11 @@ class Teacher extends Person { }
 
 Alumno -> Persona -> Mamifero -> SerVivo
 
-Ahora tanto _Alumno_ como _Profesor_ obtendrían todo lo que es y hace _Persona_. Bueno, no todo realmente pues aquí entra en juego el principio de ocultación. Todo lo declarado como público se hereda. Todo lo declarado como privado no se hereda y no es accesible desde la clase hija. Hay un tercer modificador, llamado protegido (_protected_). Si declaramos un miembro como _protected_, las clases hijas lo heredan pero no es accesible desde fuera.
+Ahora tanto *Student* como *Teacher* obtendrían todo lo que es y hace *Person*. Bueno, no todo realmente pues aquí entra en juego el principio de ocultación. Todo lo declarado como público se hereda. Todo lo declarado como privado no se hereda y no es accesible desde la clase hija. Hay un tercer modificador, llamado protegido (*protected*). Si declaramos un miembro como *protected*, las clases hijas lo heredan pero no es accesible desde fuera.
 
 ### Herencia mediante expresiones {#herencia-mediante-expresiones}
 
-Como hemos visto la herencia se consigue gracias a _extends_ seguido del nombre de la clase. Existe otra forma de hacerlo que nos permite que en vez de ser una clase lo que escribamos sea una expresión, como por ejemplo una función:
+Como hemos visto la herencia se consigue gracias a *extends* seguido del nombre de la clase. Existe otra forma de hacerlo que nos permite que en vez de ser una clase lo que escribamos sea una expresión, como por ejemplo una función:
 
 ```ts
 function PersonClass() : typeof Person { 

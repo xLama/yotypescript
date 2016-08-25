@@ -20,7 +20,7 @@ interface Desplazable {
     desplazar(): void;
 }
 ```
-Obligamos a la clase _Persona_ a implementarlo. Si no lo hace dará error de compilación. Para ello hay que cumplir exactamente con la definición del método. Si devuelve un **number** no podemos implementar ese método devolviendo un **string**. En este caso no devuelve nada por lo que así debe ser:
+Obligamos a la clase _Persona_ a implementarlo. Si no lo hace dará error de compilación. Para ello hay que cumplir exactamente con la definición del método. Si devuelve un *number* no podemos implementar ese método devolviendo un *string*. En este caso no devuelve nada por lo que así debe ser:
 
 ```ts
 class Persona implements Desplazable {

@@ -26,4 +26,4 @@ function example(ser: SerVivo): void { }
 ejemplo(new Stundent());
 ```
 
-¿Sería correcto? Sí. Pues un _Alumno_ es un _SerVivo_. No hay riesgo de ningún tipo pues _Alumno_ ha heredado de _SerVivo_ todos los miembros públicos por lo que estamos seguros que de los métodos se van a ejecutar sin problemas.
+¿Sería correcto? Sí. Pues un *Stundent* es un _SerVivo_. No hay riesgo de ningún tipo pues *Stundent* ha heredado de _SerVivo_ todos los miembros públicos por lo que estamos seguros que de los métodos se van a ejecutar sin problemas.

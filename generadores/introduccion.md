@@ -43,7 +43,7 @@ gen.next(); // devuelve {value: undefined, done: true} "Carlos"
 
 El objeto que devuelve _next()_ es el mismo que vimos en los iteradores.
 
-En el ejemplo podemos ver que al ejecutar _next()_ se ha mostrado por consola el texto _José._ Como la siguiente sentencia de la función es *yield*, la función se pausa. ¿Hasta cuándo? Pues hasta que se invoca de nuevo el método _next()._ En ese caso la función continúa hasta que termine o hasta que encuentre otra sentencia **yield** donde de nuevo se pausaría.
+En el ejemplo podemos ver que al ejecutar _next()_ se ha mostrado por consola el texto _José._ Como la siguiente sentencia de la función es *yield*, la función se pausa. ¿Hasta cuándo? Pues hasta que se invoca de nuevo el método _next()._ En ese caso la función continúa hasta que termine o hasta que encuentre otra sentencia *yield* donde de nuevo se pausaría.
 
 Si te fijas, cuando llega al final de la función, el valor de la propiedad _done_ del objeto devuelto por _next()_ es *true*.
 

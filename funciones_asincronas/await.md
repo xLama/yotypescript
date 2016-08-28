@@ -40,7 +40,7 @@ Results será un array en el que cada posición (en este caso 3) será el valor 
 Si lo combinamos junto con la deconstrucción, se hace aún más sencillo:
 
 ```ts
- var [resultS1, resultS2, resultS3] = Promise.all( [service1(), service2(), service3()] );
+ let [resultS1, resultS2, resultS3] = Promise.all( [service1(), service2(), service3()] );
  ```
 Hemos descompuesto el array de resultados en 3 partes: resultS1, resultS2, resultS3, los cuales son los resultados de las llamadas a los servicios por separados. Si todo ha ido bien, en la siguiente línea se pueden utilizar  estas variables de forma independiente.
 

@@ -41,21 +41,52 @@ La herencia clásica es explícita y estática, es decir, debemos especificar cl
 
 Para este ejemplo vamos a recurrir a los coches. Los coches tienen motores que consumen distintos tipos de combustible: gasolina y gasoil. Para ellos nos creamos una interfaz _Fuel_ y dos clases _Gasoil_ y _Gasoline_ que implementan dicha interfaz:
 
-**interface** Fuel{ fuelType():void;}******class** Gasoil **implements** Fuel { fuelType():void{ console.log("Gasoil"); } }**class** Gasoline **implements** Fuel { fuelType():void{ console.log("Gasoline"); }}
+ ```ts
+interface Fuel {
+    fuelType(): void;
+}
+
+class Gasoil implements Fuel {
+    fuelType(): void {
+        console.log("Gasoil");
+    }
+} 
+
+class Gasoline implements Fuel {
+    fuelType(): void {
+        console.log("Gasoline");
+    }
+}
+```
 
 La marca va a sortear unos coches tanto de gasolina como de gasoil. Como no sabemos el combustible, debemos elegirlo en tiempo de ejecución. Para ello nos hacemos una función que va a servir de selector de la superclase:
 
-**function** fuelSelector() : Fuel { return Math.random() >= 0.5 ? Gasoil : Gasoline}
+```ts
+function fuelSelector(): Fuel {
+    return Math.random() >= 0.5 ? Gasoil : Gasoline
+}
+```
 
 Eso muestra un error. El problema es que el tipo devuelto por la función no es el correcto. Realmente lo que debería devolver el tipo de las clases y no la interfaz. Podríamos dejar que la inferencia trabaje por nosotros y, simplemente, eliminar el tipo devuelto. Pero como aquí estamos para aprender vamos a devolver una interfaz. Para ello, lo que realmente espera es un constructor, así que podemos dárselo si hacemos uno para la interfaz:
 
-**interface** FuelConstructor { **new**():Fuel}
+```ts
+interface FuelConstructor {
+    new (): Fuel
+}
+```
 
 Nos hemos creado otra interfaz cuyo único miembro es un constructor que devuelve la interfaz _Fuel._ La interfaz _FuelConstructor_ sí puede ser usada como tipo en la devolución de la función _fuelSelector()_.
 
-**function** fuelSelector() : FuelSelector { **return** Math.random() >= 0.5 ? Gasoil : Gasoline}
+```ts
+function fuelSelector(): FuelSelector {
+    return Math.random() >= 0.5 ? Gasoil : Gasoline
+}
 
-**class** Car **extends** fuelSelector() {}**var** car = **new** Car();car.fuelType(); //
+class Car extends fuelSelector() { }
+
+let car = new Car();
+car.fuelType(); //
+```
 
 La elección del tipo de combustible dependerá de lo ejecutado en la función _fuelSelector()_.
 
@@ -67,7 +98,9 @@ Existe otro llamado _super_ que hace referencia a la clase padre desde donde est
 
 Imaginemos que queremos que, además de nombre y apellidos, un alumno tenga un número de alumno.
 
+```ts
 **class** Alumno **extends** Persona { **private** numeroAlumno: **number**; **constructor**(nombre: **string**, apellido1: **string**, numeroAlumno: **number**, apellido2?: **string**) { **super**(nombre, apellido1, apellido2); **this**.numeroAlumno = numeroAlumno }}
+```
 
 ¿Qué ha pasado aquí?
 
@@ -81,9 +114,11 @@ Si _Persona_ tiene el constructor sobrecargado, la llamada _super()_ puede ser a
 
 Desde otros métodos podemos llamar a los métodos del padre con el mismo _super_. En este caso no se exige que sea la primera llamada.
 
+```ts
 **class** Alumno **extends** Persona { **private** numeroAlumno: **number**; **constructor**(nombre: **string**, apellido1: **string**, numeroAlumno: **number**, apellido2?: **string**) { **super**(nombre, apellido1, apellido2); **this**.numeroAlumno = numeroAlumno; }
 
 **public** mostrarReferencia(): **void** { alert(**this**.numeroAlumno); **super**.mostrarNombre(); }****}
+```
 
 En este caso hemos creado un nuevo método para _Alumno_ llamado _mostrarReferencia()_ que muestra la referencia del alumno y después su nombre y apellidos. Pero esto último no lo hace reescribiendo otra vez toda la lógica, sino que se aprovecha de que el padre (_Persona_) ya lo tiene implementado.
 
@@ -101,9 +136,11 @@ Heredar los miembros de la clase padre no nos obliga a utilizarlos tal y como so
 
 Los miembros deben tener el mismo modificador de visibilidad por lo que si en la superclase está declarado como _public_ o _private_, en la clase hija se debe declarar igual.
 
+```ts
 **class** Persona { **public** mostrarNombre(): **void** { }****}
 
 **class** Alumno **extends** Persona {// Error **private** mostrarNombre(): **void** { }****}
+```
 
 Estamos intentando sobreescribir el método _mostrarNombre_ haciéndolo privado y eso no es posible en TS. Tampoco es posible hacer lo contrario, es decir, hacer público un método que en el padre es privado. También es aplicable a los atributos.
 
@@ -113,13 +150,17 @@ Sobreescribir no es más que declarar una función en el hijo con el mismo nombr
 
 En nuestra clase Persona tenemos el método _mostrarNombre():_
 
+```ts
 **public** mostrarNombre():**void**{ alert(**this**.nombre+" "+**this**.apellido1+" "+**this**.apellido2);}
+```
 
 Podemos crear uno nuevo en _Alumno_ con el mismo nombre. De esta forma lo estamos sobreescribiendo.
 
 Si queremos que el método de _Alumno_ haga lo mismo que el de _Persona_ y, además, algo adicional, se debe llamar al método de _Persona_ mediante:
 
+```ts
 **super**.mostrarNombre();
+```
 
 Y, posteriormente, implementar el código que creamos conveniente.
 

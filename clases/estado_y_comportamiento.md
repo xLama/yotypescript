@@ -150,25 +150,48 @@ De nuevo this es _window_ porque _thisExample()_ no pertenece a ningún objeto d
 
 El operador _new_ cambia este comportamiento y hace que el contexto sea la instancia.
 
-**function** thisExample(){ **this;** // object. La instancia.}**var** example = **new** thisExample();
+```ts
+function thisExample(){ 
+  this; // object. La instancia.
+}
+let example = new thisExample();
+```
 
 Teniendo en cuenta la primera fila de la tabla, podemos hacer esto:
 
-**var** thisExample = { **** name: "José", surname: "Lama", nameAndSurname: **function**(){**return this**. name +" "+ **this**. surname }****}****thisExample.nameAndSurname(); // José Lama
+```ts
+let thisExample = {
+    name: "José",
+    surname: "Lama",
+    nameAndSurname: function () {
+        return this.name + " " + this.surname
+    }
+}
+thisExample.nameAndSurname(); // José Lama
+```
 
 En esta ocasión, la función sí pertecene a un objeto de forma explícita en el momento de su ejecución por lo que ese _this_ referencia al contexto de la función, que es _thisExample, el objeto._
 
 Algo a muy tener encuenta es lo siguiente.
 
-**var** thisExample = **function**(){ **var** name = "José"; **var** surname = "Lama"; **var** nameAndSurname = **function**(){ console.log**(this**.name +" "+ **this**.surname) }
+```ts
+let thisExample = function () {
+    let name = "José";
+    let surname = "Lama";
+    let nameAndSurname = function () {
+        console.log(this.name + " " + this.surname)
+    }
 
-nameAndSurname();****}****thisExample()// undefined undefined
+    nameAndSurname();
+}
+thisExample()// undefined undefined
+```
 
 Si echamos un vistazo a la tabla, es de suponer que _this_ _name_ y _this.surname_, que se encuentran dentro de la función _nameAndSurname(),_ deberían ser correctos pues el contexto de la función es otra función superior que sí posee esas propiedades, es decir, _nameAndSurname()_ pertecene a un objeto (que en este caso es una función). Pero esto realmente no es así. El ejemplo no funciona como parece y en su lugar muestra _undefined undefined._ La conslusión final es que las funciones crean contexto pero no pueden formar parte de él a menos que se use el operador _new._
 
 #### this polimórfico {#this-polim-rfico}
 
-Ahora  **this** se refiere a la instancia de alguna clase que herede de la clase contenedora. 
+Ahora  *this* se refiere a la instancia de alguna clase que herede de la clase contenedora. 
 
 ```ts
 class HTMLElement { 

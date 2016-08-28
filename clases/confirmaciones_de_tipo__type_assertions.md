@@ -15,12 +15,13 @@ interface A { }
 interface B extends A { }
 class C implements B { }
 function conversion(casting: A): void {
-    let c = casting as A;
+    let c = <C>casting;
+    let c1 = casting as A;
 }
 conversion(new C());
 ```
 
-Los _type assertions_ se hacen encerrando el tipo al que queremos convertir entre &lt;&gt; seguido de la variable que queremos convertir o con la sentencia *as*
+Los *type assertions* se hacen encerrando el tipo al que queremos convertir entre &lt;&gt; seguido de la variable que queremos convertir o con la sentencia *as*
 
 En el caso en el que queramos usar un método del tipo de la variable a la que queremos convertir directamente sin asignarlo a otra variable tenemos que usar los paréntesis.
 

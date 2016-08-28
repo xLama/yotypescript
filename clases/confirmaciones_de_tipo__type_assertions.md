@@ -35,16 +35,31 @@ function conversion(casting: A): void {
 conversion(new C());
 ```
 
-Como TS se basa en el [tipado estructural](../genericos/comparando_genericos.md#757309351116418-_Tipado_estructural), es posible hacer conversiones de tipos que no tengan relación declarativa pero sean estructuralmente análogos.
+Como TS se basa en el [tipado estructural](../genericos/comparando_genericos.md#757309351116418-_Tipado_estructural), es posible hacer conversiones de tipos que no tengan relación pero sean estructuralmente análogos.
 
-class A{ public mostrarA():void{  alert("A"); }}
+```ts
+class A {
+    public showA(): void {
+        alert("A");
+    }
+}
 
-class B{ public mostrarA():void{  alert("A");}
+class B {
+    public showA(): void {
+        alert("A");
+    }
 
-public mostrarB():void{  alert("B"); }}
+    public showB(): void {
+        alert("B");
+    }
+}
 
-function mostrarLetra(letra:A):void{  (&lt;B&gt;letra).mostrarB();}
+function showLetter(letter: A) {
+    (letter as B).showB();
+}
+
 
 mostrarLetra(new B());
+```
 
 El código perfectamente válido y se ejecuta sin problemas. El parámetro del tipo _A_ de la función _mostrarLetra_ acepta como parámetro un objeto del tipo _B_ porque _B_ tiene todo lo de _A_. A partir de ahí B puede implementar todos los métodos que quiera.

@@ -85,7 +85,7 @@ function fuelSelector(): FuelSelector {
 class Car extends fuelSelector() { }
 
 let car = new Car();
-car.fuelType(); //
+car.fuelType(); 
 ```
 
 La elección del tipo de combustible dependerá de lo ejecutado en la función _fuelSelector()_.
@@ -99,28 +99,32 @@ Existe otro llamado _super_ que hace referencia a la clase padre desde donde est
 Imaginemos que queremos que, además de nombre y apellidos, un alumno tenga un número de alumno.
 
 ```ts
-**class** Alumno **extends** Persona { **private** numeroAlumno: **number**; **constructor**(nombre: **string**, apellido1: **string**, numeroAlumno: **number**, apellido2?: **string**) { **super**(nombre, apellido1, apellido2); **this**.numeroAlumno = numeroAlumno }}
+class Student extends Person {
+    private studentNumber: number;
+    constructor(name: string, surname1: string, studentNumber: number, surname2?: string) {
+        super(name, surname1, surname2);
+        this.studentNumber = studentNumber
+    }
+}
 ```
 
 ¿Qué ha pasado aquí?
 
-Hemos creado un constructor para _Alumno_ en el que admite un parámetro más que el de _Persona_ para incluirle la referencia.
+Hemos creado un constructor para _Alumno_ en el que admite un parámetro más que el de *Person* para incluirle la referencia.
 
-Hemos llamado al constructor de _Persona_ pasándole como argumento lo que espera. Es muy importante recalcar que la primera línea de código del constructor de una clase que hereda de otra es una llamada _super()_ con los argumentos que sean. De lo contrario dará error de compilación. Y esto tiene su lógica. Cuando creamos un _Alumno_ realmente también estamos creando una _Persona_ por lo que para hacerlo se debe llamar al constructor de _Persona_.
+Hemos llamado al constructor de *Person* pasándole como argumento lo que espera. Es muy importante recalcar que la primera línea de código del constructor de una clase que hereda de otra es una llamada _super()_ con los argumentos que sean. De lo contrario dará error de compilación. Y esto tiene su lógica. Cuando creamos un *Student* realmente también estamos creando una *Person* por lo que para hacerlo se debe llamar al constructor de *Person*.
 
 Después de la llamada _super()_ podemos guardar la referencia.
 
-Si _Persona_ tiene el constructor sobrecargado, la llamada _super()_ puede ser a cualquiera de las definiciones del constructor. Simplemente hay que cumplir con los parámetros que exige.
+Si *Person* tiene el constructor sobrecargado, la llamada _super()_ puede ser a cualquiera de las definiciones del constructor. Simplemente hay que cumplir con los parámetros que exige.
 
 Desde otros métodos podemos llamar a los métodos del padre con el mismo _super_. En este caso no se exige que sea la primera llamada.
 
 ```ts
-**class** Alumno **extends** Persona { **private** numeroAlumno: **number**; **constructor**(nombre: **string**, apellido1: **string**, numeroAlumno: **number**, apellido2?: **string**) { **super**(nombre, apellido1, apellido2); **this**.numeroAlumno = numeroAlumno; }
 
-**public** mostrarReferencia(): **void** { alert(**this**.numeroAlumno); **super**.mostrarNombre(); }****}
 ```
 
-En este caso hemos creado un nuevo método para _Alumno_ llamado _mostrarReferencia()_ que muestra la referencia del alumno y después su nombre y apellidos. Pero esto último no lo hace reescribiendo otra vez toda la lógica, sino que se aprovecha de que el padre (_Persona_) ya lo tiene implementado.
+En este caso hemos creado un nuevo método para *Student* llamado _mostrarReferencia()_ que muestra la referencia del alumno y después su nombre y apellidos. Pero esto último no lo hace reescribiendo otra vez toda la lógica, sino que se aprovecha de que el padre (*Person*) ya lo tiene implementado.
 
 Hay que señalar que un objeto de una clase hija es también del tipo de todas sus clases padre.
 
@@ -137,21 +141,27 @@ Heredar los miembros de la clase padre no nos obliga a utilizarlos tal y como so
 Los miembros deben tener el mismo modificador de visibilidad por lo que si en la superclase está declarado como _public_ o _private_, en la clase hija se debe declarar igual.
 
 ```ts
-**class** Persona { **public** mostrarNombre(): **void** { }****}
+class Person {
+    public showName(): void { }
+}
 
-**class** Alumno **extends** Persona {// Error **private** mostrarNombre(): **void** { }****}
+class Student extends Person {// Error 
+    private showName(): void { }
+}
 ```
 
-Estamos intentando sobreescribir el método _mostrarNombre_ haciéndolo privado y eso no es posible en TS. Tampoco es posible hacer lo contrario, es decir, hacer público un método que en el padre es privado. También es aplicable a los atributos.
+Estamos intentando sobreescribir el método *showName()* haciéndolo privado y eso no es posible en TS. Tampoco es posible hacer lo contrario, es decir, hacer público un método que en el padre es privado. También es aplicable a los atributos.
 
 #### Sobreescritura de métodos {#sobreescritura-de-m-todos}
 
 Sobreescribir no es más que declarar una función en el hijo con el mismo nombre que una que ya existe en el padre. Sólo es posible si el método es público. Si es privado y lo intentamos sobreescribir, fallará.
 
-En nuestra clase Persona tenemos el método _mostrarNombre():_
+En nuestra clase Persona tenemos el método *showName()*:
 
 ```ts
-**public** mostrarNombre():**void**{ alert(**this**.nombre+" "+**this**.apellido1+" "+**this**.apellido2);}
+public showName():void {
+    alert(this.name+" " + this.surname1 + " " + this.surname2);
+}
 ```
 
 Podemos crear uno nuevo en _Alumno_ con el mismo nombre. De esta forma lo estamos sobreescribiendo.
@@ -159,7 +169,7 @@ Podemos crear uno nuevo en _Alumno_ con el mismo nombre. De esta forma lo estamo
 Si queremos que el método de _Alumno_ haga lo mismo que el de _Persona_ y, además, algo adicional, se debe llamar al método de _Persona_ mediante:
 
 ```ts
-**super**.mostrarNombre();
+super.showName();
 ```
 
 Y, posteriormente, implementar el código que creamos conveniente.

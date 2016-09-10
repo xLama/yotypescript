@@ -32,4 +32,4 @@ class B extends A implements I { } // Correcto
 class C implements I { } // Error. C No es subclase de A
 ```
 
-Muestra un error indicando que _C_ no está implementando todos los miembros de la interfaz _I_, concretamente el atributo _nombre_. Aunque declaremos un atributo nombre de tipo **string** y privado en la clase C, no conseguiríamos que compilara. El único que le sirve es el de la clase A y sólo se puede conseguir heredando de ella. El comportamiento con miembros protegidos sería exactamente el mismo.
+Muestra un error indicando que _C_ no está implementando todos los miembros de la interfaz _I_, concretamente el atributo _nombre_. Aunque declaremos un atributo nombre de tipo *string* y privado en la clase C, no conseguiríamos que compilara. El único que le sirve es el de la clase A y sólo se puede conseguir heredando de ella. El comportamiento con miembros protegidos sería exactamente el mismo.

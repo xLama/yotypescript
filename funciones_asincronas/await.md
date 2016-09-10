@@ -44,4 +44,4 @@ Si lo combinamos junto con la deconstrucción, se hace aún más sencillo:
  ```
 Hemos descompuesto el array de resultados en 3 partes: resultS1, resultS2, resultS3, los cuales son los resultados de las llamadas a los servicios por separados. Si todo ha ido bien, en la siguiente línea se pueden utilizar  estas variables de forma independiente.
 
-El antiguo await* ha sido desechada en el estándar por lo que actualmente se debe utilizar Promise.all()
+El antiguo await* ha sido desechado en el estándar por lo que actualmente se debe utilizar Promise.all()

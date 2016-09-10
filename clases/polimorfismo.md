@@ -9,7 +9,7 @@ Stundent Person Mammal LivingBeing
 Podemos hacer esto:
 
 ```ts
-let ser: SerVivo = new Stundent();
+let be: LivingBeing = new Stundent();
 ```
 
 ¿Por qué? Porque Student es-un LivingBeing
@@ -20,10 +20,10 @@ Si en una función aceptamos como parámetro un LivingBeing:
 function example(ser: LivingBeing): void { }
 ```
 
-¿Qué pasaría si la invocamos pasándole como argumento un _Alumno_?
+¿Qué pasaría si la invocamos pasándole como argumento un *Student*?
 
 ```ts
-ejemplo(new Stundent());
+example(new Stundent());
 ```
 
 ¿Sería correcto? Sí. Pues un *Stundent* es un *LivingBeing*. No hay riesgo de ningún tipo pues *Stundent* ha heredado de *LivingBeing* todos los miembros públicos por lo que estamos seguros que de los métodos se van a ejecutar sin problemas.

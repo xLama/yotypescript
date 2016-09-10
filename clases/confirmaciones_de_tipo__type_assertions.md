@@ -60,7 +60,7 @@ function showLetter(letter: A) {
 }
 
 
-mostrarLetra(new B());
+showLetter(new B());
 ```
 
 El código perfectamente válido y se ejecuta sin problemas. El parámetro del tipo _A_ de la función *showLetter* acepta como parámetro un objeto del tipo _B_ porque _B_ tiene todo lo de _A_. A partir de ahí B puede implementar todos los métodos que quiera.

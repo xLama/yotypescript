@@ -4,7 +4,7 @@ Los operadores binarios son aquéllos que necesitan dos operandos para poder ser
 
 ### Operador de asignación {#operador-de-asignaci-n}
 
-Es el _=_ (igual). Ya vimos que se usaba para inicializar las variables. La regla que sigue es que todo lo que hay a la derecha del = se asigna a lo que hay a la izquierda y no al revés.
+Es el _=_ \(igual\). Ya vimos que se usaba para inicializar las variables. La regla que sigue es que todo lo que hay a la derecha del = se asigna a lo que hay a la izquierda y no al revés.
 
 No podemos hacer esto:
 
@@ -20,7 +20,7 @@ Son operadores llamados perezosos porque no siguen evaluando en cuanto el result
 
 #### false en TS {#false-en-ts}
 
-0, "" (cadena vacía), _null_ y _undefined_
+0, "" \(cadena vacía\), _null_ y _undefined_
 
 #### Operador AND {#operador-and}
 
@@ -41,7 +41,7 @@ Si alguno de los dos se evalúa como false, el resultado será false. Una expres
 
 Incluso se puede establecer prioridades con paréntesis:
 
-expresion1 && (expresión2 && expresion3)
+expresion1 && \(expresión2 && expresion3\)
 
 expresion2 y expresion3 actúan como una a la hora de evaluarse de forma conjunta con expresion1
 
@@ -56,13 +56,13 @@ Es muy útil cuando lo usamos con instancias que no sabemos si son _null/undefin
 ```ts
 let person: Person = null;
 let name = person && person.name; // undefined
-``` 
+```
 
-Como _persona_ no es una instancia de _Persona_, no tiene acceso a sus atributos, por lo que _persona.nombre_ fallará. De esta forma nos aseguramos que esto no ocurre porque si persona es _null_ ( y _null_ se evalúa como false), se asignará a nombre el valor del primer operando sin evaluar el segundo. Si _persona_ no fuera _null_ evaluaría _persona.nombre_ y se lo asignaría a _nombre_.
+Como _persona_ no es una instancia de _Persona_, no tiene acceso a sus atributos, por lo que _persona.nombre_ fallará. De esta forma nos aseguramos que esto no ocurre porque si persona es _null_ \( y _null_ se evalúa como false\), se asignará a nombre el valor del primer operando sin evaluar el segundo. Si _persona_ no fuera _null_ evaluaría _persona.nombre_ y se lo asignaría a _nombre_.
 
 #### Operador OR {#operador-or}
 
-Se representa ||
+Se representa \|\|
 
 Será true si alguno de los operandos es true.
 
@@ -110,7 +110,7 @@ let sum = x + y; // 4
 let res = x - y; // 0
 ```
 
-#### Operadores * y / {#operadores-y-0}
+#### Operadores \* y / {#operadores-y-0}
 
 Son los usados para multiplicar y dividir números respectivamente.
 
@@ -131,7 +131,7 @@ let y = 2;
 let resto = x % y; // 1
 ```
 
-#### Operador  {#operador-0}
+#### Operador {#operador-0}
 
 Obtiene la potencia siendo el primer operando la base y el segundo el exponente.
 
@@ -161,9 +161,9 @@ x *= 3; // Equivalente a x = x * 3;
 #### Operadores lógicos bit a bit {#operadores-l-gicos-bit-a-bit}
 
 | operador | uso |
-| --- | --- |
+| :--- | :--- |
 | & | Realiza la operación AND bit a bit. |
-| | | Realiza la operación OR bit a bit. |
+| "pipe" | Realiza la operación OR bit a bit. |
 | ^ | Realiza la operación XOR bit a bit |
 
 Esto operadores realizan la operación bit a bit. Eso signfica que convierten el número a binario y van comparando uno a uno los bits de la misma posición. Dependiendo del operador usado, el resultado será 0 ó 1, lo que conformará un nuevo número.
@@ -181,7 +181,7 @@ var y: number = 20; // y: 10100
 var z: number = x ^ y; // z: 11011 Es el número 27
 ```
 
-#### Operadores << y >> {#operadores-y-1}
+#### Operadores &lt;&lt; y &gt;&gt; {#operadores-y-1}
 
 Son los usados para desplazamiento de bits. Si desplazamos un bit a la izquierda el resultado es la multiplicación por 2 del número. Si desplazamos un bit a la derecha, el resultado es la división entre 2 del número. Se pueden hacer los desplazamientos que queramos y se van concatenando.
 
@@ -193,7 +193,7 @@ let x: number = 10;x << 3 // 80\. 10*2*2*2x >> 1 // 5\. 10/2
 
 Comparan datos. Es obligatorio que los dos operandos sean del mismo tipo. Si uno de los dos es any el otro puede ser de cualquiera tipo. El resultado siempre será un boolean: true o false.
 
-#### Operadores <, >, <=, >=, {#operadores}
+#### Operadores &lt;, &gt;, &lt;=, &gt;=, {#operadores}
 
 Se usan para comprobar si un dato es mayor, menor o igual que otro.
 
@@ -255,7 +255,7 @@ a === b; // false
 
 Esta vez no sólo comprueba el valor, sino también el tipo sin hacer conversion. Como number y _Number_ no son el mismo tipo ni tampoco string y _String_, el resultado de las comprobaciones del ejemplo son false.
 
-¿Cómo se evaluaría una comprobación de igualdad entre dos _String_ (objeto) cuyas cadenas fueran iguales?
+¿Cómo se evaluaría una comprobación de igualdad entre dos _String_ \(objeto\) cuyas cadenas fueran iguales?
 
 ```ts
 let a = new String("cadena");
@@ -279,7 +279,7 @@ En este caso a la variable _b_ se le está asignando _a,_ es decir, _b_ contiene
 
 Es aplicable a cualquier [tipo referencia](../tipos/tipos_nombrados_y_referencia.md), ya sea estándar del lenguaje o creado por nosotros.
 
-Esto implica que dos variables de tipos objeto relacionados pueden ser distintos a ojos del operador pero iguales en valor. Una de las opciones para poder hacer la comparación es usar el método _toString()_.
+Esto implica que dos variables de tipos objeto relacionados pueden ser distintos a ojos del operador pero iguales en valor. Una de las opciones para poder hacer la comparación es usar el método _toString\(\)_.
 
 ```ts
 let a = new String("cadena");
@@ -333,9 +333,9 @@ let x:number = 10;
 let z:number = x == 10 ? 1 : 100; // 1
 ```
 
-La variable _x_ vale 10\. A la variable _z_ se le asigna un valor dependiendo de una condición que en este caso comprueba si la variable _x_ vale 10\. Si es cierto, a _z_ se le asigna 1, en caso contrario se le asigna 100;
+La variable _x_ vale 10. A la variable _z_ se le asigna un valor dependiendo de una condición que en este caso comprueba si la variable _x_ vale 10. Si es cierto, a _z_ se le asigna 1, en caso contrario se le asigna 100;
 
-Para hacer un simil con ||, recordemos:
+Para hacer un simil con \|\|, recordemos:
 
 ```ts
 let name: string;
@@ -348,4 +348,5 @@ Podríamos, también, expresarlo de la siguiente forma:
 name = name ? name: "José Carlos";
 ```
 
-A *name* se le asigna un valor dependiendo de la condición dada. En este caso comprueba si _nombre_ es true o false (nombre es _null_ que como ya sabemos se evalúa como false). Si fuera true, a nombre se le asignaría el valor que ya tiene. Como es false se le asigna “Carlos”.
+A _name_ se le asigna un valor dependiendo de la condición dada. En este caso comprueba si _nombre_ es true o false \(nombre es _null_ que como ya sabemos se evalúa como false\). Si fuera true, a nombre se le asignaría el valor que ya tiene. Como es false se le asigna “Carlos”.
+

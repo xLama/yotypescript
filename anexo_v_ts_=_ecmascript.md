@@ -1,9 +1,9 @@
-# Anexo V. TS => ECMAScript {#anexo-v-ts-ecmascript}
+# Anexo V. TS =&gt; ECMAScript {#anexo-v-ts-ecmascript}
 
 |  | **ES3** | **ES5** | **ES6** |
 | --- | --- | --- | --- |
 | Destructuración | Adaptado | Adaptado | Nativo |
-| Spread (Expansión) | Adaptado | Adaptado | Nativo |
+| Spread \(Expansión\) | Adaptado | Adaptado | Nativo |
 | for..of | Adaptado | Adaptado | Nativo |
 | let | Sintáctico | Sintáctico | Nativo |
 | const | Sintáctico | Sintáctico | Nativo |
@@ -25,10 +25,11 @@
 | Iteradores | No soportado | No soportado | Nativo |
 | Generadores | No soportado | No soportado | Nativo |
 | Deconstrucción | Adaptado | Adaptado | Nativo |
-| Funciones asíncronas | No soportado | No soportado (previsto para la 2.1) | Adaptado |
+| Funciones asíncronas | Adaptado | Adaptado | Adaptado |
 
 **Sintáctico**: Comprobación del compilador de TS sin equivalencia en JS.
 
 **Adaptado**: Código JS generado con una semántica equivalente.
 
 **Nativo**: JS lo ejecuta de forma interna pues existe en su estándar.
+

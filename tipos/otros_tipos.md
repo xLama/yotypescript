@@ -272,6 +272,9 @@ let movement : movements = "right"; // Error
 
 Para que la asignación fuera correcta la cadena como valor debe ser a _up_ y _right_ a la vez, cosa que no es posible. Además, son tratados como cadenas \(su tipo aparente es el mismo\), por lo que tienen la misma interfaz, es decir, mismas propiedades y métodos.
 
+### Tipos mapeados (Mapped Types)
+Partial, Readonly, Record, and Pick
+
 ### Guarda de tipos \(Type Guards\) {#guarda-de-tipos-type-guards}
 
 Visto los los Tipos Unión y como ya veremos en el polimorfismo, es posible que un mismo parámetro pueda contener valores de distinto tipo en momentos diferentes. Eso requiere que cuando tratemos ese dato debamos saber de qué tipo es para crear un comportamiento adecuado:

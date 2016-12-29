@@ -1,6 +1,6 @@
 ## Estado y comportamiento {#estado-y-comportamiento}
 
-Una clase tiene propiedades (se representan con variables) que definen su estado, y métodos (funciones) que definen su comportamiento. Son los llamados miembros de clase.
+Una clase tiene propiedades \(se representan con variables\) que definen su estado, y métodos \(funciones\) que definen su comportamiento. Son los llamados miembros de clase.
 
 ### El estado {#el-estado}
 
@@ -46,7 +46,7 @@ class Persona {
 
 #### Otra forma de declarar propiedades {#otra-forma-de-declarar-atributos}
 
-Los parámetros de entrada de un constructor pueden ser miembros de la clase (propiedades) de forma automática sin declararlos de forma explícita.
+Los parámetros de entrada de un constructor pueden ser miembros de la clase \(propiedades\) de forma automática sin declararlos de forma explícita.
 
 ```ts
 class Persona {
@@ -57,10 +57,10 @@ class Persona {
 }
 ```
 
-La diferencia ha sido la de escribir la palabra reservada _private_ (con _public_ y _protected_ también funciona) en la propia definición del método constructor. De esta forma estamos declarando de forma automática esos atributos como miembros de la clase. Y, a la hora de introducirlos como argumentos del constructor, ya se estarían inicializando.
+La diferencia ha sido la de escribir la palabra reservada _private_ \(con _public_ y _protected_ también funciona\) en la propia definición del método constructor. De esta forma estamos declarando de forma automática esos atributos como miembros de la clase. Y, a la hora de introducirlos como argumentos del constructor, ya se estarían inicializando.
 
-NUEVO DE LA 2.0 CONSTRUCTORES PRIVADOS
-El constructor siempre es público. Es el único caso en que se debe omitir. En algunos lenguajes de programación existen los constructores privados pero en TS no están soportados.
+  
+El constructor también puede ser público, protegido o privado. 
 
 ### El comportamiento {#el-comportamiento}
 
@@ -68,7 +68,7 @@ El constructor siempre es público. Es el único caso en que se debe omitir. En 
 
 ¿Qué puede hacer una persona? Puede hablar, caminar, comer… El comportamiento de una clase suele definirse también como verbos. Evidentemente no todas las acciones tienen sentido en todos los contextos. Si estamos creando la clase _Persona_ para un registro de alumnos de un colegio, no tiene sentido implementar un método que se llame _caminar_. Podría tenerlo si estuviéramos desarrollando un juego.
 
-Para el ejemplo crearemos un método llamado _decirNombre()_ que mostrará en un _alert()_ el nombre de la persona junto con sus apellidos.
+Para el ejemplo crearemos un método llamado _decirNombre\(\)_ que mostrará en un _alert\(\)_ el nombre de la persona junto con sus apellidos.
 
 ```ts
 class Persona {
@@ -87,7 +87,7 @@ class Persona {
 
 Puedes observar que muestra la concatenación de los atributos que hemos insertado como argumentos a la hora de instanciar la clase.
 
-Bien, hemos creado unos atributos y un método que define un comportamiento. ¿Cómo accedemos a ellos? Con el operador “.” (punto).
+Bien, hemos creado unos atributos y un método que define un comportamiento. ¿Cómo accedemos a ellos? Con el operador “.” \(punto\).
 
 Al instanciar la clase:
 
@@ -113,7 +113,7 @@ persona.mostrarNombre();
 
 Como puede ver hay un nuevo operador llamado _this_. _this_ se refiere a la clase en sí misma donde se escribe y es la forma de referenciar a los miembros de la clase. Si se intentara acceder a un miembro de clase sin anteponer _this_, fallaría la compilación.
 
-La forma de utilizarlo es la misma con la que accedemos a los métodos públicos de una clase por medio de una instancia de la misma, con _this._ (punto).__
+La forma de utilizarlo es la misma con la que accedemos a los métodos públicos de una clase por medio de una instancia de la misma, con _this._ \(punto\).\_\_
 
 #### Contexto {#contexto}
 
@@ -121,10 +121,10 @@ El _this_ en JS funciona de una forma distinta a como lo hace en la mayoría de 
 
 | Llamada | Valor de _this_ |
 | --- | --- |
-| **ejecutar();** | Objeto al que pertenece |
-| **var objeto = new Objeto();** | La nueva instancia |
+| **ejecutar\(\);** | Objeto al que pertenece |
+| **var objeto = new Objeto\(\);** | La nueva instancia |
 
-El operador _this_ sólo tiene sentido dentro de las funciones pues fuera de éstas su valor siempre es _window_ (excepto en el modo estricto que sería undefined). Ya una vez dentro de la función el valor de _this_ será el objeto al que pertenezca esa función en el momento de ser ejecutada. Podemos decir que las funciones son las únicas que crean nuevos contextos.
+El operador _this_ sólo tiene sentido dentro de las funciones pues fuera de éstas su valor siempre es _window_ \(excepto en el modo estricto que sería undefined\). Ya una vez dentro de la función el valor de _this_ será el objeto al que pertenezca esa función en el momento de ser ejecutada. Podemos decir que las funciones son las únicas que crean nuevos contextos.
 
 ```ts
 let thisExample = { 
@@ -135,7 +135,7 @@ let thisExample = {
 thisExample.nameAndSurname // undefined undefined
 ```
 
-La propiedad *nameAndSurname* del ejemplo es *undefined undefined* pues _this_ está referenciando a _window_ y éste no tiene las propiedades _name_ y _surname_.
+La propiedad _nameAndSurname_ del ejemplo es _undefined undefined_ pues _this_ está referenciando a _window_ y éste no tiene las propiedades _name_ y _surname_.
 
 En el caso de que lo usemos dentro de una función.
 
@@ -146,7 +146,7 @@ function thisExample(){
 thisExample();
 ```
 
-De nuevo this es _window_ porque _thisExample()_ no pertenece a ningún objeto de forma explícita, por lo que es parte de _window_.
+De nuevo this es _window_ porque _thisExample\(\)_ no pertenece a ningún objeto de forma explícita, por lo que es parte de _window_.
 
 El operador _new_ cambia este comportamiento y hace que el contexto sea la instancia.
 
@@ -187,11 +187,11 @@ let thisExample = function () {
 thisExample()// undefined undefined
 ```
 
-Si echamos un vistazo a la tabla, es de suponer que _this_ _name_ y _this.surname_, que se encuentran dentro de la función _nameAndSurname(),_ deberían ser correctos pues el contexto de la función es otra función superior que sí posee esas propiedades, es decir, _nameAndSurname()_ pertecene a un objeto (que en este caso es una función). Pero esto realmente no es así. El ejemplo no funciona como parece y en su lugar muestra _undefined undefined._ La conslusión final es que las funciones crean contexto pero no pueden formar parte de él a menos que se use el operador _new._
+Si echamos un vistazo a la tabla, es de suponer que _this_ _name_ y _this.surname_, que se encuentran dentro de la función _nameAndSurname\(\),_ deberían ser correctos pues el contexto de la función es otra función superior que sí posee esas propiedades, es decir, _nameAndSurname\(\)_ pertecene a un objeto \(que en este caso es una función\). Pero esto realmente no es así. El ejemplo no funciona como parece y en su lugar muestra _undefined undefined._ La conslusión final es que las funciones crean contexto pero no pueden formar parte de él a menos que se use el operador _new._
 
 #### this polimórfico {#this-polim-rfico}
 
-Ahora  *this* se refiere a la instancia de alguna clase que herede de la clase contenedora. 
+Ahora  _this_ se refiere a la instancia de alguna clase que herede de la clase contenedora.
 
 ```ts
 class HTMLElement { 
@@ -213,3 +213,4 @@ let div = new Div().setId("div").setWidth(5);
 ```
 
 Al invocar el método _setId,_ el cual es de _HTMLElement_, lo devolvería, con lo cual, al intentar invocar _setWidth,_ y no ser éste parte de esa clase, fallaría. Precisamente ese es el comportamiento que ha cambiado. Ahora sabe que lo que devuelve _setId_ no es _HTMLElement,_ sino cualquier clase que herede de ella y que esté invocando el método en ese instante.
+

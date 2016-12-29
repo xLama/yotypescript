@@ -43,6 +43,7 @@ class Persona {
     apellido2: string /* (…) */
 }
 ```
+Esto es realmente útil si tenemos activado strictNullChecks ya que de esta forma el tipo de la propiedad también es _undefined_
 
 #### Otra forma de declarar propiedades {#otra-forma-de-declarar-atributos}
 

@@ -14,7 +14,7 @@ let variable: Boolean = null;
 
 ### Undefined {#undefined}
 
-Representa variables no inicializadas. También podemos asignar el valor _undefined_ a una variable de cualquier tipo:
+Representa variables no inicializadas. También podemos asignar el valor _undefined_ a una variable de cualquier tipo siempre que no tengamos activado strictNullChecks::
 
 ```ts
 let variable: Boolean = undefined;

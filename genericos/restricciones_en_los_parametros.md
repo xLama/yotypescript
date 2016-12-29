@@ -21,9 +21,3 @@ let conce = new Concesionario<F18>(); // Error
 ```
 
 Es erróneo porque _F18_ no hereda de _Automóvil_ por lo que no cumple con la restricción.
-
-Podemos llevarlo más allá y establecer una restricción con los propios tipos de los parámetros. Sólo tiene sentido si tenemos, como mínimo, dos genéricos:
-
-REVISAR
-Support for F-Bounded Polymorphism
-**class** MergeConcesionarios<T **extends** U, U **extends** Concesionario>{**** //(...)}

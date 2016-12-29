@@ -113,6 +113,7 @@
     * [Finally](control_de_errores/finally.md)
 * [Control de bugs](control_de_bugs.md)
     * [Tipos no nullables](tipos_no_nullables.md)
+    * [Código inalcanzable](código-inalcanzable.md)
 * [DOM](dom/README.md)
     * [Introducción](dom/introduccion.md)
     * [Document](dom/document.md)

@@ -22,9 +22,10 @@ for (let i = 0; i < elementos.length; i++) { }
 Podemos también recorrer el array empezando por el final:
 
 ```ts
-for(let i = elementos.length - 1; i > 0; i--) { }
+for(let i = elementos.length - 1; i >= 0; i--) { }
 ```
 
-El índice inicial es el tamaño del array menos uno porque recordemos el índice empieza por 0\. Si tenemos 5 elementos en un array, el quinto tendrá de índice 4.
+El índice inicial es el tamaño del array menos uno porque recordemos el índice empieza por 0. Si tenemos 5 elementos en un array, el quinto tendrá de índice 4.
 
 La clase _Array_ tiene métodos y atributos muy útiles para trabajar con ellos.
+

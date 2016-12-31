@@ -111,7 +111,7 @@ Symbol("aSymbol") === Symbol("aSymbol"); // False
 
 Una de las grandes utilidades de los _symbol_ es que pueden ser usados como [propiedades de objetos](../objetos/propiedades_computadas_computed_properties.md#propiedades-symbol). Además existen los llamados “bien conocidos” que son _symbol_ predefinidos que sirven para identificar funcionalidades específicas, como los [iteradores.](../iteradores/README.md)
 
-### Tipos Alias. \(Alias Types\) {#tipos-alias-alias-types}
+### Tipos Alias \(Alias Types\) {#tipos-alias-alias-types}
 
 Este tipo es simplemente llamar de otra forma a un tipo ya definido. Se usa la palabra reservada _type._ Es útil para los tipos unión e intersección
 
@@ -133,7 +133,7 @@ let list: ListNumber = [];
 let list2: ListNumber = new Collection<number>();
 ```
 
-### Tuple Types \(Tipos tupla\) {#tuple-types-tipos-tupla}
+### Tipos tupla \(Tuple Types\) {#tuple-types-tipos-tupla}
 
 Se utiliza en los _arrays_ y sirve para determinar distintos tipos según la posición del elemento dentro del array.
 
@@ -225,7 +225,7 @@ Hemos intersecado A & B . Como ambos tienen un miembro llamado _member_, estos t
 
 ### Tipos Locales \(Local Types\) {#tipos-locales-local-types}
 
-No son más que clases, interfaces, enumerados y tipos alias que se declaran dentro un bloque de cógido \(entre llaves\). Éstos son sólo accesibles en ese bloque, al igual que ocurre con las variables declaradas con el operador _let_.
+No son más que clases, interfaces, enumerados y tipos alias que se declaran dentro un bloque de cógido \(entre llaves\). Estos son sólo accesibles en ese bloque, al igual que ocurre con las variables declaradas con el operador _let_.
 
 ```ts
 function local() {
@@ -241,7 +241,7 @@ let bar: Foo = new Foo(); /* Error. Foo solo es accessible dentro de local() */
 
 ### Tipos primitivos literales \(String, Number, Boolean Literal Types\) {#tipos-de-cadenas-literales-string-literal-types}
 
-Son tipos definidos por un string, number o boolean literal. Así de simple. El único valor que puede contener una variable tipada de esta forma es el propio valor
+Son tipos definidos por un _string, number o boolean_ literal. Así de simple. El único valor que puede contener una variable tipada de esta forma es el propio valor
 
 ```ts
 let name : "Lama" = "Lama";
@@ -272,7 +272,8 @@ let movement : movements = "right"; // Error
 
 Para que la asignación fuera correcta la cadena como valor debe ser a _up_ y _right_ a la vez, cosa que no es posible. Además, son tratados como cadenas \(su tipo aparente es el mismo\), por lo que tienen la misma interfaz, es decir, mismas propiedades y métodos.
 
-### Tipos mapeados (Mapped Types)
+### Tipos mapeados \(Mapped Types\)
+
 Partial, Readonly, Record, and Pick
 
 ### Guarda de tipos \(Type Guards\) {#guarda-de-tipos-type-guards}

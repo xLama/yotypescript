@@ -1,9 +1,8 @@
 ## Encapsulamiento {#encapsulamiento}
 
-Todo miembro de una clase es público por defecto. Esto significa que es accesible desde fuera de la clase. Para hacer que un miembro no lo sea, hay que declararlo como privado. Las palabras reservadas son _public_ y _private_.
+Todo miembro de una clase es público por defecto. Esto significa que es accesible desde fuera de la clase. Para hacer que un miembro no lo sea, hay que declararlo como privado o protegido. Las palabras reservadas son _public, protected y_ _private_.
 
 Normalmente los atributos deben ser siempre privados y la forma de acceder a ellos es mediante métodos públicos llamados _getters_ y _setters_.
-
 
 ```ts
 class Person {
@@ -72,7 +71,7 @@ public setName(name:string):void {
 }
 ```
 
-El método _getName()_ devuelve el nombre, por ello el tipo de retorno debe ser el mismo que el de _nombre_. El método _setName(name:_ *string*_)_ no devuelve nada porque se usa para establecer un nuevo valor a *name*. Se exige pasar como argumento una variable del tipo de la propiedad.
+El método _getName\(\)_ devuelve el nombre, por ello el tipo de retorno debe ser el mismo que el de _nombre_. El método _setName\(name:_ _string\)_ no devuelve nada porque se usa para establecer un nuevo valor a _name_. Se exige pasar como argumento una variable del tipo de la propiedad.
 
 ¿Por qué se hace así? De esta forma podemos hacer comprobaciones antes de asignar valores a las propiedades del objeto. Si pudiéramos asignar libremente, es posible que pudieran contener valores no deseados.
 
@@ -87,60 +86,3 @@ public setName(name:string):void {
 
 Así controlamos que no tenga información errónea.
 
-### Getters y setter implícitos (accesors) {#getters-y-setter-impl-citos-accesors}
-
-Es una forma muy interesante de construir _getters_ y _setters_ pues sintácticamente son invisibles a la hora de acceder a los atributos.
-
-En el apartado anterior hacíamos esto:
-
-```ts
-public getName():string{ 
-    return this.name;
-}
-
-public setName(name:string):void {
-    this.name = name;
-}
-```
-
-Ahora podemos hacer esto:
-
-```ts
-public get name():string{ 
-    return this.name;
-}
-
-public set name(name:string) {
-    this.name = name;
-}
-```
-
-_get_ y _set_ son palabras reservadas del lenguaje. Usadas en un método seguido de un espacio y el nombre de un atributo, lo convertimos en método.
-
-Hay que tener en cuenta que el nombre del _getter_ y _setter_ implícito no puede coincidir con el del atributo pues nos daría un error de duplicado.
-
-Para evitar esto lo que se suele hacer es anteponer un guion bajo en los nombres de las propiedades. Así quedaría la clase *Person* sólo con un atributo para hacerlo más simple:
-
-```ts
-class Person {
-    constructor(private _name: string) { }
-
-    public get name(): string {
-        return this._name;
-    }
-    public set name(name: string) {
-        this._name = name;
-    }
-}
-```
-
-*   _Nota: No se especifica el tipo void como devolución de los setters implícitos, da error de compilación._
-
-Para usarlos basta con acceder al atributo como si éste fuera público.
-
-```ts
-let carlos: Person = new Person( "Carlos");
-person.name = "Carlos";
-```
-
-Así combinamos la simpleza sintáctica del acceso a atributos públicos junto con la practicidad de hacerlo mediante métodos.

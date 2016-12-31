@@ -1,4 +1,4 @@
-## Async y await. {#async-y-await}
+__## Async y await. {#async-y-await}
 
 Son dos las palabras reservadas para usarlas: *async* y *await*. Para declarar una función como asíncrona se debe anteponer la palabra a function.
 

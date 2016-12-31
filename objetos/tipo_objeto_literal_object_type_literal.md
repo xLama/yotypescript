@@ -3,13 +3,13 @@
 Es posible definir un tipo objeto literal de manera que podamos especificar qué propiedades debe tener un objeto y de qué tipo son éstas:
 
 ```ts
-let objeto: {a: string , n: number } = { a: "cadena", n : 1 };
+let obj: {a: string , n: number } = { a: "cadena", n : 1 };
 ```
 
 Si no lo tipamos la inferencia lo hará por nosotros
 
 ```ts
-let objeto = { a: "cadena", n : 1 };  //{a: string , n: number }
+let obj = { a: "cadena", n : 1 };  //{a: string , n: number }
 ```
 
 Lo más común es usarlo junto con los tipos alias:

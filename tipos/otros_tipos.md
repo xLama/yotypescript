@@ -2,7 +2,7 @@
 
 ### Void {#void}
 
-Sólo sirve para determinar que una función no devuelve ningún valor. También se podrían tipar variables con _void _pero carece de sentido.
+Sólo sirve para determinar que una función no devuelve ningún valor. También se podrían tipar variables con \_void \_pero carece de sentido.
 
 ### Null {#null}
 
@@ -40,7 +40,7 @@ _Dog_ representaría el 0, _Cat_ el 1 y así sucesivamente.
 En TS, como en JS, una función también es un objeto y se puede almacenar como tal.
 
 ```ts
-let funcion: Function;
+let funcion: Function =  function(){};
 ```
 
 ### [Array](../modulos/evitar_que_una_clase_pueda_ser_superclase.md#757309351116418-_Anexo_I._) {#array}

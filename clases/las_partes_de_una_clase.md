@@ -13,7 +13,7 @@ class Persona {
 
 Parte de instancia: el atributo _nombre._
 
-Parte estática: el atributo _esperanza_vida_ y el constructor.
+Parte estática: el atributo _esperanza\_vida_ y el constructor.
 
 La parte estática se referencia con el nombre de la clase por ello no podemos asignar la parte estática a una variable del tipo _Persona_. Esto sólo sería correcto si la clase Persona no tuviera ningún miembro.
 
@@ -45,3 +45,6 @@ Una vez que tenemos la referencia de la parte estática podemos acceder a su con
 ```ts
 let persona = new estaticaPersona(); /* La inferencia tipa con Persona */
 ```
+
+
+

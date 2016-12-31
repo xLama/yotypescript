@@ -6,10 +6,10 @@ Es posible definir un tipo objeto literal de manera que podamos especificar qué
 let objeto: {a: string , n: number } = { a: "cadena", n : 1 };
 ```
 
-Si no lo tipado la inferencia lo hará por nosotros
+Si no lo tipamos la inferencia lo hará por nosotros
 
 ```ts
-let objeto = { a: "cadena", n : 1 };  //{a: string , n: number } 
+let objeto = { a: "cadena", n : 1 };  //{a: string , n: number }
 ```
 
 Lo más común es usarlo junto con los tipos alias:
@@ -19,7 +19,7 @@ type obj = {a: string , n: number }
 let g : obj = { a: "cadena", n : 1 }
 ```
 
-Existen tres restricciones a la hora de asginar objetos literales a variables de tipo objeto literal: número, nombre y tipo de propiedades del objeto:
+Existen tres restricciones a la hora de asignar objetos literales a variables de tipo objeto literal: número, nombre y tipo de propiedades del objeto:
 
 ```ts
 type obj = {a: string , n: number }

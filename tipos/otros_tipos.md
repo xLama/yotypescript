@@ -2,11 +2,11 @@
 
 ### Void {#void}
 
-Sólo sirve para determinar que una función no devuelve ningún valor. También se podrían tipar variables con void pero carece de sentido.
+Sólo sirve para determinar que una función no devuelve ningún valor. También se podrían tipar variables con _void _pero carece de sentido.
 
 ### Null {#null}
 
-No se puede tipar una variable con _Null._ Sólo puede ser el valor de la variable. Cualquier tipo de variable puede contener el valor _null_. Representa valor nulo.
+Cualquier tipo de variable puede contener el valor _null_. Representa valor nulo.
 
 ```ts
 let variable: Boolean = null;
@@ -110,4 +110,8 @@ Symbol("aSymbol") === Symbol("aSymbol"); // False
 ```
 
 Una de las grandes utilidades de los _symbol_ es que pueden ser usados como [propiedades de objetos](../objetos/propiedades_computadas_computed_properties.md#propiedades-symbol). Además existen los llamados “bien conocidos” que son _symbol_ predefinidos que sirven para identificar funcionalidades específicas, como los [iteradores.](../iteradores/README.md)
+
+## Tipos nombrados y referencia {#tipos-nombrados-y-referencia}
+
+Podemos crear nuestros propios tipos de datos con [clases](../enumerados/const_enums.md), [interfaces](../clases/objetos_dinamicos.md#757309351116418-_Interfaces) o enumerados. Es una característica básica de la programación orientada a objetos. Se les suele dar el nombre de tipos referencia aunque en TS obtienen este nombre cuando son usados. Si sólo los hemos creado se les llama tipos nombrados \(Named Types\). En este grupo entran los tipos objeto pues son realmente clases para manejar con más facilidad los tipos primitivos.
 

@@ -1,6 +1,6 @@
 ## Inferencia de tipos {#inferencia-de-tipos}
 
-Inferir, según la RAE se define como: *“Sacar una consecuencia o deducir algo de otra cosa”*.
+Inferir, según la RAE se define como: _“Sacar una consecuencia o deducir algo de otra cosa”_.
 
 En este sentido se refiere a la capacidad de deducción del compilador a la hora de asignar tipos de forma automática a variables no tipadas explícitamente, según ciertas circunstancias.
 
@@ -12,7 +12,7 @@ Es la que ocurre cuando “se nos olvida” tipar una variable que hemos inicial
 let str = "inferencia";
 ```
 
-El compilador tipa de forma automática la variable porque sabe que su contenido es un *string*.
+El compilador tipa de forma automática la variable porque sabe que su contenido es un _string_.
 
 Si inicializamos de forma literal, la inferencia del tipo será de primitivos. Si inicializamos con un constructor, la inferencia será del tipo del objeto.
 
@@ -20,6 +20,8 @@ Si inicializamos de forma literal, la inferencia del tipo será de primitivos. S
 let x = 3; // Tipado con number
 let y = new Number(3); // Tipado con Number
 ```
+
+Para que el código quede limpio, es aconsejable dejar que la inferencia haga su trabajo pues con ello conseguimos escribir menos.
 
 ### Expresiones tipadas por el contexto {#expresiones-tipadas-por-el-contexto}
 
@@ -37,9 +39,9 @@ En ella hemos especificado todos los tipos tanto a la hora de declararla como de
 let func: (x: number) => string = (x) => "func";
 ```
 
-Podemos obviar el tipo del parámetro en la inicialización pues al estar en el tipo de la declaración, sabe que realmente es un *number*.
+Podemos obviar el tipo del parámetro en la inicialización pues al estar en el tipo de la declaración, sabe que realmente es un _number_.
 
-Si lo hacemos al revés, es decir, no especificamos el tipo en el parámetro de la declaración pero sí en el de la incialización, el tipo del parámetro en la declaración será *any*:
+Si lo hacemos al revés, es decir, no especificamos el tipo en el parámetro de la declaración pero sí en el de la incialización, el tipo del parámetro en la declaración será _any_:
 
 ```ts
 let func: (x) => string = (x: number) => "func"; // x es any
@@ -51,7 +53,7 @@ Pero si borramos por completo el tipo de la declaración, va a tiparlo por infer
 let func = (x: number) => "func"; // tipado con : (x: number) => string
 ```
 
-Si no se tipa ni en la declaración ni en la inicialización, TS no tiene más remedio que tipar el parámetro con *any*:
+Si no se tipa ni en la declaración ni en la inicialización, TS no tiene más remedio que tipar el parámetro con _any_:
 
 ```ts
 let func = (x) => "func"; // x lo tipa con any. El retorno sí es string
@@ -62,3 +64,6 @@ Lo mejor es no tipar la variable y dejar que la inferencia haga su trabajo:
 ```ts
 let func =  (x: number) => "func"; // func es del tipo  (x:number) => string
 ```
+
+
+

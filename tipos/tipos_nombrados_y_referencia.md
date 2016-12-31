@@ -1,3 +1,4 @@
-## Tipos nombrados y referencia {#tipos-nombrados-y-referencia}
+##  {#tipos-nombrados-y-referencia}
 
-Podemos crear nuestros propios tipos de datos con [clases](../enumerados/const_enums.md), [interfaces](../clases/objetos_dinamicos.md#757309351116418-_Interfaces) o enumerados. Es una característica básica de la programación orientada a objetos. Se les suele dar el nombre de tipos referencia aunque en TS obtienen este nombre cuando son usados. Si sólo los hemos creado se les llama tipos nombrados (Named Types). En este grupo entran los tipos objeto pues son realmente clases para manejar con más facilidad los tipos primitivos.
+
+

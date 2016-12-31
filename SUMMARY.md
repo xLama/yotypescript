@@ -35,7 +35,6 @@
     * [Variables con tipo](tipos/variables_con_tipo.md)
     * [Tipos primitivos y tipos objeto](tipos/tipos_primitivos_y_tipos_objeto.md)
     * [Otros tipos](tipos/otros_tipos.md)
-    * [Tipos nombrados y referencia](tipos/tipos_nombrados_y_referencia.md)
     * [Inferencia de tipos](tipos/inferencia_de_tipos.md)
     * [El mejor tipo común](tipos/el_mejor_tipo_comun.md)
     * [typeof](tipos/typeof.md)

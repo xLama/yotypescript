@@ -321,7 +321,8 @@ No busca valor de los atributos, sino el nombre de los mismos.
 let animales = ["Perro", "Gato", "Conejo"];
 "Perro" in animales; /* False. Perro es un valor del íncide 0 del array */
 1 in animales; /* true. El array contiene 3 valores con lo cual existe el índice 1 */
-let obj = {animal:"Perro"}"Perro" in obj; /* False. Perro es un valor del íncide “animal” */"animal" in obj; // True. Animal es un índice
+let obj = {animal:"Perro"}
+"Perro" in obj; /* False. Perro es un valor del íncide “animal” */"animal" in obj; // True. Animal es un índice
 ```
 
 ### Operador condicional terciario {#operador-condicional-terciario}

@@ -5,12 +5,11 @@
 | Destructuración | Adaptado | Adaptado | Nativo |
 | Spread \(Expansión\) | Adaptado | Adaptado | Nativo |
 | for..of | Adaptado | Adaptado | Nativo |
-| let | Sintáctico | Sintáctico | Nativo |
-| const | Sintáctico | Sintáctico | Nativo |
+| let y const | Sintáctico | Sintáctico | Nativo |
 | Computed properties | Adaptado | Adaptado | Nativo |
 | Symbols | No soportado | No soportado | Nativo |
 | Módulos externos | Adaptado | Adaptado | Nativo |
-| Módulos internos | Adaptado | Adaptado |  |
+| Módulos internos | Adaptado | Adaptado | Adaptado |
 | Plantillas de cadenas | Adaptado | Adaptado | Nativo |
 | Clases | Adaptado | Adaptado | Nativo |
 | Interfaces | Sintáctico | Sintáctico | Sintáctico |

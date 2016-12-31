@@ -81,26 +81,30 @@ Función como argumento:
 ```ts
 (valor:number, index:number, array:number[]) => void
 ```
-
-**function** recorrer\(valor:**number**, index:**number**, array:**number**\[\]\){ 
-
-** array\[index\] = valor + 1;**
-
-**}**
-
-array.forEach\(recorrer\);
+```ts
+function recorrer(valor: number, index: number, array: number[]) {
+    array[index] = valor + 1;
+}
+array.forEach(recorrer);
+```
 
 La función suma 1 a todos los elementos del array. Si modificamos el parámetro _valor_, no surtiría efecto en el array pues los tipos primitivos se pasan por valor y no por referencia.
 
-**function** recorrer\(valor:**number**, index:**number**, array:**number**\[\]\):**void**{ _\*\*_ ++valor;}numeros.forEach\(recorrer\); // array es \[1,2,3\]
+```ts
+function recorrer(valor, index, array) { ++valor; }
+nums.forEach(recorrer); // nums es [1,2,3]
+```
 
 Pero si lo usáramos con objetos:
 
-let array = \[**new** Persona\(18\), **new** Persona\(60\)\];
-
-**function** cambiarEdad\(valor:Persona, index:**number**, array:Persona\[\]\):**void**{ _\*\*_ valor.setEdad\( valor.getEdad\(\)+1 \);}
-
-numeros.forEach\(cambiarEdad\); /_ array contiene 2 personas. Una con 19 años y otra con 61. _/
+```ts
+let array = [new Person(18), new Person(60)];
+array.forEach(
+    (valor, index, array) => { 
+        valor.setEdad(valor.getEdad() + 1); 
+    }
+); // array contiene 2 personas. Una con 19 años y otra con 61.
+```
 
 No sería necesario acceder al valor a través del array y su índice.
 
@@ -108,61 +112,80 @@ No sería necesario acceder al valor a través del array y su índice.
 
 Recorre el array buscando el elemento pasado como argumento, devolviendo el índice de la primera ocurrencia. Devuelve -1 si no lo encuentra
 
-let indice:**number** = numeros.indexOf\(2\); // 1
+```ts
+let index = nums.indexOf(2); // 1
+```
 
 También se puede invocar el método con un argumento opcional que específica a partir de qué posición debe empezar a buscar.
 
-let indice:**number** = numeros.indexOf \(2, 2\); // -1
+```ts
+let index = nums.indexOf(2, 2); // -1
+```
 
 ### lastIndexOf {#lastindexof}
 
 Recorre el array buscando el elemento pasado como argumento, devolviendo el índice de la última ocurrencia. Si no lo encuentra devuelve -1
 
-let indice:**number** = numeros.indexOf \(2\); // 1
+```ts
+let index = nums.lastIndexOf(2); // 1
+```
 
 También se puede invocar el método con un argumento opcional que específica a partir de qué índice debe empezar a buscar.
 
-let indice:**number** = numeros.indexOf \(2, 2\); // -1
+```ts
+let index = nums.lastIndexOf(2, 2); // -1
+```
 
 ### join {#join}
 
-Devuelve el array como un **string** donde sus elementos están separados por un carácter pasado como argumento.
+Devuelve el array como un string donde sus elementos están separados por un carácter pasado como argumento.
 
-let arrayComoString:**string** = numeros.join\("-"\); // “1,2,3”
+```ts
+let arrayString = nums.join("-"); // "1,2,3"
+```
 
-Hemos convertido el array en un **string** separado por guiones. Ejecuta el método _toString\(\)_ de cada elemento del array.
+Hemos convertido el array en un string separado por guiones. Ejecuta el método _toString()_ de cada elemento del array.
 
 ### map {#map}
 
 Recorre todos los elementos del array ejecutando el código de la función pasada como argumento a cada uno de ellos y devuelve un array con los cambios realizados sin modificar el array original.
 
-**function** map\(valor:**number**, index:**number**, array:**number**\[\]\):**number**{ **return** ++valor;}let numeros2 = numeros.map\(map\);
-
-El array _numeros_ sigue siendo \[1,2,3\] pero _numeros2_ es \[2,3,4\] puesto que hemos sumado uno a cada elemento.
+```ts
+function map(valor, index, array) {
+    return ++valor;
+}
+let numbers2 = nums.map(map);
+```
+El array _numbers_ sigue siendo \[1,2,3\] pero _numbers2_ es \[2,3,4\] puesto que hemos sumado uno a cada elemento.
 
 ### shift {#shift}
 
 Elimina el primer elemento del array y lo devuelve
 
-let primerElemento = numeros.shift\(\);// primerElemento es 1
+```ts
+let firstElement = nums.shift(); // firstElement es 1
+```
 
 ### pop {#pop}
 
 Elimina el último elemento del array y lo devuelve
-
-let ultimoElemento = numeros.pop\(\);// ultimoElemento es 3
+```ts
+let lastElement = nums.pop(); // lastElement es 3
+```
 
 ### push {#push}
 
 Añade un nuevo elemento al final del array y devuelve el tamaño del array.
-
-let nuevoTamano:**number** = numeros.push\(8\);// nuevoTamano es 4
+```ts
+let newLenght = nums.push(8); // newLenght es 4
+```
 
 ### unshift {#unshift}
 
 Inserta nuevos elemento al principio del array y devuelve el nuevo tamaño del array.
-
-let nuevoTamano:**number** = numeros.unshift\(8\);//array es \[8,1,2,3\]
+```ts
+let newLenght = nums.unshift(8); // array es [8,1,2,3]
+```
 
 ### reduce {#reduce}
 
@@ -240,59 +263,83 @@ _valorPrevio_: 53 \(es el resultado de la iteración anterior\), _valor actual_ 
 
 Devuelve el array original dándole la vuelta al orden de sus elementos.
 
-let arrayReverse = numeros.reverse\(\);// arrayReverse es \[3,2,1\];
+```ts
+let arrayReverse = nums.reverse();// arrayReverse es [3,2,1];
+```
 
 ### slice {#slice}
 
 Devuelve un trozo del array estableciendo como argumentos los índices de principio y fin, ambos opcionales. Si no se establece ninguno, hace una copia completa del array.
 
-let trozoArray = numeros.slice\(1\); // trozoArray es \[2,3\]
+```ts
+let partialArray = nums.slice(1); // partialArray es [2,3]
+```
 
 ### sort {#sort}
 
 Ordena un array mediante el criterio dado por una función. Si se omite la función serán ordenados de forma ascendente mediante caracteres ASCII.
+```ts
+let array = [4,7,1,3,9,6];
+array.sort(); // array es [1,3,4,6,7,9]
+```
 
-let array = \[4,7,1,3,9,6\];array.sort\(\);// array es \[1,3,4,6,7,9\]
-
-Función como argumento: \(a:T, b:T\) =&gt; number
+Función como argumento: 
+```ts
+(a:T, b:T) => number
+```
 
 La función debe devolver un número:
 
-0 = si los elementos son iguales 1 = si el primer elemento parametrizado es mayor al segundo-1 = si el primer elemento parametrizado es menor al segundo.
+0 = si los elementos son iguales 
+1 = si el primer elemento parametrizado es mayor al segundo
+-1 = si el primer elemento parametrizado es menor al segundo.
 
 Con esto obtendríamos un orden ascendente. Si queremos un orden descendente sólo debemos cambiar el 1 por el -1, y el -1 por el.
 
-**function** ordenarDescendente\(n1: **number**, n2: **number**\): **number** {
-
-let orden: **number** = 0; **if** \(n1 &gt; n2\) { **\*\* orden = 1; } **else** **if** \(n1 &lt; n2\) { \*\*** orden = -1
-
-} **return** orden;}numeros.sort\(ordenarDescendente\);// numeros es \[9,7,6,4,3,1\]
+```ts
+function ordenarDescendente(n1: number, n2: number): number {
+    let orden = 0;
+    if (n1 > n2) { orden = 1; }
+    else if (n1 < n2) { orden = -1 }
+    return orden;
+}
+nums.sort(ordenarDescendente); // numeros es [9,7,6,4,3,1]
+```
 
 ### splice {#splice}
 
 Elimina elementos del array pudiendo sustituirlos por otros. Devuelve un array con los elementos eliminados.
 
-let eliminados = numeros.splice\(0,1\); /_ Empieza en el 0 y avanza uno. eliminados es \[1\] _/
+```ts
+let remove = nums.splice(0, 1); // Empieza en el 0 y avanza uno. remove es [1]
+```
 
-let eliminados = array.splice\(0,1, 9\); /_ Empieza en el 0 y avanza uno e inserta 9 en su lugar. eliminados es \[1\] array es \[9,2,3\] _/
 
 ### toString {#tostring}
 
-Devuelve el Array en forma de cadena de caracteres separados por coma. Ejecuta el método _toString\(\)_ de cada objeto si lo posee.
+Devuelve el Array en forma de cadena de caracteres separados por coma. Ejecuta el método _toString()_ de cada objeto si lo posee.
 
-**class** Persona{ **constructor**\(**private** nombre:**string**\){} toString\(\):**string**{ **return** **this**.nombre; }_\*\*_}
+```ts
+class Person {
+    constructor(private nombre: string) { }
+    toString() { return this.nombre; }
+}
 
-let array:Array&lt;Persona&gt; = \[**new** Persona\("José"\),**new** Persona\("Carlos"\)\];
-
+let array = [new Person("José"), new Person("Carlos")];
 array.toString\(\) // "José, Carlos"
+```
 
-Si no poseyera el método toString\(\), devolvería _\[object Object\]_
 
-**class** Persona{ **constructor**\(**private** nombre:**string**\){}_\*\*_}
+Si no poseyera el método toString(), devolvería _[object Object]_
 
-let array:Array&lt;Persona&gt; = \[**new** Persona\("José"\),**new** Persona\("Carlos"\)\];
+```ts
+class Person {
+    constructor(private nombre: string) { }
+}
 
-array.toString\(\) // \[object Object\],\[object Object\]
+let array = [new Person("José"), new Person("Carlos")];
+array.toString() // [object Object],[object Object]
+```
 
-Esto ocurre porque no sabría cómo convertir las instancias de esa clase en un _String_. Los tipos primitivos y objeto poseen el método _toString\(\)_.
+Esto ocurre porque no sabría cómo convertir las instancias de esa clase en un _String_. Los tipos primitivos y objeto poseen el método _toString()_.
 

@@ -117,8 +117,6 @@ Si _Person_ tiene el constructor sobrecargado, la llamada _super\(\)_ puede ser 
 
 Desde otros métodos podemos llamar a los métodos del padre con el mismo _super_. En este caso no se exige que sea la primera llamada.
 
-```ts
-
 
 En este caso hemos creado un nuevo método para *Student* llamado _mostrarReferencia()_ que muestra la referencia del alumno y después su nombre y apellidos. Pero esto último no lo hace reescribiendo otra vez toda la lógica, sino que se aprovecha de que el padre (*Person*) ya lo tiene implementado.
 
@@ -136,7 +134,7 @@ Heredar los miembros de la clase padre no nos obliga a utilizarlos tal y como so
 
 Los miembros deben tener el mismo modificador de visibilidad por lo que si en la superclase está declarado como _public_ o _private_, en la clase hija se debe declarar igual.
 
-
+```ts
 class Person {
     public showName(): void { }
 }

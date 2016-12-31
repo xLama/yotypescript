@@ -51,7 +51,7 @@ function checkIfSomeIsTwo(val:number, index:number, array:number[]){
 nums.some(checkIfSomeIsTwo); // true
 ```
 
-La función comprueba si al menos uno de los elementos del array es el número 2. Como uno lo es, devuelve **true**.
+La función comprueba si al menos uno de los elementos del array es el número 2. Como uno lo es, devuelve _true_.
 
 ### filter {#filter}
 
@@ -189,13 +189,18 @@ let newLenght = nums.unshift(8); // array es [8,1,2,3]
 
 ### reduce {#reduce}
 
-Aplica una función simultáneamente a dos valores de un array \(de izquierda a derecha\)
+Aplica una función simultáneamente a dos valores de un array (de izquierda a derecha)
 
-Función como argumento: \(valorPrevio:T, valorActual:T, índice:index, array:T\[\]\) =&gt; T
+Función como argumento: 
 
-**function** reduce\(valorPrevio:**number**, valorActual:**number**, índice:**number**, array:**number**\[\]\):**number**{ **return** valorPrevio + valorActual;}
+```ts
+(valorPrevio:T, valorActual:T, index : number, array:T[]) => T
+```
 
-let sumaArray:**number** = numeros.reduce\(reduce\);
+```ts
+let reduce = (valorPrevio, valorActual, index, array) => valorPrevio + valorActual
+let sumArray = nums.reduce(reduce);
+```
 
 De esta forma el valor previo es el primer elemento del array y el valor actual el segundo.
 
@@ -209,7 +214,9 @@ valorPrevio: 3 \(es el resultado de la iteración anterior\), valor actual = 3. 
 
 Si se inserta un segundo argumento a _reduce_, ese argumento sería el _valorPrevio_ en la primera iteración y el _valorActual_ sería el primer elemento del array
 
-let sumaArray:**number** = array.reduce\(reduce,50\);
+```ts
+let sumaArray = array.reduce(reduce,50);
+```
 
 Primera iteración:
 
@@ -227,12 +234,15 @@ valorPrevio: 53 \(es el resultado de la iteración anterior\), valor actual = 3.
 
 Aplica una función simultáneamente a dos valores de un array \(de derecha a izquierda\) para reducirlo a un único valor.
 
-Definición del método: \(valorPrevio:T, valorActual:T, índice:number, array:T\[\]\) =&gt; T
+Definición del método: 
+```ts
+(valorPrevio:T, valorActual:T, índice:number, array:T[]) => T
+```
 
-**function** reduceRight\(valorPrevio:**number**, valorActual:**number**, índice:**number**, array:**number**\[\]\):**number**{ **return** valorPrevio + valorActual;}
-
-let sumaArray:**number** = numeros.reduceRight\(reduceRight\);
-
+```ts
+let reduceRight = (valorPrevio, valorActual, index, array) => valorPrevio + valorActual
+let sumaArray= numeros.reduceRight(reduceRight);
+```
 De esta forma el valor previo es el último elemento del array y el valor actual el penúltimo.
 
 Primera iteración:
@@ -245,7 +255,9 @@ _valorPrevio_: 3 \(es el resultado de la iteración anterior\), _valor actual_ =
 
 Si se inserta un segundo argumento a _reduceRight_, ese argumento sería el _valorPrevio_ en la primera iteración y el _valorActual_ sería el último elemento del array
 
-let sumaArray:**number** = numeros.reduceRight\(reduceRight,50\);
+```ts
+let sumArray = nums.reduceRight(reduceRight, 50);
+```
 
 Primera iteración:
 

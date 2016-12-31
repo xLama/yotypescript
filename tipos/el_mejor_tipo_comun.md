@@ -60,7 +60,7 @@ class B { }
 let array = [new A(), new B()] // A[]
 ```
 
-Si existe más de un mejor tipo común posible, elige el primero que encuentra. En este caso _A_.
+Si existe más de un mejor tipo común posible, elige el primero que encuentra.
 
 ```ts
 class A { }

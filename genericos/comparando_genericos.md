@@ -22,6 +22,7 @@ let y: Generico<number>;
 x = y; // Incorrecto
 ```
 
-No sería correcto pues la x tendría su miembro _algo_ del tipo _string y la y tendría su miembro _algo_ del tipo _number_. _Number_ y _string_ no son compatibles.
+No sería correcto pues la x tendría su miembro _algo_ del tipo _string y la y tendría su miembro algo_ del tipo _number_. _Number_ y _string_ no son compatibles.
 
 Los genéricos no son nada por sí solos, sino que siempre son una clase, interfaz o función. Las comparaciones se realizan una vez se resuelven los parámetros genéricos siguiendo las mismas reglas de comparación vistas en el libro.
+

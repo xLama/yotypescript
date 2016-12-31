@@ -49,10 +49,10 @@ La verdadera configuración se realiza en _compilerOptions_:
 | target | Versión de ECMAScript de la compilación | _“ES3”, “ES5”, “ES6”_ |
 | watch | Especifica si se debe compilar al guardar los cambios. | _boolean_ |
 | newLine | Final de secuencia usada en los archivos .js generados. | _"CRLF", "LF"_ |
-| noEmitHelpers | Especifica si debe generar el código .js que sirve de ayuda en distintas implementaciones. Un ejemplo claro es __extends usado para realizar la herencia. | _boolean_ |
+| noEmitHelpers | Especifica si debe generar el código .js que sirve de ayuda en distintas implementaciones. Un ejemplo claro es \_\_extends usado para realizar la herencia. | _boolean_ |
 | inlineSourceMap | Especifica si debe generar el contenido de los .maps dentro del propio archivo .js | _boolean_ |
 | inlineSources |  |  |
-| emitDecoratorMetadata | Especifica si debe generar el decorador __metadata al usar decoradores. | _boolean_ |
+| emitDecoratorMetadata | Especifica si debe generar el decorador \_\_metadata al usar decoradores. | _boolean_ |
 | experimentalDecorators | Especifica si se pueden usar los decoradores, aún en fase experimental. | _boolean_ |
 | isolaredModules | Especifica si debe generar los archivos .js aunque no pueda resolver la importación del módulo. | _boolean_ |
 | rootDir | Directorio donde se encuentran los archivos .ts a compilar. | _string_ |
@@ -68,4 +68,5 @@ La verdadera configuración se realiza en _compilerOptions_:
 | noFallthroughCasesInSwitch |  | _boolean_ |
 | allowUnusedLabels |  | _boolean_ |
 
-Imagen de cómo quedaría un tsconfig.json:
+
+

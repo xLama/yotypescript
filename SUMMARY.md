@@ -55,7 +55,6 @@
     * [Tipo objeto literal \(Object type literal\)](objetos/tipo_objeto_literal_object_type_literal.md)
     * [Exceso de propiedades](objetos/exceso_de_propiedades.md)
     * [Propiedades opcionales](objetos/propiedades_opcionales.md)
-    * [Relación con las interfaces](objetos/relacion_con_las_interfaces.md)
 * [Funciones](funciones/README.md)
     * [Introducción](funciones/introduccion.md)
     * [Declaración](funciones/declaracion.md)

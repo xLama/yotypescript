@@ -1,6 +1,6 @@
 ## Polimorfismo {#polimorfismo}
 
-Com su nombre indica (muchas formas) es la cualidad que tiene un objeto de un tipo de comportarse como de otro tipo en un momento determinado.
+Com su nombre indica \(muchas formas\) es la cualidad que tiene un objeto de un tipo de comportarse como de otro tipo en un momento determinado.
 
 Recordando el ejemplo:
 
@@ -17,13 +17,14 @@ let be: LivingBeing = new Stundent();
 Si en una función aceptamos como parámetro un LivingBeing:
 
 ```ts
-function example(ser: LivingBeing): void { }
+function example(ser: LivingBeing) { }
 ```
 
-¿Qué pasaría si la invocamos pasándole como argumento un *Student*?
+¿Qué pasaría si la invocamos pasándole como argumento un _Student_?
 
 ```ts
 example(new Stundent());
 ```
 
-¿Sería correcto? Sí. Pues un *Stundent* es un *LivingBeing*. No hay riesgo de ningún tipo pues *Stundent* ha heredado de *LivingBeing* todos los miembros públicos por lo que estamos seguros que de los métodos se van a ejecutar sin problemas.
+¿Sería correcto? Sí. Pues un _Stundent_ es un _LivingBeing_. No hay riesgo de ningún tipo pues _Stundent_ ha heredado de _LivingBeing_ todos los miembros públicos por lo que estamos seguros que de los métodos se van a ejecutar sin problemas.
+

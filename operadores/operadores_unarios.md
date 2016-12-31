@@ -145,7 +145,7 @@ let numbers = [1, 2];
 let moreNumbers = [4, 5, 9, ...numbers, 10]; // 4,5,9,1,2,10
 
 let keys = { a: 1, b: 2 };
-let moreKeys = { ...keys, c: 3 }; 
+let moreKeys = { ...keys, c: 3 };
 ```
 
 Es útil para hacer copias de estructuras. Realmente son copias superficiales pues los objetos que puedan contener esas estructuras no se copian. Para ello habría que hacer una copia profunda.
@@ -156,7 +156,6 @@ let copyArray = [...originalArray];
 
 let originalObject = { a: 1, b: 2 };
 let copyObject = { ...originalObject };
-
 ```
 
 También sirve como parámetro de una función para indicar que admite un número infinito de argumentos, además de usarse como argumento en sí mismo:
@@ -187,14 +186,5 @@ Siempre se necesita que uno de los parámetros use también el operador … Con 
 
 Realmente lo que hace es iterar el iterable \(en este caso un _array_\).
 
-### Operador keyof
-Obtiene las propiedades de cualquier objeto en forma de unión de cadenas literales.
-```ts
-type obj = { a: 1, b: 2, c: 3 };
-let obj2: keyof  obj; // obj2 es del tipo "a" | "b" | "c"
-obj2 = "a" // Correcto
-obj2 = "Other" // Incorrecto
 
 
-```
-Esto se hace relevante en los tipos mapeados

@@ -39,6 +39,7 @@
     * [Inferencia de tipos](tipos/inferencia_de_tipos.md)
     * [El mejor tipo común](tipos/el_mejor_tipo_comun.md)
     * [typeof](tipos/typeof.md)
+    * [keyof](tipos/keyof.md)
     * [Destructuring \(deconstrucción\)](tipos/destructuring_deconstruccion.md)
 * [Operadores](operadores/README.md)
     * [Operadores unarios](operadores/operadores_unarios.md)

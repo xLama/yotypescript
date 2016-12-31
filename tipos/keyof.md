@@ -11,3 +11,12 @@ obj2 = "Other" // Incorrecto
 
 Esto se hace relevante en los tipos mapeados
 
+Se puede utilizar junto con typeof para obtener las propiedades de del tipo de una variable
+
+```ts
+let obj : {a :number, b:number, c:string};
+let obj2 : keyof typeof obj; // "a" | "b" | "c"
+```
+
+
+

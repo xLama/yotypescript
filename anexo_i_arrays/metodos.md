@@ -278,22 +278,33 @@ let partialArray = nums.slice(1); // partialArray es [2,3]
 ### sort {#sort}
 
 Ordena un array mediante el criterio dado por una función. Si se omite la función serán ordenados de forma ascendente mediante caracteres ASCII.
+```ts
+let array = [4,7,1,3,9,6];
+array.sort(); // array es [1,3,4,6,7,9]
+```
 
-let array = \[4,7,1,3,9,6\];array.sort\(\);// array es \[1,3,4,6,7,9\]
-
-Función como argumento: \(a:T, b:T\) =&gt; number
+Función como argumento: 
+```ts
+(a:T, b:T) => number
+```
 
 La función debe devolver un número:
 
-0 = si los elementos son iguales 1 = si el primer elemento parametrizado es mayor al segundo-1 = si el primer elemento parametrizado es menor al segundo.
+0 = si los elementos son iguales 
+1 = si el primer elemento parametrizado es mayor al segundo
+-1 = si el primer elemento parametrizado es menor al segundo.
 
 Con esto obtendríamos un orden ascendente. Si queremos un orden descendente sólo debemos cambiar el 1 por el -1, y el -1 por el.
 
-**function** ordenarDescendente\(n1: **number**, n2: **number**\): **number** {
-
-let orden: **number** = 0; **if** \(n1 &gt; n2\) { **\*\* orden = 1; } **else** **if** \(n1 &lt; n2\) { \*\*** orden = -1
-
-} **return** orden;}numeros.sort\(ordenarDescendente\);// numeros es \[9,7,6,4,3,1\]
+```ts
+function ordenarDescendente(n1: number, n2: number): number {
+    let orden = 0;
+    if (n1 > n2) { orden = 1; }
+    else if (n1 < n2) { orden = -1 }
+    return orden;
+}
+nums.sort(ordenarDescendente); // numeros es [9,7,6,4,3,1]
+```
 
 ### splice {#splice}
 

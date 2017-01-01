@@ -1,4 +1,4 @@
-## Primitivos y objeto {#tipos-primitivos-y-tipos-objeto}
+## Tipos primitivos y objeto {#tipos-primitivos-y-tipos-objeto}
 
 Los tipos primitivos son los elementales que nos proporciona un lenguaje de programación y cuyos valores son guardados en la posición de memoria que se le asigna.
 
@@ -147,26 +147,19 @@ function suma(strings : string[], x: number, y : number){
   y; // a * b = 500
 }
 suma `La suma de a y b es ${a + b} y la multiplicación es ${a * b}
-
 ```
-
 
 ### ¿Primitivo u objeto? ¿Cuál usar? {#primitivo-u-objeto-cu-l-usar}
 
-
-
-
 Vayamos por partes:
 
-Con respecto a *number/Number*, con el primero se pueden usar los [operadores aritméticos](../operadores/operadores_binarios.md#operadores-aritm-ticos) y con el segundo no. Es algo exclusivo de TS ya que en JS es perfectamente válido por lo que estamos ante otra comprobación en tiempo de compilación. Esto supone un gran inconveniente.
+Con respecto a _number/Number_, con el primero se pueden usar los [operadores aritméticos](../operadores/operadores_binarios.md#operadores-aritm-ticos) y con el segundo no. Es algo exclusivo de TS ya que en JS es perfectamente válido por lo que estamos ante otra comprobación en tiempo de compilación. Esto supone un gran inconveniente.
 
 ```ts
 let x: Number = new Number(1);
 let y: Number = new Number(1);
 let z: Number = x + y; // Error
 ```
-
-
 
 Para los tipos _boolean/Boolean_ y _string/String_ la elección es más complicada. No existen diferencias más allá de las incompatibilidades de inicialización. Pero teniendo en cuenta que es preferible usar _number_ a _Number_, son recomendables _boolean_ y _string_ para conseguir coherencia en el código.
 

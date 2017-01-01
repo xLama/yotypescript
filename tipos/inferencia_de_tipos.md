@@ -1,4 +1,4 @@
-## Inferencia de tipos {#inferencia-de-tipos}
+## Inferencia {#inferencia-de-tipos}
 
 Inferir, según la RAE se define como: _“Sacar una consecuencia o deducir algo de otra cosa”_.
 

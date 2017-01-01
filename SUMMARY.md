@@ -82,6 +82,7 @@
     * [El estado y el comportamiento](clases/el-estado-y-el-comportamiento.md)
         * [El estado](clases/el-estado.md)
         * [El comportamiento](clases/el-comportamiento.md)
+        * [Operador this](clases/operador-this.md)
     * [Encapsulamiento](clases/encapsulamiento.md)
         * [Getter y setter implícitos](clases/getter-y-setter-implícitos.md)
     * [Herencia](clases/herencia.md)

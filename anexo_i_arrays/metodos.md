@@ -81,14 +81,12 @@ Función como argumento:
 ```ts
 (valor:number, index:number, array:number[]) => void
 ```
-
-**function** recorrer\(valor:**number**, index:**number**, array:**number**\[\]\){ 
-
-** array\[index\] = valor + 1;**
-
-**}**
-
-array.forEach\(recorrer\);
+```ts
+function recorrer(valor: number, index: number, array: number[]) {
+    array[index] = valor + 1;
+}
+array.forEach(recorrer);
+```
 
 La función suma 1 a todos los elementos del array. Si modificamos el parámetro _valor_, no surtiría efecto en el array pues los tipos primitivos se pasan por valor y no por referencia.
 
@@ -108,21 +106,29 @@ No sería necesario acceder al valor a través del array y su índice.
 
 Recorre el array buscando el elemento pasado como argumento, devolviendo el índice de la primera ocurrencia. Devuelve -1 si no lo encuentra
 
-let indice:**number** = numeros.indexOf\(2\); // 1
+```ts
+let index = nums.indexOf(2); // 1
+```
 
 También se puede invocar el método con un argumento opcional que específica a partir de qué posición debe empezar a buscar.
 
-let indice:**number** = numeros.indexOf \(2, 2\); // -1
+```ts
+let index = nums.indexOf(2, 2); // -1
+```
 
 ### lastIndexOf {#lastindexof}
 
 Recorre el array buscando el elemento pasado como argumento, devolviendo el índice de la última ocurrencia. Si no lo encuentra devuelve -1
 
-let indice:**number** = numeros.indexOf \(2\); // 1
+```ts
+let index = nums.lastIndexOf(2); // 1
+```
 
 También se puede invocar el método con un argumento opcional que específica a partir de qué índice debe empezar a buscar.
 
-let indice:**number** = numeros.indexOf \(2, 2\); // -1
+```ts
+let index = nums.lastIndexOf(2, 2); // -1
+```
 
 ### join {#join}
 

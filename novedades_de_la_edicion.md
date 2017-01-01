@@ -1,14 +1,19 @@
 # Novedades de la edición {#novedades-de-la-edici-n}
 
-Entre las versiones 1.7 y 1.8 se enumeran las siguientes novedades recogidas por este libro:
+Entre las versiones 1.7 y 2.1 se enumeran las siguientes novedades recogidas por este libro:
 
-* Funciones async / await.
-* Mixins.
+* Funciones async / await
+* Mixins
 * Polimorfismo F-Bounded
-* Tipos cadenas literales
+* Tipos primitivosliterales
 * Nuevos parámetros del compilador
 * JavaScript en compilaciones TypeScript
-* Guardas de tipos con this.
+* Guardas de tipos con this
+* Tipos mapeados
+* Tipos no nullables
+* keyof
+* Spread y rest en objetos
+* Never
 * Corrección de errores
 
 Entre las versiones 1.6 y 1.7 se enumeran las siguientes novedades recogidas por este libro:
@@ -41,5 +46,5 @@ Avance para las próximas ediciones del libro:
 
 **NOTA IMPORTANTE**
 
-Con la compra de este ebook tienes derecho a obtener la versión PDF en formato A4 del libro. Debido a que Amazon no me permite regalarlo a través de su plataforma, puedes visitar esta web https://www.gitbook.com/read/book/jclama/yotypescript?key=f088-b333-3416 donde está disponible para su descarga y visionado online. Además verás las últimas novedades que se irán incluyendo en el libro sin esperar a la publicación en Amazon.
+Con la compra de este ebook tienes derecho a obtener la versión PDF en formato A4 del libro. Debido a que Amazon no me permite regalarlo a través de su plataforma, puedes visitar esta web [https://www.gitbook.com/read/book/jclama/yotypescript?key=f088-b333-3416](https://www.gitbook.com/read/book/jclama/yotypescript?key=f088-b333-3416) donde está disponible para su descarga y visionado online. Además verás las últimas novedades que se irán incluyendo en el libro sin esperar a la publicación en Amazon.
 

@@ -1,6 +1,7 @@
 # Summary
 
 * [YoTypeScript 2.1](README.md)
+    * Novedades
 * [Introducción](introduccion/README.md)
     * [¿A quién va dirigido este libro?](introduccion/a_quien_va_dirigido_este_libro.md)
     * [JavaScript](introduccion/javascript.md)
@@ -176,4 +177,6 @@
     * [La clase JSON](anexo_iii_json/la_clase_json.md)
 * [Anexo IV. tsconfig.json](anexo_iv_tsconfigjson.md)
 * [Anexo V. TS =&gt; ECMAScript](anexo_v_ts_=_ecmascript.md)
+* [Novedades de la edición](novedades_de_la_edicion.md)
+* [Versión PDF - Gitbook](versión-pdf---gitbook.md)
 

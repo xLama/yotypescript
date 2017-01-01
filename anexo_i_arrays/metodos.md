@@ -234,12 +234,15 @@ valorPrevio: 53 \(es el resultado de la iteración anterior\), valor actual = 3.
 
 Aplica una función simultáneamente a dos valores de un array \(de derecha a izquierda\) para reducirlo a un único valor.
 
-Definición del método: \(valorPrevio:T, valorActual:T, índice:number, array:T\[\]\) =&gt; T
+Definición del método: 
+```ts
+(valorPrevio:T, valorActual:T, índice:number, array:T[]) => T
+```
 
-**function** reduceRight\(valorPrevio:**number**, valorActual:**number**, índice:**number**, array:**number**\[\]\):**number**{ **return** valorPrevio + valorActual;}
-
-let sumaArray:**number** = numeros.reduceRight\(reduceRight\);
-
+```ts
+let reduceRight = (valorPrevio, valorActual, index, array) => valorPrevio + valorActual
+let sumaArray= numeros.reduceRight(reduceRight);
+```
 De esta forma el valor previo es el último elemento del array y el valor actual el penúltimo.
 
 Primera iteración:
@@ -252,7 +255,9 @@ _valorPrevio_: 3 \(es el resultado de la iteración anterior\), _valor actual_ =
 
 Si se inserta un segundo argumento a _reduceRight_, ese argumento sería el _valorPrevio_ en la primera iteración y el _valorActual_ sería el último elemento del array
 
-let sumaArray:**number** = numeros.reduceRight\(reduceRight,50\);
+```ts
+let sumArray = nums.reduceRight(reduceRight, 50);
+```
 
 Primera iteración:
 

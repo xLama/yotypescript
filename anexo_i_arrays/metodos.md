@@ -92,7 +92,7 @@ La función suma 1 a todos los elementos del array. Si modificamos el parámetro
 
 ```ts
 function recorrer(valor, index, array) { ++valor; }
-nums.forEach(recorrer); // nums es \[1,2,3]
+nums.forEach(recorrer); // nums es [1,2,3]
 ```
 
 Pero si lo usáramos con objetos:

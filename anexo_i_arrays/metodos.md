@@ -132,43 +132,54 @@ let index = nums.lastIndexOf(2, 2); // -1
 
 ### join {#join}
 
-Devuelve el array como un **string** donde sus elementos están separados por un carácter pasado como argumento.
+Devuelve el array como un string donde sus elementos están separados por un carácter pasado como argumento.
 
-let arrayComoString:**string** = numeros.join\("-"\); // “1,2,3”
+```ts
+let arrayString = nums.join("-"); // "1,2,3"
+```
 
-Hemos convertido el array en un **string** separado por guiones. Ejecuta el método _toString\(\)_ de cada elemento del array.
+Hemos convertido el array en un string separado por guiones. Ejecuta el método _toString()_ de cada elemento del array.
 
 ### map {#map}
 
 Recorre todos los elementos del array ejecutando el código de la función pasada como argumento a cada uno de ellos y devuelve un array con los cambios realizados sin modificar el array original.
 
-**function** map\(valor:**number**, index:**number**, array:**number**\[\]\):**number**{ **return** ++valor;}let numeros2 = numeros.map\(map\);
-
-El array _numeros_ sigue siendo \[1,2,3\] pero _numeros2_ es \[2,3,4\] puesto que hemos sumado uno a cada elemento.
+```ts
+function map(valor, index, array) {
+    return ++valor;
+}
+let numbers2 = nums.map(map);
+```
+El array _numbers_ sigue siendo \[1,2,3\] pero _numbers2_ es \[2,3,4\] puesto que hemos sumado uno a cada elemento.
 
 ### shift {#shift}
 
 Elimina el primer elemento del array y lo devuelve
 
-let primerElemento = numeros.shift\(\);// primerElemento es 1
+```ts
+let firstElement = nums.shift(); // firstElement es 1
+```
 
 ### pop {#pop}
 
 Elimina el último elemento del array y lo devuelve
-
-let ultimoElemento = numeros.pop\(\);// ultimoElemento es 3
+```ts
+let lastElement = nums.pop(); // lastElement es 3
+```
 
 ### push {#push}
 
 Añade un nuevo elemento al final del array y devuelve el tamaño del array.
-
-let nuevoTamano:**number** = numeros.push\(8\);// nuevoTamano es 4
+```ts
+let newLenght = nums.push(8); // newLenght es 4
+```
 
 ### unshift {#unshift}
 
 Inserta nuevos elemento al principio del array y devuelve el nuevo tamaño del array.
-
-let nuevoTamano:**number** = numeros.unshift\(8\);//array es \[8,1,2,3\]
+```ts
+let newLenght = nums.unshift(8); // array es [8,1,2,3]
+```
 
 ### reduce {#reduce}
 

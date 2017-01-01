@@ -257,13 +257,17 @@ _valorPrevio_: 53 \(es el resultado de la iteración anterior\), _valor actual_ 
 
 Devuelve el array original dándole la vuelta al orden de sus elementos.
 
-let arrayReverse = numeros.reverse\(\);// arrayReverse es \[3,2,1\];
+```ts
+let arrayReverse = nums.reverse();// arrayReverse es [3,2,1];
+```
 
 ### slice {#slice}
 
 Devuelve un trozo del array estableciendo como argumentos los índices de principio y fin, ambos opcionales. Si no se establece ninguno, hace una copia completa del array.
 
-let trozoArray = numeros.slice\(1\); // trozoArray es \[2,3\]
+```ts
+let partialArray = nums.slice(1); // partialArray es [2,3]
+```
 
 ### sort {#sort}
 
@@ -289,27 +293,36 @@ let orden: **number** = 0; **if** \(n1 &gt; n2\) { **\*\* orden = 1; } **else** 
 
 Elimina elementos del array pudiendo sustituirlos por otros. Devuelve un array con los elementos eliminados.
 
-let eliminados = numeros.splice\(0,1\); /_ Empieza en el 0 y avanza uno. eliminados es \[1\] _/
+```ts
+let remove = nums.splice(0, 1); // Empieza en el 0 y avanza uno. remove es [1]
+```
 
-let eliminados = array.splice\(0,1, 9\); /_ Empieza en el 0 y avanza uno e inserta 9 en su lugar. eliminados es \[1\] array es \[9,2,3\] _/
 
 ### toString {#tostring}
 
-Devuelve el Array en forma de cadena de caracteres separados por coma. Ejecuta el método _toString\(\)_ de cada objeto si lo posee.
+Devuelve el Array en forma de cadena de caracteres separados por coma. Ejecuta el método _toString()_ de cada objeto si lo posee.
 
-**class** Persona{ **constructor**\(**private** nombre:**string**\){} toString\(\):**string**{ **return** **this**.nombre; }_\*\*_}
+```ts
+class Person {
+    constructor(private nombre: string) { }
+    toString() { return this.nombre; }
+}
 
-let array:Array&lt;Persona&gt; = \[**new** Persona\("José"\),**new** Persona\("Carlos"\)\];
-
+let array = [new Person("José"), new Person("Carlos")];
 array.toString\(\) // "José, Carlos"
+```
 
-Si no poseyera el método toString\(\), devolvería _\[object Object\]_
 
-**class** Persona{ **constructor**\(**private** nombre:**string**\){}_\*\*_}
+Si no poseyera el método toString(), devolvería _[object Object]_
 
-let array:Array&lt;Persona&gt; = \[**new** Persona\("José"\),**new** Persona\("Carlos"\)\];
+```ts
+class Person {
+    constructor(private nombre: string) { }
+}
 
-array.toString\(\) // \[object Object\],\[object Object\]
+let array = [new Person("José"), new Person("Carlos")];
+array.toString() // [object Object],[object Object]
+```
 
-Esto ocurre porque no sabría cómo convertir las instancias de esa clase en un _String_. Los tipos primitivos y objeto poseen el método _toString\(\)_.
+Esto ocurre porque no sabría cómo convertir las instancias de esa clase en un _String_. Los tipos primitivos y objeto poseen el método _toString()_.
 

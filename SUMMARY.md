@@ -41,7 +41,7 @@
     * [Sentencias útiles para los bucles](control_del_flujo/sentencias_utiles_para_los_bucles.md)
 * [Tipos](tipos/README.md)
     * [Variables con tipo](tipos/variables_con_tipo.md)
-    * [Tipos primitivos y tipos objeto](tipos/tipos_primitivos_y_tipos_objeto.md)
+    * [Primitivos y objeto](tipos/tipos_primitivos_y_tipos_objeto.md)
     * [Inferencia de tipos](tipos/inferencia_de_tipos.md)
     * [Otros tipos](tipos/otros_tipos.md)
     * [El mejor tipo común](tipos/el_mejor_tipo_comun.md)

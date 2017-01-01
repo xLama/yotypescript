@@ -1,4 +1,0 @@
-##  {#tipos-nombrados-y-referencia}
-
-
-

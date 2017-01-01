@@ -1,4 +1,4 @@
-## Tipos primitivos y tipos objeto {#tipos-primitivos-y-tipos-objeto}
+## Primitivos y objeto {#tipos-primitivos-y-tipos-objeto}
 
 Los tipos primitivos son los elementales que nos proporciona un lenguaje de programación y cuyos valores son guardados en la posición de memoria que se le asigna.
 
@@ -11,8 +11,8 @@ En TS los tipos primitivos y los objetos poseen el mismo nombre pero con la dife
 | **number** | Number | Números: enteros y decimales |
 | **string** | String | Caracteres o cadenas |
 | **boolean** | Boolean | Sólo admiten _true_ o _false_ |
-| **undefined** | Undefined | Sólo puede usarse como valor |
-| **null** | Null | Sólo puede usarse como valor |
+| **undefined** | Undefined | Sin valor |
+| **null** | Null | Valor nulo |
 | **void** | Void | Ausencia de valor |
 | **never** | - | Valores que no pueden ocurrir |
 | **symbol** | Symbol | Valores únicos usados como token. |
@@ -146,9 +146,15 @@ function suma(strings : string[], x: number, y : number){
   x; // a + b = 60
   y; // a * b = 500
 }
-suma `La suma de a y b es ${a + b} y la multiplicación es ${a * b}````
+suma `La suma de a y b es ${a + b} y la multiplicación es ${a * b}
+
+```
+
 
 ### ¿Primitivo u objeto? ¿Cuál usar? {#primitivo-u-objeto-cu-l-usar}
+
+
+
 
 Vayamos por partes:
 
@@ -159,6 +165,8 @@ let x: Number = new Number(1);
 let y: Number = new Number(1);
 let z: Number = x + y; // Error
 ```
+
+
 
 Para los tipos _boolean/Boolean_ y _string/String_ la elección es más complicada. No existen diferencias más allá de las incompatibilidades de inicialización. Pero teniendo en cuenta que es preferible usar _number_ a _Number_, son recomendables _boolean_ y _string_ para conseguir coherencia en el código.
 

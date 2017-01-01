@@ -1,4 +1,4 @@
-## Propiedades opcionales {#propiedades-opcionales}
+## Propiedades de sólo lectura {#propiedades-opcionales}
 
 Las propiedades de sólo lectura son, como su nombre indican, aquéllas que sólo se pueden inicializar en el momento de la declaración del objeto y no después.
 

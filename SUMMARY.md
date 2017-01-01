@@ -93,12 +93,10 @@
     * [Estáticos](clases/estaticos.md)
     * [Las partes de una clase](clases/las_partes_de_una_clase.md)
     * [Objetos dinámicos](clases/objetos_dinamicos.md)
-    * El estado y el comportamiento
 * [Interfaces](interfaces/README.md)
     * [Introducción](interfaces/introduccion.md)
     * [Declaración e implementación](interfaces/declaracion_e_implementacion.md)
     * [Herencia](interfaces/herencia.md)
-    * [Interfaces como funciones](interfaces/interfaces_como_funciones.md)
     * [Fusionando interfaces](interfaces/fusionando_interfaces.md)
     * [Comprobar si una clase implementa una interfaz](interfaces/comprobar_si_una_clase_implementa_una_interfaz.md)
 * [Enumerados](enumerados/README.md)

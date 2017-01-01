@@ -5,14 +5,14 @@
 Los parámetros se definen de la siguien forma:
 
 ```ts
-function nombreDeLaFuncion(*/listaParametros*/):void {}
+function functionName(*/listaParametros*/):void {}
 
 /*_listaParametros_ representa una lista de parámetros separados por coma. 
 Los parámetros son valores que la función acepta como entrada. 
 Esto resulta muy útil para construir funciones más reutilizables que nos ahorren tiempo y trabajo.*/
 
 
-funcion (x: number, z: number) { }
+funcion foo(x: number, z: number) { }
 ```
 
 Hemos declarado dos parámetros llamados _x_ y _z_ respectivamente del tipo _number_. Esto quiere decir que para poder utilizar esa función debemos pasarle como argumentos dos números o algún tipo de dato compatible con _number_.
@@ -46,7 +46,7 @@ El valor de _x_ sería 10 y el de _z_ sería 20.
 También podemos asignar un valor por defecto.
 
 ```ts
-function sum(x: number, z? = 20):  {
+function sum(x: number, z = 20):  {
   return x * z;
 }
 ```

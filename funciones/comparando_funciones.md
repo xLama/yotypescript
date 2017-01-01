@@ -21,10 +21,13 @@ let numbers = [4,5,9,10];
 
 Usamos el método
 
-[numeros.filter()](../anexo_i_arrays/metodos.md#filter) que exige como argumento una función con 3 parámetros: los dos primeros son números y el último del tipo _Array_.
+[numeros.filter\(\)](../anexo_i_arrays/metodos.md#filter) que exige como argumento una función con 3 parámetros: los dos primeros son números y el último del tipo _Array_.
 
 ¿Es obligatorio pasarle una función con esa definición? Realmente no. Como argumento acepta una función con un máximo de 3 parámetros, por lo que si sólo nos interesa construir una función con un sólo parámetro podemos hacerlo.
 
 ```ts
 numbers.filter((item) => console.log(item));
 ```
+
+
+

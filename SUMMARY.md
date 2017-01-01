@@ -83,6 +83,7 @@
         * [El estado](clases/el-estado.md)
         * [El comportamiento](clases/el-comportamiento.md)
     * [Encapsulamiento](clases/encapsulamiento.md)
+        * [Getter y setter implícitos](clases/getter-y-setter-implícitos.md)
     * [Herencia](clases/herencia.md)
     * [Agregación y composición](clases/agregacion_y_composicion.md)
     * [Polimorfismo](clases/polimorfismo.md)

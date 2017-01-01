@@ -90,15 +90,21 @@ array.forEach(recorrer);
 
 La función suma 1 a todos los elementos del array. Si modificamos el parámetro _valor_, no surtiría efecto en el array pues los tipos primitivos se pasan por valor y no por referencia.
 
-**function** recorrer\(valor:**number**, index:**number**, array:**number**\[\]\):**void**{ _\*\*_ ++valor;}numeros.forEach\(recorrer\); // array es \[1,2,3\]
+```ts
+function recorrer(valor, index, array) { ++valor; }
+nums.forEach(recorrer); // nums es \[1,2,3]
+```
 
 Pero si lo usáramos con objetos:
 
-let array = \[**new** Persona\(18\), **new** Persona\(60\)\];
-
-**function** cambiarEdad\(valor:Persona, index:**number**, array:Persona\[\]\):**void**{ _\*\*_ valor.setEdad\( valor.getEdad\(\)+1 \);}
-
-numeros.forEach\(cambiarEdad\); /_ array contiene 2 personas. Una con 19 años y otra con 61. _/
+```ts
+let array = [new Person(18), new Person(60)];
+array.forEach(
+    (valor, index, array) => { 
+        valor.setEdad(valor.getEdad() + 1); 
+    }
+); // array contiene 2 personas. Una con 19 años y otra con 61.
+```
 
 No sería necesario acceder al valor a través del array y su índice.
 

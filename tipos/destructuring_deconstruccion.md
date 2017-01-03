@@ -17,7 +17,7 @@ let array = [1, 2, 3];
 let [x,y,z] = array;
 ```
 
-Si hay un exceso de valores en el _array,_ estos son ignorados. Si faltan valores, los no inicializados serán _undefined_.
+Si hay un exceso de valores en el array_,_ estos son ignorados. Si faltan valores, los no inicializados serán _undefined_.
 
 Es muy útil para intercambiar valores, evitando el uso de una variable intermedia.
 

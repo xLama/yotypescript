@@ -4,7 +4,7 @@ Este tipo es simplemente llamar de otra forma a un tipo ya definido. Se usa la p
 
 ```ts
 type numberAndString = number | string;
-let numstr :numberAndString // Es del tipo string | number
+let numstr : numberAndString // Es del tipo string | number
 ```
 
 También es compatible con los [genéricos](../genericos/README.md):

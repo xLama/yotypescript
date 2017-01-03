@@ -6,9 +6,9 @@ Hay situaciones en las no hemos tipado un array y lo hemos rellenado de valores 
 let x = ["uno", null, "dos"];
 ```
 
-El compilador, para tipar por inferencia, elige la mejor opción. En este caso hay dos elecciones posibles: _string_ y _Null_. Como _Null_ es compatible con cualquier tipo, elige tipar el _array_ con _string_. En consecuencia _x_ sería un _string_\[\] \(array de strings\).
+El compilador, para tipar por inferencia, elige la mejor opción. En este caso hay dos elecciones posibles: _string_ y _Null_. Como _Null_ es compatible con cualquier tipo, elige tipar el _array_ con _string_. En consecuencia _x_ sería un _string_\[\].
 
-Esto no es aplicable si tenemos activado strictNullChecks puesto que en ese caso ni _null_ ni _undefined_ son compatibles con _string_. Por ello el mejor tipo común sería:
+Esto no es aplicable si tenemos activado _strictNullChecks _puesto que en ese caso ni _null_ ni _undefined_ son compatibles con _string_. Por ello el mejor tipo común sería:
 
 ```ts
 let x = ["uno", null, "dos"]; // (string | null)[]

@@ -17,8 +17,8 @@ Si hacemos _typeof str_, el resultado será _object_. ¿Por qué? Pues porque re
 Devolverá _string_:
 
 ```ts
-let str1 = typeof "probando typeof";
-let str2 = typeof "probando typeof";
+let str1 : string = typeof "probando typeof";
+let str2 : String = typeof "probando typeof";
 ```
 
 Devolverá _object_

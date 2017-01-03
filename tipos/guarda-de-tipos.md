@@ -121,21 +121,21 @@ class Structure {
     isDirectory(): this is Directory {
         return this instanceof Directory
     }
-    isFile(): this is File {
-        return this instanceof File
+    isFile(): this is MyFile {
+        return this instanceof MyFile
     }
 }
-class File extends Structure { }
+class MyFile extends Structure { }
 
 class Directory extends Structure { }
 
-let file: Structure = // Código para leer una estructura
+let file: Structure; // Código para leer una estructura
 
 if (file.isFile()) {
-    file.studentId; // Aquí file es un Directory 
+    file; // Aquí file es un Directory 
 }
 else if (file.isDirectory()) {
-    file.teacherId; // Aquí file es un File 
+    file; // Aquí file es un MyFile
 }
 ```
 

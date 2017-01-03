@@ -59,6 +59,7 @@
 * [Objetos](objetos/README.md)
     * [Introducción](objetos/introduccion.md)
     * [Propiedades computadas \(Computed properties\)](objetos/propiedades_computadas_computed_properties.md)
+    * [Symbol](objetos/symbol.md)
     * [Tipo objeto literal \(Object type literal\)](objetos/tipo_objeto_literal_object_type_literal.md)
     * [Exceso de propiedades](objetos/exceso_de_propiedades.md)
     * [Propiedades opcionales](objetos/propiedades_opcionales.md)

@@ -5,9 +5,9 @@
 Los parámetros se definen de la siguien forma:
 
 ```ts
-function functionName(*/listaParametros*/):void {}
+function functionName(/*listaParametros*/):void {}
 
-/*_listaParametros_ representa una lista de parámetros separados por coma. 
+/*listaParametros representa una lista de parámetros separados por coma. 
 Los parámetros son valores que la función acepta como entrada. 
 Esto resulta muy útil para construir funciones más reutilizables que nos ahorren tiempo y trabajo.*/
 

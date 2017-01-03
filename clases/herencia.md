@@ -4,7 +4,7 @@
 
 Nuestra clase ejemplo _Person_ se refiere a algo muy general. Podríamos especificar más. Si estamos realizando la gestión de un aula, nos damos cuenta de que en ella hay alumnos y profesores y ambos son personas. De esta forma estamos agrupando dos tipos de cosas bajo un mismo comportamiento y estado.
 
-Con todo ello podríamos crear una clase llamada Student y otra llamada Teacher que heredarían de _Person_ por lo que las clases hijas \(así se les llamas a las clases que heredan de otra\) obtendrían todo lo que es y hace el padre \(así se les llama a las clases de las que se hereda\).
+Con todo ello podríamos crear una clase llamada _Student _y otra llamada _Teacher _que heredarían de _Person_ por lo que las clases hijas \(así se les llamas a las clases que heredan de otra\) obtendrían todo lo que es y hace el padre \(así se les llama a las clases de las que se hereda\).
 
 Para hacerlo hay que usar la palabra reservada _extends_.
 
@@ -16,7 +16,7 @@ class Teacher extends Person { }
 
 > No existe la herencia múltiple en TS. Esto es que una clase sólo puede heredar de una sola clase a la vez. No confundir con construir una jerarquía pues una clase puede heredar de varias si entre todas se relacionan de forma vertical.
 
-Alumno -&gt; Persona -&gt; Mamifero -&gt; SerVivo
+Student -&gt; Person -&gt; Mammal -&gt; SerVivo
 
 Ahora tanto _Student_ como _Teacher_ obtendrían todo lo que es y hace _Person_. Bueno, no todo realmente pues aquí entra en juego el principio de ocultación. Todo lo declarado como público se hereda. Todo lo declarado como privado no se hereda y no es accesible desde la clase hija. Hay un tercer modificador, llamado protegido \(_protected_\). Si declaramos un miembro como _protected_, las clases hijas lo heredan pero no es accesible desde fuera.
 
@@ -117,8 +117,7 @@ Si _Person_ tiene el constructor sobrecargado, la llamada _super\(\)_ puede ser 
 
 Desde otros métodos podemos llamar a los métodos del padre con el mismo _super_. En este caso no se exige que sea la primera llamada.
 
-
-En este caso hemos creado un nuevo método para *Student* llamado _mostrarReferencia()_ que muestra la referencia del alumno y después su nombre y apellidos. Pero esto último no lo hace reescribiendo otra vez toda la lógica, sino que se aprovecha de que el padre (*Person*) ya lo tiene implementado.
+En este caso hemos creado un nuevo método para _Student_ llamado _mostrarReferencia\(\)_ que muestra la referencia del alumno y después su nombre y apellidos. Pero esto último no lo hace reescribiendo otra vez toda la lógica, sino que se aprovecha de que el padre \(_Person_\) ya lo tiene implementado.
 
 Hay que señalar que un objeto de una clase hija es también del tipo de todas sus clases padre.
 
@@ -126,7 +125,7 @@ En nuestro ejemplo:
 
 Alumno Persona Mamifero SerVivo
 
-Si instanciamos _Alumno_ obtendríamos un objeto del tipo _Alumno_ pero que a su vez también sería del tipo Persona, _Mamifero_ y _SerVivo_. ¿Recuerdas la llamada _super()_ en el constructor de _Alumno_? Con eso se llama al constructor de _Persona_ por lo que podemos deducir que estamos creando también una instancia de _Persona_ y así sucesivamente. No estamos creando 4 instancias distintas, sólo una pero con las características de todas las superclases.
+Si instanciamos _Alumno_ obtendríamos un objeto del tipo _Alumno_ pero que a su vez también sería del tipo Persona, _Mamifero_ y _SerVivo_. ¿Recuerdas la llamada _super\(\)_ en el constructor de _Alumno_? Con eso se llama al constructor de _Persona_ por lo que podemos deducir que estamos creando también una instancia de _Persona_ y así sucesivamente. No estamos creando 4 instancias distintas, sólo una pero con las características de todas las superclases.
 
 ### Sobreescritura {#sobreescritura}
 

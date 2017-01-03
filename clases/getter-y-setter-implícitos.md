@@ -28,9 +28,9 @@ public set name(name:string) {
 
 _get_ y _set_ son palabras reservadas del lenguaje. Usadas en un método seguido de un espacio y el nombre de un atributo, lo convertimos en método.
 
-Hay que tener en cuenta que el nombre del _getter_ y _setter_ implícito no puede coincidir con el del atributo pues nos daría un error de duplicado.
+Hay que tener en cuenta que el nombre del _getter_ y _setter_ implícito no puede coincidir con el de la propiedad pues nos daría un error de duplicado.
 
-Para evitar esto lo que se suele hacer es anteponer un guion bajo en los nombres de las propiedades. Así quedaría la clase _Person_ sólo con un atributo para hacerlo más simple:
+Para evitar esto lo que se suele hacer es anteponer un guion bajo en los nombres de las propiedades. Así quedaría la clase _Person_ sólo con una propiedad para hacerlo más simple:
 
 ```ts
 class Person {
@@ -47,12 +47,12 @@ class Person {
 
 * _Nota: No se especifica el tipo void como devolución de los setters implícitos, da error de compilación._
 
-Para usarlos basta con acceder al atributo como si éste fuera público.
+Para usarlos basta con acceder a la propiedad como si éste fuera público.
 
 ```ts
 let carlos: Person = new Person( "Carlos");
 person.name = "Carlos";
 ```
 
-Así combinamos la simpleza sintáctica del acceso a atributos públicos junto con la practicidad de hacerlo mediante métodos.
+Así combinamos la simpleza sintáctica del acceso a propiedades públicas junto con la practicidad de hacerlo mediante métodos.
 

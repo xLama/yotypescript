@@ -24,7 +24,7 @@ Lo mismo ocurre con los métodos.
 ```ts
 class Person {
     //... 
-    private showName(): void {
+    private showName(){
         alert(this.name + " " + this.surname1 + " " + this.surname2);
     }
 }
@@ -38,7 +38,7 @@ carlos.showName();
 
 Es algo menos común el encontrarse con métodos privados. Se suelen usar para comprobación de datos dentro de la propia clase.
 
-Como hemos dicho, todo miembro es público por defecto sin escribirlo de forma explícita aunque es aconsejable hacerlo para darle mayor legilibidad al código.
+Como hemos dicho, todo miembro es público por defecto sin escribirlo de forma explícita aunque yo suelo hacerlo para darle mayor legilibidad al código.
 
 Nuestra clase quedaría así:
 
@@ -59,7 +59,7 @@ class Person {
 }
 ```
 
-Para acceder a esos atributos que hemos declarado como privados, lo que suele hacer es crear pares de métodos públicos por cada uno, llamados _setters_ y _getters_ que contenga el nombre del atributo. Ejemplo:
+Para acceder a esas propiedades que hemos declarado como privados, lo que suele hacer es crear pares de métodos públicos por cada uno, llamados _setters_ y _getters_ que contenga el nombre del atributo. Ejemplo:
 
 ```ts
 public getName():string{ 

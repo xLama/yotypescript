@@ -18,4 +18,5 @@ function writable(writable: boolean) {
 Person.prototype.walk = function () { }; // No tiene efecto
 ```
 
-Se ha modificado para que el decorador @writable acepte un parámetro **boolean** para decidir si el método debser escribible o no. En este caso la función que hace de decorador debe devolver una función con una definición igual a la usada cuando no tiene parámetros.
+Se ha modificado para que el decorador _@writable_ acepte un parámetro _boolean _para decidir si el método deb ser escribible o no. En este caso la función que hace de decorador debe devolver una función con una definición igual a la usada cuando no tiene parámetros.
+

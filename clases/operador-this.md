@@ -13,7 +13,7 @@ El _this_ en JS funciona de una forma distinta a como lo hace en la mayoría de 
 | **ejecutar\(\);** | Objeto al que pertenece |
 | **let objeto = new Objeto\(\);** | La nueva instancia |
 
-El operador _this_ sólo tiene sentido dentro de las funciones pues fuera de éstas su valor siempre es _window_ \(excepto en el modo estricto que sería undefined\). Ya una vez dentro de la función el valor de _this_ será el objeto al que pertenezca esa función en el momento de ser ejecutada. Podemos decir que las funciones son las únicas que crean nuevos contextos.
+El operador _this_ sólo tiene sentido dentro de las funciones pues fuera de éstas su valor siempre es _window_ \(excepto en el modo estricto que sería _undefined_\). Ya una vez dentro de la función el valor de _this_ será el objeto al que pertenezca esa función en el momento de ser ejecutada. Podemos decir que las funciones son las únicas que crean nuevos contextos.
 
 ```ts
 let thisExample = { 

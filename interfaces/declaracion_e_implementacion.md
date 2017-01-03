@@ -41,7 +41,7 @@ class Persona implements Desplazable, Inteligente {
 }
 ```
 
-Por otro lado no sólo puedes obligar a implementar métodos, sino también a poseer atributos.
+Por otro lado no sólo puedes obligar a implementar métodos, sino también a poseer propiedades.
 
 ```ts
 interface Desplazable {  
@@ -50,7 +50,7 @@ interface Desplazable {
 }
 ```
 
-Los atributos pueden ser opcionales por lo que no obligaría a la clase a implementarlos. Además, con strictNullChecks activado, el atributo opcional sería del tipo explícitamente escrito y _undefined_
+Las propiedadespueden ser opcionales por lo que no obligaría a la clase a implementarlos. Además, con strictNullChecks activado, la propiedad opcional sería del tipo explícitamente escrito y _undefined_
 
 ```ts
 interface Desplazable {

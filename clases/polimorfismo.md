@@ -26,5 +26,5 @@ function example(be: LivingBeing) { }
 example(new Stundent());
 ```
 
-¿Sería correcto? Sí. Pues un _Stundent_ es un _LivingBeing_. No hay riesgo de ningún tipo pues _Stundent_ ha heredado de _LivingBeing_ todos los miembros públicos por lo que estamos seguros que de los métodos se van a ejecutar sin problemas.
+¿Sería correcto? Sí. Pues un _Stundent_ es un _LivingBeing_. No hay riesgo de ningún tipo pues _Stundent_ ha heredado de _LivingBeing_ todos los miembros públicos.
 

@@ -1,10 +1,10 @@
 ## Confirmaciones de tipo \( Type Assertions \) {#confirmaciones-de-tipo-type-assertions}
 
-Siguiendo con el ejemplo anterior, podemos hacer que la letiable _ser_ se convierta en un _Alumno_ para poder ejecutar todo lo que _Stundet_ implementa y _LivingBeing_ no, porque en la invocación de la función introdujimos como argumento un _Alumno_. Ocurre que sintácticamente no tenemos disponible los métodos de _Stundet_ porque el parámetro de la función es del tipo _LivingBeing_, por lo que hay que forzarlo.
+Siguiendo con el ejemplo anterior, podemos hacer que la variable _be _se convierta en un Student para poder ejecutar todo lo que Student implementa y _LivingBeing_ no, porque en la invocación de la función introdujimos como argumento un Student. Ocurre que sintácticamente no tenemos disponible los métodos de Student porque el parámetro de la función es del tipo _LivingBeing_, por lo que hay que forzarlo.
 
 ```ts
-function ejemplo(ser: LivingBeing): void {
-    let student = ser as Student;
+function ejemplo(be: LivingBeing): void {
+    let student = be as Student;
 }
 ```
 

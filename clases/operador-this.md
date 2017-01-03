@@ -2,7 +2,7 @@
 
 Como puede ver hay un nuevo operador llamado _this_. _this_ se refiere a la clase en sí misma donde se escribe y es la forma de referenciar a los miembros de la clase. Si se intentara acceder a un miembro de clase sin anteponer _this_, fallaría la compilación.
 
-La forma de utilizarlo es la misma con la que accedemos a los métodos públicos de una clase por medio de una instancia de la misma, con _this._ \(punto\).\_\_
+La forma de utilizarlo es la misma con la que accedemos a los métodos públicos de una clase por medio de una instancia de la misma, con _this._ \(punto\).
 
 #### Contexto {#contexto}
 
@@ -11,7 +11,7 @@ El _this_ en JS funciona de una forma distinta a como lo hace en la mayoría de 
 | Llamada | Valor de _this_ |
 | --- | --- |
 | **ejecutar\(\);** | Objeto al que pertenece |
-| **var objeto = new Objeto\(\);** | La nueva instancia |
+| **let objeto = new Objeto\(\);** | La nueva instancia |
 
 El operador _this_ sólo tiene sentido dentro de las funciones pues fuera de éstas su valor siempre es _window_ \(excepto en el modo estricto que sería undefined\). Ya una vez dentro de la función el valor de _this_ será el objeto al que pertenezca esa función en el momento de ser ejecutada. Podemos decir que las funciones son las únicas que crean nuevos contextos.
 

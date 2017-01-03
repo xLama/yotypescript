@@ -9,12 +9,12 @@ interface Desplazable { }
 Para que una clase implemente una interfaz se utiliza la palabra reservada _implements_:
 
 ```ts
-class Persona implements Desplazable {
+class Person implements Desplazable {
     //...
 }
 ```
 
-La interfaz _Desplazable_ está vacía por lo que no está obligando a la clase _Persona_ a hacer nada. Pero si en _Desplazable_ definimos un método:
+La interfaz _Desplazable_ está vacía por lo que no está obligando a la clase _Person_ a hacer nada. Pero si en _Desplazable_ definimos un método:
 
 ```ts
 interface Desplazable {
@@ -22,7 +22,7 @@ interface Desplazable {
 }
 ```
 
-Obligamos a la clase _Persona_ a implementarlo. Si no lo hace dará error de compilación. Para ello hay que cumplir exactamente con la definición del método. Si devuelve un _number_ no podemos implementar ese método devolviendo un _string_. En este caso no devuelve nada por lo que así debe ser:
+Obligamos a la clase _Person_ a implementarlo. Si no lo hace dará error de compilación. Para ello hay que cumplir exactamente con la definición del método. Si devuelve un _number_ no podemos implementar ese método devolviendo un _string_. En este caso no devuelve nada por lo que así debe ser:
 
 ```ts
 class Persona implements Desplazable {
@@ -50,7 +50,7 @@ interface Desplazable {
 }
 ```
 
-Las propiedadespueden ser opcionales por lo que no obligaría a la clase a implementarlos. Además, con strictNullChecks activado, la propiedad opcional sería del tipo explícitamente escrito y _undefined_
+Las propiedades pueden ser opcionales por lo que no obligaría a la clase a implementarlos. Además, con _strictNullChecks _activado, la propiedad opcional sería del tipo explícitamente escrito y _undefined_
 
 ```ts
 interface Desplazable {

@@ -71,5 +71,5 @@ let show = a.show;
 show();
 ```
 
-Funcionará correctamente. Lo que hace el compilador es referenciar el _this_ en otra variable llamada _\_this_ justo antes de la declaración del método. Cuando el método se ejecuta y hace _this.showLetter\(\)_, ese _this_ es, en realidad, el _this que antes se creó. this sí hace referencia al objeto en sí y no a window por lo que puede ejecutar this.showLetter\(\)_ sin problemas. Para entenderlo mejor es recomendable leer [este apartado.](../clases/estado_y_comportamiento.md#operador-this)
+Funcionará correctamente. Lo que hace el compilador es referenciar el _this_ en otra variable llamada _\_this_ justo antes de la declaración del método. Cuando el método se ejecuta y hace _this.showLetter\(\)_, ese _this_ es, en realidad, el _this que antes se creó. this sí hace referencia al objeto en sí y no a window por lo que puede ejecutar this.showLetter\(\)_ sin problemas. Para entenderlo mejor es recomendable leer [este apartado.](/this.md)
 

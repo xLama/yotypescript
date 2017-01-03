@@ -9,9 +9,9 @@ obj2 = "a" // Correcto
 obj2 = "Other" // Incorrecto
 ```
 
-Esto se hace relevante en los [tipos mapeados](/tipos/tipos-mapeados.md)
+Esto se hace relevante en los [tipos mapeados](/tipos/tipos-mapeados.md).
 
-Se puede utilizar junto con typeof para obtener las propiedades de del tipo de una variable
+Se puede utilizar junto con _typeof _para obtener las propiedades de del tipo de una variable
 
 ```ts
 let obj : {a :number, b:number, c:string};

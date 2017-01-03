@@ -50,7 +50,7 @@ class Person {
 Para usarlos basta con acceder a la propiedad como si éste fuera público.
 
 ```ts
-let carlos: Person = new Person( "Carlos");
+let carlos = new Person( "Carlos");
 person.name = "Carlos";
 ```
 

@@ -35,41 +35,5 @@ let funcion = (): void => { }
 
 ### Contexto {#contexto}
 
-Una función flecha conserva el contexto donde se ha declarado.
-
-```ts
-class A {
-    show() {
-        this.showLetter();
-    }
-    showLetter() {
-        alert("A");
-    }
-}
-
-let a: A = new A(); 
-let show = a.show; 
-show();
-```
-
-La ejecución fallará porque el contexto de la ejecución _show\(\)_ es _window_ por lo que asigna _this_ a _window_. _Window_ no tiene la función _showLetter\(\)_.
-
-Pero, sin embargo, escribimos esto:
-
-```ts
-class A {
-    show = () => {
-        this.showLetter();
-    }
-    showLetter() {
-        alert("A");
-    }
-}
-
-let a: A = new A();
-let show = a.show;
-show();
-```
-
-Funcionará correctamente. Lo que hace el compilador es referenciar el _this_ en otra variable llamada _\_this_ justo antes de la declaración del método. Cuando el método se ejecuta y hace _this.showLetter\(\)_, ese _this_ es, en realidad, el _this que antes se creó. this sí hace referencia al objeto en sí y no a window por lo que puede ejecutar this.showLetter\(\)_ sin problemas. Para entenderlo mejor es recomendable leer [este apartado.](../clases/estado_y_comportamiento.md#operador-this)
+Este apartado se encuentro mejor explicado [aquí](/this.md)
 

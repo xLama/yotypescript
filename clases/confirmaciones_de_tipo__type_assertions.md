@@ -1,6 +1,6 @@
 ## Confirmaciones de tipo \( Type Assertions \) {#confirmaciones-de-tipo-type-assertions}
 
-Siguiendo con el ejemplo anterior, podemos hacer que la variable _be _se convierta en un Student para poder ejecutar todo lo que Student implementa y _LivingBeing_ no, porque en la invocación de la función introdujimos como argumento un Student. Ocurre que sintácticamente no tenemos disponible los métodos de Student porque el parámetro de la función es del tipo _LivingBeing_, por lo que hay que forzarlo.
+Siguiendo con el ejemplo anterior, podemos hacer que la variable _be _se_ convierta en un Student para poder ejecutar todo lo que Student _implementa y_ LivingBeing_ no, porque en la invocación de la función introdujimos como argumento un Student. Ocurre que sintácticamente no tenemos disponible los métodos de Student porque el parámetro de la función es del tipo _LivingBeing_, por lo que hay que forzarlo.
 
 ```ts
 function ejemplo(be: LivingBeing): void {

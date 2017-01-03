@@ -2,11 +2,17 @@
 
 Para activar esta característica se debe hacer desde el archivo tsconfig.json estableciendo _strictNullChecks  a true_
 
-¿Qué es lo que hace? Hemos estudiado que hay una compatibilidad de tipos predefinida en el lenguaje, es decir, any es compatible con todos los tipos, object \(sin propiedades\) también._ String, number y boolean_ solo con los suyos y así sigue. Lo que quizás no te has percatado es que puedes asignar el valor null o undefined a cualquier tipo. Y cuando digo cualquiera es cualquiera, incluso Function.
+¿Qué es lo que hace? Hemos estudiado que hay una compatibilidad de tipos predefinida en el lenguaje, es decir, any es compatible con todos los tipos, object \(sin propiedades\) también._ String, number y boolean_ solo con ellos mismo, etc. Lo que quizás no te has percatado es que puedes asignar el valor _null _o _undefined _a cualquier tipo. Y cuando digo cualquiera es cualquiera, incluso Function.
 
-Esto lo que hace es separarlos y no permitir que _null _y _undefined _sean asignables a todos los tipos, sólo a los que lo especifique de forma explícita y a ellos mismos.
+El esquema sería así:
 
-IMAGEN DE EJEMPLO
+![](/assets/TypeScript - JavaScript that scales. - Google Chrome.jpg)
+
+Esto lo que hace es separarlos y no permitir que \_null \_y \_undefined \_sean asignables a todos los tipos, sólo a los que lo especifique de forma explícita y a ellos mismos.
+
+De esta forma:
+
+![](/assets/TypeScript - JavaScript that scales. - Google Chrome_2.jpg)
 
 Ahora no podremos hacer Esto
 

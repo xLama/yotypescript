@@ -28,7 +28,7 @@ halfLife("26");
 halfLife(26);
 ```
 
-Ya que la comparación ha sido si _age_ es un string, dentro de ese bloque _if_, _age_ es convertido \(las especificaciones del lenguaje lo denomina “estrechamiento”\) a _string_ por lo que podemos tratarlo como tal. En el _else_, y al sólo quedar _number_ como alternativa, es convertido a _number_. Si la condición hubiera sido “no es un string”, los roles se intercambiarían:
+Ya que la comparación ha sido si _age_ es un _string_, dentro de ese bloque _if_, _age_ es convertido \(las especificaciones del lenguaje lo denomina “estrechamiento”\) a _string_ por lo que podemos tratarlo como tal. En el _else_, y al sólo quedar _number_ como alternativa, es convertido a _number_. Si la condición hubiera sido “no es un string”, los roles se intercambiarían:
 
 ```ts
 function halfLife(age: number | string) {
@@ -109,7 +109,7 @@ if (isStudent(person)) {
 }
 ```
 
-No se puede tener más de una expression de guarda por función. Si no entiendes el ejemplo te recomiendo que vuelvas a este apartado una vez hayas visto las [clases](../clases/README.md).
+No se puede tener más de una expresión de guarda por función. Si no entiendes el ejemplo te recomiendo que vuelvas a este apartado una vez hayas visto las [clases](../clases/README.md).
 
 ### Guardas basadas en this {#guardas-basadas-en-this}
 
@@ -117,6 +117,7 @@ Simplemente producen estrechamiento al tipo de _this_ si se cumple la condición
 
 ```ts
 class Structure {
+
     isDirectory(): this is Directory {
         return this instanceof Directory
     }
@@ -125,7 +126,9 @@ class Structure {
     }
 }
 class File extends Structure { }
+
 class Directory extends Structure { }
+
 let file: Structure = // Código para leer una estructura
 
 if (file.isFile()) {

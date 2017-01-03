@@ -33,11 +33,12 @@ function add(x: number): number
 function add(x: number, z: number): number
 function add(x: number, z?: number): number {
     let total: number = x;
-    if (z !== undefined) {
+    if (z) {
         total = x + z;
     }
     return total;
 }
 ```
 
-Como _z_ es el parámetro que puede estar vacío y darnos problemas, tenemos que comprobar que realmente contiene algún valor antes de operar. En este caso vemos si y es distinto de _undefined_.
+Como _z_ es el parámetro que puede estar vacío y darnos problemas, tenemos que comprobar que realmente contiene algún valor antes de operar. .
+

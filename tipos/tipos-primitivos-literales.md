@@ -18,7 +18,7 @@ Así la variable _movement_ sólo puede contener esas cadenas. Esto resulta muy 
 
 ```ts
 let movements : "up" | "right" | "down" | "left";
-let movement : movements = "right";// Ok
+let movement : movements = "right"; // Ok
 let otherMovement : movements = "upDown"; // Error
 ```
 

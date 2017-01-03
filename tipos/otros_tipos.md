@@ -2,7 +2,7 @@
 
 ### Void {#void}
 
-Sólo sirve para determinar que una función no devuelve ningún valor. También se podrían tipar variables con \_void \_pero carece de sentido.
+Sólo sirve para determinar que una función no devuelve ningún valor. También se podrían tipar variables con _void _pero carece de sentido.
 
 ### Null {#null}
 
@@ -94,7 +94,7 @@ Son valores únicos e inmutables, es decir, una vez declarados e inicializados n
 
 ```ts
 let aSymbol  = Symbol();
-let otherSymbol = **new** Symbol(); // Error
+let otherSymbol = new Symbol(); // Error
 ```
 
 Se le puede pasar un _string_ como argumento a la función _Symbol_ que sirve como identificador:

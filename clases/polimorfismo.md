@@ -4,7 +4,7 @@ Com su nombre indica \(muchas formas\) es la cualidad que tiene un objeto de un 
 
 Recordando el ejemplo:
 
-Stundent Person Mammal LivingBeing
+Stundent -&gt; Person -&gt; Mammal -&gt; LivingBeing
 
 Podemos hacer esto:
 
@@ -17,7 +17,7 @@ let be: LivingBeing = new Stundent();
 Si en una función aceptamos como parámetro un LivingBeing:
 
 ```ts
-function example(ser: LivingBeing) { }
+function example(be: LivingBeing) { }
 ```
 
 ¿Qué pasaría si la invocamos pasándole como argumento un _Student_?

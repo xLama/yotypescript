@@ -8,9 +8,9 @@ En TS los tipos primitivos y los objetos poseen el mismo nombre pero con la dife
 
 | Primitivo | Objeto | Uso |
 | :--- | :--- | :--- |
-| **number** | Number | Números: enteros y decimales |
+| **number** | Number | Enteros y decimales |
 | **string** | String | Caracteres o cadenas |
-| **boolean** | Boolean | Sólo admiten _true_ o _false_ |
+| **boolean** | Boolean | Sólo admite _true_ o _false_ |
 | **undefined** | Undefined | Sin valor |
 | **null** | Null | Valor nulo |
 | **void** | Void | Ausencia de valor |

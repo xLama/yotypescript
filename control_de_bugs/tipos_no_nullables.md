@@ -2,7 +2,7 @@
 
 Para activar esta característica se debe hacer desde el archivo tsconfig.json estableciendo _strictNullChecks  a true_
 
-¿Qué es lo que hace? Hemos estudiado que hay una compatibilidad de tipos predefinida en el lenguaje, es decir, any es compatible con todos los tipos, object \(sin propiedades\) también._ String, number y boolean_ solo con ellos mismo, etc. Lo que quizás no te has percatado es que puedes asignar el valor _null _o _undefined _a cualquier tipo. Y cuando digo cualquiera es cualquiera, incluso Function.
+¿Qué es lo que hace? Hemos estudiado que hay una compatibilidad de tipos predefinida en el lenguaje, es decir, any es compatible con todos los tipos, object \(sin propiedades\) también._ String, number y boolean_ solo con ellos mismo, etc. Lo que quizás no te has percatado es que puedes asignar el valor \_null \_o \_undefined \_a cualquier tipo. Y cuando digo cualquiera es cualquiera, incluso Function.
 
 El esquema sería así:
 
@@ -14,13 +14,13 @@ De esta forma:
 
 ![](/assets/TypeScript - JavaScript that scales. - Google Chrome_2.jpg)
 
-Ahora no podremos hacer Esto
+Ahora no podremos hacer esto
 
 ```ts
 let name : string = null;
 ```
 
-Una de las grandes utilidades que tiene es evitar que se pueda pasar como argumento los valores \_null \_o \_undefined \_a una función.
+Una de las grandes utilidades que tiene es evitar que se pueda pasar como argumento los valores _null _o _undefined _a una función.
 
 ```ts
 function countWords(str:string){
@@ -56,7 +56,7 @@ function foo(bar: string | number) {
 }
 ```
 
-Ahora va un paso más allá y puede reconocer que algo podría ser \_undefined \_o \_null \_y lo avisa.
+Ahora va un paso más allá y puede reconocer que algo podría ser _undefined _o _null _y lo avisa.
 
 ```ts
 let name: string | null = null;
@@ -69,7 +69,7 @@ countWords("Carlos"); // Ok
 countWords(null); // Error.
 ```
 
-Debido que el argumento podría ser _null_ o _undefined_, nos avisa de que podría haber un problema con ello ya que si efectivamente lo es, el código lanzará una excepción, pues el tipo _undefined \_no tiene la propiedad \_length_.  
+Debido que el argumento podría ser _null_ o _undefined_, nos avisa de que podría haber un problema con ello ya que si efectivamente lo es, el código lanzará una excepción, pues el tipo _undefined _no tiene la propiedad_ length_.  
 Para solucionarlo habría que usar una guarda ya sea con _typeof_ o con una simple comprobación de verdad.
 
 ```ts

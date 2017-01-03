@@ -129,7 +129,7 @@
     * [Document](dom/document.md)
     * [Crear elementos](dom/crear_elementos.md)
     * [Eliminar elementos](dom/eliminar_elementos.md)
-    * [Acceso a los atributos](dom/acceso_a_los_atributos.md)
+    * [Acceso a las propiedades](dom/acceso_a_los_atributos.md)
 * [Eventos](eventos/README.md)
     * [Introducción](eventos/introduccion.md)
     * [Eventos visuales](eventos/eventos_visuales.md)

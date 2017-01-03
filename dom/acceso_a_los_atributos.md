@@ -1,4 +1,4 @@
-## Acceso a los atributos {#acceso-a-los-atributos}
+## Acceso a las propiedades {#acceso-a-los-atributos}
 
 Desde las propias variables que hacen referencia a los elementos del DOM se puede acceder a los atributos.
 
@@ -17,3 +17,4 @@ enlace.style.textDecoration = "none";
 ```
 
 De esta forma eliminamos el subrayado característico de los enlaces.
+

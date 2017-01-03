@@ -17,8 +17,6 @@ El ejemplo no compila pues da un error de identificador duplicado.
 
 El problema de no tener ninguna referencia a la función es no poder invocarla más de una sola vez.
 
-###  {#expresiones-lambda-funciones-flecha}
-
 ### Tipado literal de una función {#tipado-literal-de-una-funci-n}
 
 Hemos visto que una función puede almacenarse en un objeto, ya sea mediante expresiones estándar o flechas.
@@ -92,46 +90,6 @@ function ejemplo(func: (x: string) => number): void {
 ```
 
 La función _ejemplo_ acepta como parámetro una función sólo si esa función acepta como parámetro un dato del tipo _string_ y devuelve uno del tipo _number_.
-
-### Contexto {#contexto}
-
-Una función flecha conserva el contexto donde se ha declarado.
-
-```ts
-class A {
-    show() {
-        this.showLetter();
-    }
-    showLetter() {
-        alert("A");
-    }
-}
-
-let a: A = new A(); 
-let show = a.show; 
-show();
-```
-
-La ejecución fallará porque el contexto de la ejecución _show\(\)_ es _window_ por lo que asigna _this_ a _window_. _Window_ no tiene la función _showLetter\(\)_.
-
-Pero, sin embargo, escribimos esto:
-
-```ts
-class A {
-    show = () => {
-        this.showLetter();
-    }
-    showLetter() {
-        alert("A");
-    }
-}
-
-let a: A = new A();
-let show = a.show;
-show();
-```
-
-Funcionará correctamente. Lo que hace el compilador es referenciar el _this_ en otra variable llamada _\_this_ justo antes de la declaración del método. Cuando el método se ejecuta y hace _this.showLetter\(\)_, ese _this_ es, en realidad, el _this que antes se creó. \_this sí hace referencia al objeto en sí y no a window por lo que puede ejecutar \_this.showLetter\(\)_ sin problemas. Para entenderlo mejor es recomendable leer [este apartado.](../clases/estado_y_comportamiento.md#operador-this)
 
 ### Funciones anónimas autoejecutables {#funciones-an-nimas-autoejecutables}
 

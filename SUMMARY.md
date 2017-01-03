@@ -1,7 +1,6 @@
 # Summary
 
 * [YoTypeScript 2.1](README.md)
-    * Novedades
 * [Introducción](introduccion/README.md)
     * [¿A quién va dirigido este libro?](introduccion/a_quien_va_dirigido_este_libro.md)
     * [JavaScript](introduccion/javascript.md)

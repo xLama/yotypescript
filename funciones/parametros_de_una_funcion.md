@@ -1,4 +1,4 @@
-## Parámetros de una función {#par-metros-de-una-funci-n}
+## Parámetros {#par-metros-de-una-funci-n}
 
 > Comúnmente a los parámetros se les llama también argumentos, separando los parámetros/argumentos formales y los parámetros/argumentos actuales. Los primeros son propiedades intrínsecas que están definidas en la signatura de la función. Los segundos son los valores que se le pasan a esa función en la invocación de la misma. Para facilitar las cosas, a partir de ahora llamaremos simplemente parámetros para referirnos a los formales y argumentos para referirnos a los actuales.
 

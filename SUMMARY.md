@@ -68,7 +68,7 @@
     * [Introducción](funciones/introduccion.md)
     * [Declaración](funciones/declaracion.md)
     * [Invocando funciones](funciones/invocando_funciones.md)
-    * [Parámetros de una función](funciones/parametros_de_una_funcion.md)
+    * [Parámetros](funciones/parametros_de_una_funcion.md)
     * [Valores de retorno](funciones/valores_de_retorno.md)
     * [Sobrecarga](funciones/sobrecarga.md)
     * [Funciones anónimas](funciones/funciones_anonimas.md)

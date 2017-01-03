@@ -20,7 +20,7 @@ Ahora no podremos hacer esto
 let name : string = null;
 ```
 
-Una de las grandes utilidades que tiene es evitar que se pueda pasar como argumento los valores _null _o _undefined _a una función.
+Una de las grandes utilidades que tiene es evitar que se pueda pasar como argumento los valores \_null \_o \_undefined \_a una función.
 
 ```ts
 function countWords(str:string){
@@ -56,7 +56,7 @@ function foo(bar: string | number) {
 }
 ```
 
-Ahora va un paso más allá y puede reconocer que algo podría ser _undefined _o _null _y lo avisa.
+Ahora va un paso más allá y puede reconocer que algo podría ser \_undefined \_o \_null \_y lo avisa.
 
 ```ts
 let name: string | null = null;
@@ -69,8 +69,8 @@ countWords("Carlos"); // Ok
 countWords(null); // Error.
 ```
 
-Debido que el argumento podría ser _null_ o _undefined_, nos avisa de que podría haber un problema con ello ya que si efectivamente lo es, el código lanzará una excepción, pues el tipo _undefined _no tiene la propiedad_ length_.  
-Para solucionarlo habría que usar una guarda ya sea con _typeof_ o con una simple comprobación de verdad.
+Debido que el argumento podría ser _null_ o _undefined_, nos avisa de que podría haber un problema con ello ya que si efectivamente lo es, el código lanzará una excepción, pues el tipo _undefined \_no tiene la propiedad_ length_.  
+Para solucionarlo habría que usar una guarda ya sea con \_typeof_ o con una simple comprobación de verdad.
 
 ```ts
 function countWords(str: string | null) {
@@ -100,7 +100,7 @@ let b = countLines(["hello", null, "world"]); // El array no admite nullos.
 let c = countLines();
 ```
 
-Para solucionar esto habría que darnos cuenta de dos cosas: podemos no pasar argumento alguna, ya que es opcional y eso lo convierte en _undefined_ por defecto. Y que el argumento es un array de string que no admite valores _null_ ni _undefined_
+Para solucionar esto habría que darnos cuenta de dos cosas: podemos no pasar argumento alguno, ya que es opcional y eso lo convierte en _undefined_ por defecto. Y que el argumento es un _array de string_ que no admite valores _null_ ni _undefined_
 
 Podemos empezar por solucionar el problema con _text_
 

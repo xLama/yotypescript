@@ -1,4 +1,4 @@
-### Expresiones lambda \(funciones flecha\) {#expresiones-lambda-funciones-flecha}
+### Funciones flecha \(Expresiones lambda\) {#expresiones-lambda-funciones-flecha}
 
 TS nos proporciona otra sintaxis a la hora de declarar una función que resulta bastante interesante, llamada funciones flecha.
 

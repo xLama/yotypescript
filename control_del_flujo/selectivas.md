@@ -23,7 +23,7 @@ if(x === 5) {
 else{ 
   /* Si no es igual a 5 entra aquí */
 }
-  ```
+```
 
 Además se puede usar el bloque _else if_ para determinar más casos.
 
@@ -85,3 +85,6 @@ switch (x) {
   break;
 }
 ```
+
+
+

@@ -118,7 +118,7 @@ function countLines(text?: string[]): number {
 }
 ```
 
-Con el _if_ nos hemos asegurado de que _text_ no es _undefined_, y si no lo es, lo único que puede ser es un array el cual podemos iterar. Pero hay otro problema. Cuando una función devuelve algo vacío, como en este caso, lo que en realidad devuelve es _undefined_ y _undefined_ no es asignable a _number_. Así que hay que solucionarlo:
+Con el _if_ nos hemos asegurado de que _text_ no es _undefined_, y si no lo es, lo único que puede ser es un array el cual podemos iterar. Pero hay otro problema. Cuando una función devuelve algo vacío, como en este caso, lo que en realidad devuelve es _undefined. Y_ _undefined_ no es asignable a _number_. Así que hay que solucionarlo:
 
 ```ts
 function countLines(text?: string[]): number {

@@ -20,4 +20,5 @@ class Student extends Person {
 }
 ```
 
-La clase *Student* estaría implementando las interfaces _Desplazable_ y _Motriz_ a través de *Persona*, que es clase padre.
+La clase _Student_ estaría implementando las interfaces _Desplazable_ y _Motriz_ a través de _Person_, que es clase padre.
+

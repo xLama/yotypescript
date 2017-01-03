@@ -77,13 +77,15 @@ class Concesionario<Seat>{
 
 El compilador sustituye el parámetro genérico T por la clase que le hemos proporcionado, en este caso _Seat_. A este proceso se le llama instancia de tipo genérico.
 
-Hemos conseguido que el _array_ de coches de la clase sea de coches de la marca _Seat_. Lo mismo si lo hacemos con otras marcas:
+Hemos conseguido que el array de coches de la clase sea de coches de la marca _Seat_. Lo mismo si lo hacemos con otras marcas:
 
 ```ts
 class Audi { }
 class Ferrari { }
 
 let conceAudi = new Concesionario<Audi>();
-
 let conceFerrari = new Concesionario<Ferrari>();
 ```
+
+
+

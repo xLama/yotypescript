@@ -1,4 +1,4 @@
-## Genéricos en interfaces {#gen-ricos-en-interfaces}
+## Interfaces genéricas {#gen-ricos-en-interfaces}
 
 También se pueden parametrizar las interfaces de la misma forma que las clases.
 
@@ -45,3 +45,4 @@ let conceSeat = new Concesionario<Seat>();
 ```
 
 En este caso sería correcto porque aunque _Seat_ no implementa la interfaz _IAutomovil_ de forma explícita, lo hace a través de su superclase.
+

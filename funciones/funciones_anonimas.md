@@ -10,48 +10,14 @@ Cuando declaramos una función con la palaba reservada _function_ seguido de un 
 
 ```ts
 let add = function () { } // es equivalente a, excepto por hoisting
-function add() { } 
+function add() { }
 ```
 
 El ejemplo no compila pues da un error de identificador duplicado.
 
 El problema de no tener ninguna referencia a la función es no poder invocarla más de una sola vez.
 
-### Expresiones lambda (funciones flecha) {#expresiones-lambda-funciones-flecha}
-
-TS nos proporciona otra sintaxis a la hora de declarar una función que resulta bastante interesante, llamada funciones flecha.
-
-Siguiendo con el ejemplo anterior, otra forma de declarar _sumar_ sería:
-
-```ts
-let example = (x: number) => {
-    return 0;
-};
-```
-
-Entre paréntesis se especifica la lista de parámetros seguido de : (dos puntos) para especificar el tipo devuelto por la función. Por último el => para definir el cuerpo de la función. Realmente no es necesario encerrarlo entre llaves {} pero si se hace debe aparecer la palabra clave _return_
-
-Son equivalentes:
-
-```ts
-let example = (x: number): number => {
-    return 0;
-};
-let example = (x: number) => 0;
-```
-
-Incluso podemos usar los parámetros en el cuerpo sin llaves:
-
-```ts
-let square = (x: number) => x * x;
-```
-
-En el caso de las funciones flecha la única posibilidad es la de asignarla a una variable pues su sintaxis no permite darle un nombre en la propia declaración
-
-```ts
-let funcion = (): void => { }
-```
-
+###  {#expresiones-lambda-funciones-flecha}
 
 ### Tipado literal de una función {#tipado-literal-de-una-funci-n}
 
@@ -96,6 +62,7 @@ let funcion: { (x: number): string };
 ```
 
 Su equivalencia es forma corta es:
+
 ```ts
 let funcion: (x: number) => string;
 ```
@@ -124,7 +91,7 @@ function ejemplo(func: (x: string) => number): void {
 }
 ```
 
-La función _ejemplo_ acepta como parámetro una función sólo si esa función acepta como parámetro un dato del tipo *string* y devuelve uno del tipo *number*.
+La función _ejemplo_ acepta como parámetro una función sólo si esa función acepta como parámetro un dato del tipo _string_ y devuelve uno del tipo _number_.
 
 ### Contexto {#contexto}
 
@@ -145,7 +112,7 @@ let show = a.show;
 show();
 ```
 
-La ejecución fallará porque el contexto de la ejecución _show()_ es _window_ por lo que asigna _this_ a _window_. _Window_ no tiene la función _showLetter()_.
+La ejecución fallará porque el contexto de la ejecución _show\(\)_ es _window_ por lo que asigna _this_ a _window_. _Window_ no tiene la función _showLetter\(\)_.
 
 Pero, sin embargo, escribimos esto:
 
@@ -164,13 +131,16 @@ let show = a.show;
 show();
 ```
 
-Funcionará correctamente. Lo que hace el compilador es referenciar el _this_ en otra variable llamada *_this* justo antes de la declaración del método. Cuando el método se ejecuta y hace _this.showLetter()_, ese *this* es, en realidad, el _this que antes se creó. _this sí hace referencia al objeto en sí y no a *window* por lo que puede ejecutar _this.showLetter()_ sin problemas. Para entenderlo mejor es recomendable leer [este apartado.](../clases/estado_y_comportamiento.md#operador-this)
+Funcionará correctamente. Lo que hace el compilador es referenciar el _this_ en otra variable llamada _\_this_ justo antes de la declaración del método. Cuando el método se ejecuta y hace _this.showLetter\(\)_, ese _this_ es, en realidad, el _this que antes se creó. \_this sí hace referencia al objeto en sí y no a window por lo que puede ejecutar \_this.showLetter\(\)_ sin problemas. Para entenderlo mejor es recomendable leer [este apartado.](../clases/estado_y_comportamiento.md#operador-this)
 
 ### Funciones anónimas autoejecutables {#funciones-an-nimas-autoejecutables}
 
-Este tipo de funciones se pueden invocar de forma automática encerrándolas entre paréntesis y añadiendo () al final. Mucho cuidado con hacer esto si queremos declarar y ejecutar de forma automática más de una función porque en este caso sí es necesario acabar la sentencia con ; (punto y coma)
+Este tipo de funciones se pueden invocar de forma automática encerrándolas entre paréntesis y añadiendo \(\) al final. Mucho cuidado con hacer esto si queremos declarar y ejecutar de forma automática más de una función porque en este caso sí es necesario acabar la sentencia con ; \(punto y coma\)
 
 ```ts
 ( (): void => { alert("función flecha")} )(); // ; necesario
 (function () { alert("función") })();
 ```
+
+
+

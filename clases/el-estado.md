@@ -1,6 +1,6 @@
 ## El estado {#estado-y-comportamiento}
 
-Los atributos de una clase son variables que se declaran dentro de la propia clase.
+Las propiedades de una clase son variables que se declaran dentro de la propia clase.
 
 Seguimos construyendo la clase _Person_. Tenemos que pensar qué características tiene una persona cualquiera, qué es lo que nos define. En este caso hemos optado por su nombre y apellidos. También podría ser el DNI, altura, peso, todo lo que queramos o necesitemos.
 
@@ -40,7 +40,7 @@ class Persona {
 }
 ```
 
-Esto es realmente útil si tenemos activado strictNullChecks ya que de esta forma el tipo de la propiedad también es _undefined_
+Esto es realmente útil si tenemos activado _strictNullChecks _ya que de esta forma el tipo de la propiedad también es _undefined_
 
 #### Otra forma de declarar propiedades {#otra-forma-de-declarar-atributos}
 

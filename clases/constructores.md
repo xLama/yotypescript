@@ -25,7 +25,7 @@ class Person {
 El constructor de la clase _Person_ ahora tiene como parámetros obligatorios el nombre y el primer apellido. El segundo apellido es opcional.
 
 ```ts
-let carlos: Person = new Person("Carlos", "Lama");
+let carlos = new Person("Carlos", "Lama");
 ```
 
 En el cuerpo del constructor podemos usar estos valores como si de cualquier función se tratara.

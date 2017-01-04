@@ -32,3 +32,6 @@ let a: A;
 let b: B = b; // Error
 b = a;
 ```
+
+
+

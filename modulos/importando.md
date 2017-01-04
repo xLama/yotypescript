@@ -1,11 +1,11 @@
 ## Importando {#m-dulos-externos}
 
-Ya que hemos aprendido a exportar miembros, debemos aprender a importarlos para poder usarlos. Para ello es tan fácil como lo que sigue.
+Ya que hemos aprendido a exportar miembros, debemos aprender a importarlos para poder usarlos. Para ello es tan fácil como lo que sigue. Atención al ./ ya que sin él no lo buscaría en un archivo, sino que lo trataría como un módulo ambiental.
 
 App.ts
 
 ```ts
-import { Person } from"./Person";
+import { Person } from"./Person"; /
 var person : Person;
 ```
 
@@ -27,7 +27,7 @@ import * as P from "./Person";
 let person:P.Person;
 ```
 
-Si declaramos un miembro como _default_ a la hora de exportarlo, nos va a facilitar las cosas al importarlo. De esta forma no es necesario que encerremos entre llaves el miembro a importar.
+Si delaramos un miembro como _default_ a la hora de exportarlo, nos va a facilitar las cosas al importarlo. De esta forma no es necesario que encerremos entre llaves el miembro a importar.
 
 ```ts
 import Person from"./Person";
@@ -86,7 +86,7 @@ App.ts:
 
 ```ts
 import Person = require("Person") // Error
-var person: Person;
+let person: Person;
 ```
 
 Lo único compatible es la exportación de módulos internos
@@ -94,7 +94,7 @@ Lo único compatible es la exportación de módulos internos
 Person.ts:
 
 ```ts
-module Human {
+namespace Human {
     export class Person { }
 }
 export = Human;

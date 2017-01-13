@@ -1,4 +1,4 @@
-## Un mismo módulo en distintos archivos {#un-mismo-m-dulo-en-distintos-archivos}
+### Un mismo módulo en distintos archivos
 
 Una característica importante de los módulos es la posibilidad de declarar el mismo en archivos distintos.
 

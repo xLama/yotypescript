@@ -1,4 +1,4 @@
-## Importando {#m-dulos-externos}
+### Importando
 
 Ya que hemos aprendido a exportar miembros, debemos aprender a importarlos para poder usarlos. Para ello es tan fácil como lo que sigue. Atención al ./ ya que sin él no lo buscaría en un archivo, sino que lo trataría como un módulo ambiental.
 

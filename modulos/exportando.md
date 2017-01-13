@@ -1,4 +1,4 @@
-### Exportando {#exportando}
+### Exportando
 
 Lo primero que hay que hacer es declarar algún miembro como exportado para que pueda ser importando posteriormente. Lo habitual es tener un módulo por archivo, aunque no es obligatorio.
 

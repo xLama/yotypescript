@@ -14,7 +14,7 @@ En él podemos encontrar definiciones para librerías tan conocidas como jQuery,
 
 Cuando creamos nuestra aplicación directamente en TS, el compilador genera un archivo de definiciones de forma automática pero esta funcionalidad es experimental y contiene aún bastantes bugs por resolver.
 
-### Archivos de definiciones {#archivos-de-definiciones}
+## Archivos de definiciones
 
 Nosotros podemos crear nuestros propios archivos de definiciones de forma manual.
 
@@ -29,3 +29,4 @@ declare class Person {
 ```
 
 Así podremos usar _Persona_ en nuestra aplicación TS para instanciarla, extenderla, etc.
+

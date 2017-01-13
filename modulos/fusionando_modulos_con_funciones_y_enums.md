@@ -1,4 +1,4 @@
-## Fusionando módulos con funciones y enums {#fusionando-m-dulos-con-funciones-y-enums}
+### Fusionando módulos con funciones y enums
 
 Es una posibilidad muy interesante que nos permite añadir atributos a las funciones o métodos a los enums.
 

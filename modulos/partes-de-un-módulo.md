@@ -1,4 +1,4 @@
-## Partes de un módulo {#partes-de-un-m-dulo}
+### Partes de un módulo
 
 Cuando hacemos referencia al módulo a través de su nombre original, en este caso _M_, estamos accediendo a la parte de las interfaces, la no instanciada. Pero si accedemos a través de una variable del tipo del módulo, estamos accediendo a la parte instanciada que comprende las variables, clases, enumerados y funciones. Realmente un módulo es un objeto de JS. Recordemos que las interfaces en TS no tienen equivalencia en JS, por lo que cuando declaramos una no genera código. Si un módulo sólo tiene interfaces, ese módulo no tiene equivalencia en JS de ninguna forma, por ello no es posible acceder a la parte instanciada, pues ésta sólo se crea cuando realmente se genera código JS.
 

@@ -155,7 +155,6 @@
         * [Un mismo módulo en distintos archivos](modulos/un_mismo_modulo_en_distintos_archivos.md)
         * [Fusionando módulos con funciones y enums](modulos/fusionando_modulos_con_funciones_y_enums.md)
     * [Módulos externos](modulos/módulos-externos.md)
-        * [Introducción](modulos/introducción.md)
         * [Exportando](modulos/exportando.md)
         * [Importando](modulos/importando.md)
         * [Módulos ambientales](modulos/módulos-ambientales.md)

@@ -1,4 +1,4 @@
-## Importar tipos {#importar-tipos}
+### Importar tipos
 
 Podemos importar módulos y sus entidades a otros módulos con la palabra reservada _import_ para un manejo más fácil de los mismos.
 

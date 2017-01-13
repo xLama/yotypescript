@@ -1,4 +1,4 @@
-## Declaración {#introducci-n}
+### Declaración
 
 Para crear uno basta con encerrar el código que queramos en un bloque _module o namespace_:
 

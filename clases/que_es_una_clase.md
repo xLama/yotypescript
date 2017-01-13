@@ -1,4 +1,4 @@
-## Qué es una clase {#qu-es-una-clase}
+## Qué es una clase
 
 *   _Nota: En este tema hablamos de métodos para referirnos a las funciones de una clase._
 

@@ -58,7 +58,7 @@ var show = a.show;
 show();
 ```
 
-Como vemos, \_\_this \_siempre es la instancia. Da igual que intentemos manipularlo, su contexto nunca va a cambiar. Esto tiene su lado bueno y su lado malo.
+Como vemos, \_this siempre es la instancia. Da igual que intentemos manipularlo, su contexto nunca va a cambiar. Esto tiene su lado bueno y su lado malo.
 
 El bueno es que podemos asegurar que su contexto nunca va a cambiar por lo que no habrá errores en tiempo de ejecución al respecto ya que su contexto está definido de una forma clara y concisa.
 

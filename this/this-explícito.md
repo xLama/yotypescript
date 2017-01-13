@@ -8,9 +8,9 @@ function otherThis(this:number){
 }
 ```
 
-Esto no quiere decir que por arte de magia su contexto sea el que especifiquemos, es evidente. Esto sirve para que podamos verlo fácilmente a la vez que podamos exprimir las herramientas de autocompletado del editor.
+Esto no quiere decir que por arte de magia su contexto sea el que especifiquemos, es evidente. Esto sirve para que podamos verlo fácilmente a la vez que podamos exprimir las _herramientas _de autocompletado del editor.
 
-¿Y para qué podemos usar esto realmente? Tiene su lógica si activamos _noImplicitThis _en el tsconfig.json. Con esto el compilador nos avisa de los this que no tienen un valor específico, sino que suelen ser Any.
+¿Y para qué podemos usar esto realmente? Tiene su lógica si activamos \_noImplicitThis \_en el tsconfig.json. Con esto el compilador nos avisa de los this que no tienen un valor específico, sino que suelen ser Any.
 
 ```ts
 class A {

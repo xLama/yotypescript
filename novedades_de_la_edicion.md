@@ -14,6 +14,7 @@ Entre las versiones 1.7 y 2.1 se enumeran las siguientes novedades recogidas por
 * keyof
 * Spread y rest en objetos
 * Never
+* This
 * Corrección de errores
 
 Entre las versiones 1.6 y 1.7 se enumeran las siguientes novedades recogidas por este libro:

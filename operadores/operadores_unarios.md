@@ -102,7 +102,7 @@ También puede ser usado para convertir a _boolean_.
 let truly = !"true";
 ```
 
-Estamos convirtiendo el _string_ “true” a _boolean\*\*false_. Si queremos convertirlo a _boolean\*\*true_, basta con negar dos veces.
+Estamos convirtiendo el _string_ “true” a _boolean false_. Si queremos convertirlo a _boolean true_, basta con negar dos veces.
 
 ```ts
 let falsy = !!"true";
@@ -185,6 +185,4 @@ sum(...numbers);
 Siempre se necesita que uno de los parámetros use también el operador … Con él conseguimos pasar un _array_ como argumento hacia una función que admite infinitos parámetros, y sin usar bucles.
 
 Realmente lo que hace es iterar el iterable \(en este caso un _array_\).
-
-
 

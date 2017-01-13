@@ -23,7 +23,7 @@ class A {
 }
 ```
 
-¿Por qué es _Any_? El primer _this es la propia clase y eso lo tiene controlado. El problema viene con el segundo this. Como recordamos de temas anteriores, el contexto de una función que está dentro de otra función es window o undefined. Por ello nos avisa. Para arreglar esto necesitamos especificar el tipo del this._
+¿Por qué es _Any_? El primer _this_ es la propia clase y eso lo tiene controlado. El problema viene con el segundo_ this. _Como recordamos de temas anteriores, el contexto de una función que está dentro de otra función es _window _o _undefined_. Por ello nos avisa. Para arreglar esto necesitamos especificar el tipo del _this_.
 
 ```ts
 class A {
@@ -36,7 +36,7 @@ class A {
 }
 ```
 
-Ahora no produce error. Una cosa a tener en cuenta es que si en algún momento el contexto de esa función no es el tipo _A_, la ejecución fallará si referenciamos una propiedad de _this \_que no tenga_ A.\_
+Ahora no produce error. Una cosa a tener en cuenta es que si en algún momento el contexto de esa función no es el tipo _A_, la ejecución fallará si referenciamos una propiedad de _this _que no tenga A.
 
 ```ts
 class A {
@@ -72,5 +72,5 @@ class A {
 }
 ```
 
-Y es así porque una función flecha conserva el contexto donde se ha declarado. En este caso su contexto es la instancia y eso no cambiará nunca por lo que TS infiere que _this \_es del tipo_ A.\_
+Y es así porque una función flecha conserva el contexto donde se ha declarado. En este caso su contexto es la instancia y eso no cambiará nunca por lo que TS infiere que _this _es del tipo A.
 

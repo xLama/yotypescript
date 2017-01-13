@@ -10,10 +10,8 @@ Number.prototype[Symbol.iterator] = function(){}
 
 Para este iterador vamos a hacer que recorra el número (sólo la parte entera) de derecha a izquierda, devolviendo cada uno de los dígitos por separado. Para ello lo que hay que hacer es que el método devuelva un objeto que contenga una función llamada _next()_ y ésta a su vez debe devolver un objeto literal con la siguiente estructura:
 
-type iteratorReturn = 
-
 ```ts
-{value: any, done : boolean }
+type iteratorReturn = {value: any, done : boolean }
 ```
 
 Las propiedades _value_ y _done_ hacen referencia al valor que queremos iterar y a la terminación de la iteración, respectivamente:

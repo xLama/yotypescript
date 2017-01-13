@@ -36,7 +36,7 @@ function conversion(casting: A): void {
 conversion(new C());
 ```
 
-Como TS se basa en el[ tipado estructural,](/clases/confirmaciones_de_tipo__type_assertions.md) es posible hacer conversiones de tipos que no tengan relación pero sean estructuralmente compatibles.
+Como TS se basa en el [tipado estructural](/tipado_estructural/README.md), es posible hacer conversiones de tipos que no tengan relación pero sean estructuralmente compatibles.
 
 ```ts
 class A {

@@ -6,7 +6,7 @@ App.ts
 
 ```ts
 import { Person } from"./Person"; /
-var person : Person;
+const person : Person;
 ```
 
 Por supuesto también podemos renombrarlo.
@@ -15,7 +15,7 @@ App.ts:
 
 ```ts
 import { Person as Persona } from "./Person";
-let persona: Persona;
+const persona: Persona;
 ```
 
 Si se quiere importar todo el módulo con todos los miembros exportados podemos hacerlo con el \* y nombrándolo como nos convenga. Para usar los miembros debemos referenciarlos con el nombre elegido en el renombrado seguido del nombre del miembro, separado por un punto.
@@ -24,14 +24,14 @@ App.ts
 
 ```ts
 import * as P from "./Person";
-let person:P.Person;
+const person:P.Person;
 ```
 
 Si delaramos un miembro como _default_ a la hora de exportarlo, nos va a facilitar las cosas al importarlo. De esta forma no es necesario que encerremos entre llaves el miembro a importar.
 
 ```ts
 import Person from"./Person";
-let person: Person;
+const person: Person;
 ```
 
 Sería equivalente a esto.
@@ -40,10 +40,10 @@ App.ts:
 
 ```ts
 import { default as Person } from "./Person";
-let person: Person;
+const person: Person;
 ```
 
-Si te estás preguntando cómo importar el mimebro _default_ y el resto, se hace así.
+Si te estás preguntando cómo importar el miembro _default_ y el resto, se hace así.
 
 App.ts
 
